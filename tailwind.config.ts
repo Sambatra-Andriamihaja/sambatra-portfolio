@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+const { fontFamily } = require("tailwindcss/defaultTheme");
 
 const config: Config = {
   content: [
@@ -12,6 +13,26 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        circularLight:
+          "repeating-radial-gradient(rgba(0,0,0,0.4) 2px, #f5f5f5 5px, #f5f5f5 100px);",
+      },
+      fontFamily: {
+        montserrat: ["var(--font-montserrat)", ...fontFamily.sans],
+      },
+      colors: {
+        dark: "#1b1b1b",
+        light: "#f5f5f5",
+        // primary: "#B63E96",
+        primary: "#10203a",
+        primaryDark: "#58E6D9",
+        spBackground: "#000000",
+        orangeBackground: "#ff7900",
+        telmaBackground: "#006f3b",
+        ituBackground: "#273d91",
+        funPinkDark: "#192742",
+      },
+      animation: {
+        "spin-slow": "spin 8s linear infinite",
       },
     },
   },
