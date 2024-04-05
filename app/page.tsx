@@ -8,7 +8,7 @@ import Link from "next/link";
 import profilePic from "../public/images/profile/sambatra-andriamihaja.png";
 import { ModelViewer } from "@/components/sub/ModelViewer";
 import { Controls, Player } from "@lottiefiles/react-lottie-player";
-import ParallaxLottieContainer from "@/components/sub/ParallaxLottieContainer";
+import LottieContainer from "@/components/sub/LottieContainer";
 
 export const metadata: Metadata = {
   title: "Sambatra | Portfolio",
@@ -16,23 +16,16 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  const lottieAnimationUrls = [
-    "https://assets3.lottiefiles.com/packages/lf20_UJNc2t.json",
-    "https://assets3.lottiefiles.com/packages/lf20_UJNc2t.json",
-    "https://assets3.lottiefiles.com/packages/lf20_UJNc2t.json",
-    "https://assets3.lottiefiles.com/packages/lf20_UJNc2t.json",
-  ];
-
   return (
-    <main className="flex items-center text-dark w-full min-h-screen">
+    <main className="flex items-center text-dark w-full h-full">
       <Layout className="pt-0">
+        <LottieContainer />
         <div className="flex items-center justify-center w-full">
           <div className="w-1/2">
-            <ParallaxLottieContainer animationUrls={lottieAnimationUrls} />
             {/* <Image src={profilePic} alt="CodeBucks" className="w-full h-auto" /> */}
             <ModelViewer />
           </div>
-          <div className="w-1/2 flex flex-col items-center self-center">
+          <div className="w-1/2 flex flex-col items-center self-center z-10">
             <AnimatedText
               className="!text-5xl !text-left"
               text="Breathing life into ideas through coding"
@@ -59,10 +52,10 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div className="absolute right-8 bottom-8 ">
+          <HireMe />
+        </div>
       </Layout>
-      <div className="absolute right-8 bottom-8 ">
-        <HireMe />
-      </div>
     </main>
   );
 }
