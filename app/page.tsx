@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import Layout from "@/components/layout/Layout";
 import AnimatedText from "@/components/sub/AnimatedText";
-import HireMe from "@/components/sub/HireMe";
 import { LinkArrow } from "@/components/sub/Icons";
 import Image from "next/image";
 import Link from "next/link";
@@ -51,9 +50,6 @@ export default function Home() {
               </Link>
             </div>
           </div>
-        </div>
-        <div className="absolute right-8 bottom-8 ">
-          <HireMe />
         </div>
       </Layout>
     </main>

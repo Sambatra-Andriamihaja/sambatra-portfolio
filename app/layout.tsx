@@ -8,6 +8,7 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 import { useEffect, useState } from "react";
 import NavBar from "@/components/layout/NavBar";
 import Footer from "@/components/layout/Footer";
+import HireMe from "@/components/sub/HireMe";
 
 config.autoAddCss = false;
 
@@ -46,6 +47,9 @@ export default function RootLayout({
           <NavBar />
         </div>
         <div className="pt-[navbarHeight]">{children}</div>
+        <div className="absolute right-8 bottom-8 ">
+          <HireMe />
+        </div>
         <Footer />
       </body>
     </html>
