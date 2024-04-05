@@ -39,7 +39,7 @@ export default function RootLayout({
         className={`${montserrat.variable} font-montserrat bg-light w-full min-h-screen`}
       >
         <div
-          className={`fixed top-0 left-0 right-0 z-50 bg-light ${
+          className={`fixed top-0 left-0 right-0 z-50 bg-white/85 backdrop-blur-sm ${
             isScrolled ? "shadow-2xl" : ""
           }`}
         >
