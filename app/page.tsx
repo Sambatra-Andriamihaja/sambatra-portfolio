@@ -23,8 +23,8 @@ export default function Home() {
         {/* <ParticlesBackground /> */}
         <LottieContainer />
         <div className="flex items-center justify-center w-full h-[50%]">
-          <div className="flex flex-row w-full items-center justify-between">
-            <div className="w-1/2">
+          <div className="flex flex-row w-full items-center justify-between ">
+            <div className="w-1/2 ">
               {/* <Image src={profilePic} alt="CodeBucks" className="w-full h-auto" /> */}
               <ModelViewer />
             </div>
@@ -44,7 +44,7 @@ export default function Home() {
                   href="/CV-Sambatra-Andriamihaja.pdf"
                   target={"_blank"}
                   className="flex items-center bg-dark text-light p-2.5 px-6
-                  rounded-lg text-lg font-semibold hover:bg-light hover:text-dark
+                  rounded-lg text-lg font-semibold hover:bg-transparent hover:text-dark
                   border border-solid border-transparent hover:border-dark
                   "
                   download={true}
@@ -56,7 +56,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex flex-row items-end justify-between h-[50%]">
+        <div className="flex flex-row items-end justify-between h-[50%] w-[75%]">
           <div className="flex flex-col items-end justify-center">
             <span className="inline-block text-7xl font-bold">
               <AnimatedNumbers value={20} />+
