@@ -8,6 +8,7 @@ import profilePic from "../public/images/profile/sambatra-andriamihaja.png";
 import { ModelViewer } from "@/components/sub/ModelViewer";
 import { Controls, Player } from "@lottiefiles/react-lottie-player";
 import LottieContainer from "@/components/sub/LottieContainer";
+import ParticlesBackground from "@/components/sub/ParticlesBackground";
 
 export const metadata: Metadata = {
   title: "Sambatra | Portfolio",
@@ -18,6 +19,7 @@ export default function Home() {
   return (
     <main className="flex items-center text-dark w-full h-full">
       <Layout className="pt-0">
+        <ParticlesBackground />
         <LottieContainer />
         <div className="flex items-center justify-center w-full">
           <div className="w-1/2">
