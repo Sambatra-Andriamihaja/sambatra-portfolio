@@ -14,8 +14,9 @@ const LottieContainer = () => {
           position: "absolute",
           width: "200px",
           height: "200px",
-          right: "2%",
-          top: "27.5%",
+          right: "1%",
+          top: "12%",
+          opacity: 0.85,
         }}
       />
 
@@ -28,7 +29,8 @@ const LottieContainer = () => {
           width: "250px",
           height: "250px",
           left: "42.5%",
-          top: "22.5%",
+          top: "7%",
+          opacity: 0.85,
         }}
       />
 
@@ -40,8 +42,9 @@ const LottieContainer = () => {
           position: "absolute",
           width: "200px",
           height: "200px",
-          right: "30%",
-          top: "60%",
+          right: "32.5%",
+          top: "40%",
+          opacity: 0.85,
         }}
       />
     </div>

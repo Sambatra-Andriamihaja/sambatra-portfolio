@@ -31,7 +31,7 @@ export const ModelViewer = () => {
 
   return (
     <div
-      className="flex justify-center items-center h-screen"
+      className="flex justify-center items-center"
       style={{ overscrollBehavior: "none" }}
     >
       {/* Import 3D object */}
