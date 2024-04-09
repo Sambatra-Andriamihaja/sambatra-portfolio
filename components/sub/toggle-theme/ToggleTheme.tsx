@@ -1,15 +1,11 @@
-import React from "react";
+import { Dispatch, SetStateAction } from "react";
 import styles from "./ToggleTheme.module.css";
+import useThemeSwitcher from "@/hooks/useThemeSwitcher";
 
-interface IToggleTheme {
-  mode: string;
-  setMode: React.Dispatch<string>;
-}
-
-const ToggleTheme = (props: IToggleTheme) => {
-  const { mode, setMode } = props;
+const ToggleTheme = () => {
+  const [mode, setMode] = useThemeSwitcher();
   const handleToggleTheme = () => {
-    setMode(mode === "dark" ? "light" : "dark");
+    setMode?.(mode === "dark" ? "light" : "dark");
   };
 
   return (

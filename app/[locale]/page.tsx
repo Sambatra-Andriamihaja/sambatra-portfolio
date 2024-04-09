@@ -24,7 +24,7 @@ export default function Home() {
   const t = useTranslations("HomePage");
 
   return (
-    <main className="flex items-center text-dark w-full h-full">
+    <main className="flex items-center text-dark w-full min-h-screen dark:text-light">
       <Layout className="pt-[navbarHeight] h-screen">
         <LottieContainer />
         <div className="flex items-center justify-center w-full h-[50%]">
@@ -46,6 +46,8 @@ export default function Home() {
                   className="flex items-center bg-dark text-light p-2.5 px-6
                   rounded-lg text-lg font-semibold hover:bg-transparent hover:text-dark
                   border border-solid border-transparent hover:border-dark
+                  dark:bg-light dark:text-dark hover:dark:bg-dark hover:dark:text-light
+                  hover:dark:border-light
                   "
                   download={true}
                 >
@@ -62,7 +64,7 @@ export default function Home() {
             <span className="inline-block text-7xl font-bold">
               <AnimatedNumbers value={20} />+
             </span>
-            <h2 className="text-xl font-medium capitalize text-dark/75">
+            <h2 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75">
               {t("technoUsed")}
             </h2>
           </div>
@@ -71,7 +73,7 @@ export default function Home() {
             <span className="inline-block text-7xl font-bold">
               <AnimatedNumbers value={10} />+
             </span>
-            <h2 className="text-xl font-medium capitalize text-dark/75">
+            <h2 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75">
               {t("projectsCompleted")}
             </h2>
           </div>
@@ -80,7 +82,7 @@ export default function Home() {
             <span className="inline-block text-7xl font-bold">
               <AnimatedNumbers value={2} />+
             </span>
-            <h2 className="text-xl font-medium capitalize text-dark/75">
+            <h2 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75">
               {t("yearsOfExperience")}
             </h2>
           </div>

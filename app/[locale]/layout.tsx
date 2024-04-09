@@ -28,7 +28,7 @@ export default function LocaleLayout({
   return (
     <html lang={locale}>
       <body
-        className={`${montserrat.variable} font-montserrat bg-light w-full min-h-screen`}
+        className={`${montserrat.variable} font-montserrat bg-light dark:bg-dark w-full min-h-screen`}
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
           <NavBar />

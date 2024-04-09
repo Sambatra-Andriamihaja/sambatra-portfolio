@@ -74,7 +74,7 @@ export const CircularText = ({ className = "", lang = "en", ...rest }) => {
       >
         <g
           transform="translate(0.000000,810.000000) scale(0.100000,-0.100000)"
-          fill="#000000"
+          // fill="#000000"
           stroke="none"
         >
           <path
@@ -334,7 +334,7 @@ export const CircularText = ({ className = "", lang = "en", ...rest }) => {
     >
       <g
         transform="translate(0.000000,810.000000) scale(0.100000,-0.100000)"
-        fill="#000000"
+        // fill="#000000"
         stroke="none"
       >
         <path
