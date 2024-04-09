@@ -10,7 +10,6 @@ import { GithubIcon, LinkedInIcon } from "../sub/Icons";
 import CustomLink from "../sub/CustomLink";
 import LanguageSwitcher from "../sub/language-switcher/LanguageSwitcher";
 import { useTranslations } from "next-intl";
-import ParticlesBackground from "../sub/ParticlesBackground";
 
 interface INavBar {
   lang: string;
@@ -91,7 +90,6 @@ const NavBar = (props: INavBar) => {
       </nav>
       <div className="absolute left-[50%] top-2 translate-x-[50%]">
         <PortfolioLogo />
-        <ParticlesBackground />
       </div>
     </header>
   );

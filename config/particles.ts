@@ -112,7 +112,7 @@ export const particlesOptions: RecursivePartial<IOptions> = {
 export const starsOptions: RecursivePartial<IOptions> = {
   background: {
     color: {
-      value: "#17182f",
+      value: "transparent",
     },
   },
   particles: {
