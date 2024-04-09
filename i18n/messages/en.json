@@ -1,0 +1,23 @@
+{
+  "General": {
+    "hireMe": "Hire me"
+  },
+  "NavBar": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects"
+  },
+  "HomePage": {
+    "title": "Breathing life into ideas through coding",
+    "description": "As a versatile full-stack developer, I am committed to transforming concepts into cutting-edge solutions. Delve into my recent endeavors that highlight my proficiency in software engineering.",
+    "resume": "Resume",
+    "technoUsed": "technologies used",
+    "projectsCompleted": "projects completed",
+    "yearsOfExperience": "years of experience"
+  },
+  "NotFoundPage": {},
+  "Footer": {
+    "copyright": "Copyright © {year} All rights reserved.",
+    "buildBy": "Build by"
+  }
+}

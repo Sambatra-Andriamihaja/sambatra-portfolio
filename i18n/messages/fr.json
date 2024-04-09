@@ -1,0 +1,23 @@
+{
+  "General": {
+    "hireMe": "Embauchez-moi"
+  },
+  "NavBar": {
+    "home": "Accueil",
+    "about": "À propos",
+    "projects": "Projets"
+  },
+  "HomePage": {
+    "title": "Donner vie aux idées par le codage",
+    "description": "En tant que développeur polyvalent, je m'engage à transformer les concepts en solutions de pointe. Jetez un coup d'œil à mes récentes réalisations qui mettent en évidence mes compétences en ingénierie logicielle.",
+    "resume": "CV",
+    "technoUsed": "technologies utilisées",
+    "projectsCompleted": "projets achevés",
+    "yearsOfExperience": "années d' expérience"
+  },
+  "NotFoundPage": {},
+  "Footer": {
+    "copyright": "Droit d'auteur © {year} Tous droits réservés.",
+    "buildBy": "Construit par"
+  }
+}

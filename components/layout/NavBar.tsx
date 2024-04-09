@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { motion } from "framer-motion";
 
@@ -8,16 +8,37 @@ import PortfolioLogo from "../sub/PortfolioLogo";
 import ToggleTheme from "../sub/toggle-theme/ToggleTheme";
 import { GithubIcon, LinkedInIcon } from "../sub/Icons";
 import CustomLink from "../sub/CustomLink";
+import LanguageSwitcher from "../sub/language-switcher/LanguageSwitcher";
+import { useTranslations } from "next-intl";
 
 const NavBar = () => {
+  const t = useTranslations("NavBar");
+
   const [mode, setMode] = useState<string>("light");
 
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      setIsScrolled(scrollTop > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="w-full px-32 py-8 font-medium flex items-center justify-between">
+    <header
+      className={`w-full px-32 py-8 font-medium flex items-center justify-between
+      fixed top-0 left-0 right-0 z-50 bg-light backdrop-blur-sm ${
+        isScrolled ? "bg-light/85 shadow-2xl" : ""
+      }`}
+    >
       <nav>
-        <CustomLink href="/" title="Home" className="mr-4" />
-        <CustomLink href="/about" title="About" className="mx-4" />
-        <CustomLink href="/projects" title="Projects" className="mx-4" />
+        <CustomLink href="/" title={t("home")} className="mr-4" />
+        <CustomLink href="/about" title={t("about")} className="mx-4" />
+        <CustomLink href="/projects" title={t("projects")} className="mx-4" />
       </nav>
 
       <nav className="flex items-center justify-center flex-wrap">
@@ -43,7 +64,14 @@ const NavBar = () => {
         <motion.div
           whileHover={{ y: -2 }}
           whileTap={{ scale: 0.9 }}
-          className="cursor-pointer w-8 ml-3"
+          className="cursor-pointer w-25 mx-3"
+        >
+          <LanguageSwitcher />
+        </motion.div>
+        <motion.div
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.9 }}
+          className="cursor-pointer w-18 ml-3"
         >
           <ToggleTheme mode={mode} setMode={setMode} />
         </motion.div>
