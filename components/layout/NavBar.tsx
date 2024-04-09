@@ -10,7 +10,7 @@ import { GithubIcon, LinkedInIcon } from "../sub/Icons";
 import CustomLink from "../sub/CustomLink";
 import LanguageSwitcher from "../sub/language-switcher/LanguageSwitcher";
 import { useTranslations } from "next-intl";
-import useThemeSwitcher from "@/hooks/useThemeSwitcher";
+import ParticlesBackground from "../sub/ParticlesBackground";
 
 const NavBar = () => {
   const t = useTranslations("NavBar");
@@ -77,6 +77,7 @@ const NavBar = () => {
       </nav>
       <div className="absolute left-[50%] top-2 translate-x-[50%]">
         <PortfolioLogo />
+        <ParticlesBackground />
       </div>
     </header>
   );

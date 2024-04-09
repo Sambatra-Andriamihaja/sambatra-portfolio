@@ -21,7 +21,7 @@ const config: Config = {
         montserrat: ["var(--font-montserrat)", ...fontFamily.sans],
       },
       colors: {
-        dark: "#1b1b1b",
+        dark: "#17182f",
         light: "#f5f5f5",
         // primary: "#B63E96",
         primary: "#10203a",

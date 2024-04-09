@@ -7,7 +7,6 @@ import Link from "next/link";
 import { useTranslations } from "next-intl";
 
 import { ModelViewer } from "@/components/sub/ModelViewer";
-import { Controls, Player } from "@lottiefiles/react-lottie-player";
 import LottieContainer from "@/components/sub/LottieContainer";
 import ParticlesBackground from "@/components/sub/ParticlesBackground";
 import AnimatedNumbers from "@/components/sub/AnimatedNumbers";

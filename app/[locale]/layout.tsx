@@ -6,6 +6,7 @@ import NavBar from "@/components/layout/NavBar";
 import Footer from "@/components/layout/Footer";
 import HireMe from "@/components/sub/HireMe";
 import { NextIntlClientProvider, useMessages } from "next-intl";
+import { ThemeProvider } from "@/components/providers/theme-provider";
 
 config.autoAddCss = false;
 
@@ -26,19 +27,20 @@ export default function LocaleLayout({
   const messages = useMessages();
 
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
       <body
         className={`${montserrat.variable} font-montserrat bg-light dark:bg-dark w-full min-h-screen`}
       >
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          <NavBar />
-          {/* <ParticlesBackground /> */}
-          <div className="pt-[navbarHeight]">{children}</div>
-          <div className="absolute right-8 bottom-8 ">
-            <HireMe lang={locale} />
-          </div>
-          <Footer />
-        </NextIntlClientProvider>
+        <ThemeProvider>
+          <NextIntlClientProvider locale={locale} messages={messages}>
+            <NavBar />
+            <div className="pt-[navbarHeight]">{children}</div>
+            <div className="absolute right-8 bottom-8 ">
+              <HireMe lang={locale} />
+            </div>
+            <Footer />
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

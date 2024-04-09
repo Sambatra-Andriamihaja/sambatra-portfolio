@@ -2,7 +2,7 @@ import React from "react";
 import { CircularText } from "./Icons";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { isLangEn } from "@/utils/i18n";
+import { isLangEn } from "@/utils/utils";
 
 interface IHireMe {
   lang: string;
