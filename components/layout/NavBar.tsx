@@ -12,7 +12,13 @@ import LanguageSwitcher from "../sub/language-switcher/LanguageSwitcher";
 import { useTranslations } from "next-intl";
 import ParticlesBackground from "../sub/ParticlesBackground";
 
-const NavBar = () => {
+interface INavBar {
+  lang: string;
+}
+
+const NavBar = (props: INavBar) => {
+  const { lang } = props;
+
   const t = useTranslations("NavBar");
 
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
@@ -36,8 +42,16 @@ const NavBar = () => {
     >
       <nav>
         <CustomLink href="/" title={t("home")} className="mr-4" />
-        <CustomLink href="/about" title={t("about")} className="mx-4" />
-        <CustomLink href="/projects" title={t("projects")} className="mx-4" />
+        <CustomLink
+          href={`/${lang}/about`}
+          title={t("about")}
+          className="mx-4"
+        />
+        <CustomLink
+          href={`/${lang}/projects`}
+          title={t("projects")}
+          className="mx-4"
+        />
       </nav>
 
       <nav className="flex items-center justify-center flex-wrap">

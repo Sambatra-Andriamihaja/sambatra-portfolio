@@ -33,7 +33,7 @@ export default function LocaleLayout({
       >
         <ThemeProvider>
           <NextIntlClientProvider locale={locale} messages={messages}>
-            <NavBar />
+            <NavBar lang={locale} />
             <div className="pt-[navbarHeight]">{children}</div>
             <div className="absolute right-8 bottom-8 ">
               <HireMe lang={locale} />
