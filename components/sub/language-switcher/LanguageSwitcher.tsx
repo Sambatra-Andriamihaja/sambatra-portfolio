@@ -7,10 +7,27 @@ const LanguageSwitcher = () => {
   const router = useRouter();
   const localeActive = useLocale();
 
+  // const handleLanguageChange = (event: ChangeEvent<HTMLSelectElement>) => {
+  //   const nextLocale = event.target.value;
+  //   startTransition(() => {
+  //     router.replace(`/${nextLocale}`);
+  //   });
+  // };
+
   const handleLanguageChange = (event: ChangeEvent<HTMLSelectElement>) => {
     const nextLocale = event.target.value;
     startTransition(() => {
-      router.replace(`/${nextLocale}`);
+      const currentUrl = new URL(window.location.href);
+      const currentPathname = currentUrl.pathname;
+
+      // Remove the current locale from the pathname
+      const pathWithoutLocale = currentPathname.replace(`/${localeActive}`, "");
+
+      // Construct the new path with the desired locale
+      const newPath = `/${nextLocale}${pathWithoutLocale}`;
+
+      // Replace the route with the new path
+      router.replace(newPath, undefined);
     });
   };
 
