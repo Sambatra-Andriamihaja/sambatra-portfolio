@@ -15,6 +15,44 @@
     "projectsCompleted": "projets achevés",
     "yearsOfExperience": "années d' expérience"
   },
+  "About": {
+    "Experiences": {
+      "SP": {
+        "experienceTitle": "Développeur Full Stack JS",
+        "companyName": "Smart Predict",
+        "date": "Sep. 2022 - Présent",
+        "points": {
+          "0": "J'ai travaillé dans une équipe responsable de la maintenance et du développement de nouvelles fonctionnalités sur mobile pour le projet Orizon d'Orizon.",
+          "1": "J'ai implémenté de nouvelles fonctionnalités sur la plateforme web équivalente."
+        }
+      },
+      "MGBI": {
+        "experienceTitle": "Développeur Logiciel",
+        "companyName": "Madagascar Business Intelligence",
+        "date": "Jan. 2023 - Jul. 2023",
+        "points": {
+          "0": "Développement d'applications web",
+          "1": "Conception et maintenance d'outils logiciels"
+        }
+      },
+      "ODC": {
+        "experienceTitle": "Développeur Mobile",
+        "companyName": "Orange Digital Center",
+        "date": "Jul. 2022 - Sep. 2022",
+        "points": {
+          "0": "J'ai effectué un stage de fin d'études dans le cadre de l'Orange Summer Challenge 2022 sur le thème 'tech4good' (c'est-à-dire la technologie pour le bien), organisé par l'Orange Digital Center dans le cadre de mon Master Sciences BIHAR, au cours duquel j'ai été chargé de construire une application mobile."
+        }
+      },
+      "TELMA": {
+        "experienceTitle": "Développeur d'applications Web",
+        "companyName": "TELMA",
+        "date": "Dec. 2020 - Mar. 2021",
+        "points": {
+          "0": "J'ai effectué un stage en vue d'obtenir une licence en informatique option Développement, au cours duquel j'ai redessiné l'application web de gestion des documents pour le département des systèmes d'information de Telma."
+        }
+      }
+    }
+  },
   "NotFoundPage": {},
   "Footer": {
     "copyright": "Droit d'auteur © {year} Tous droits réservés.",

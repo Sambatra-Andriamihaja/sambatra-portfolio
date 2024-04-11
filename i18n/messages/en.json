@@ -15,6 +15,44 @@
     "projectsCompleted": "projects completed",
     "yearsOfExperience": "years of experience"
   },
+  "About": {
+    "Experiences": {
+      "SP": {
+        "experienceTitle": "Fullstack Developer JS",
+        "companyName": "Smart Predict",
+        "date": "Sep. 2022 - Present",
+        "points": {
+          "0": "Worked on a team responsible for maintaining and developing new features on mobile for Orizon's project called Orizon.",
+          "1": "Implemented new features in the equivalent web platform"
+        }
+      },
+      "MGBI": {
+        "experienceTitle": "Software Developer",
+        "companyName": "Madagascar Business Intelligence",
+        "date": "Jan. 2023 - Jul. 2023",
+        "points": {
+          "0": "Developed web applications",
+          "1": "Designed and maintained software tools"
+        }
+      },
+      "ODC": {
+        "experienceTitle": "Mobile Developer",
+        "companyName": "Orange Digital Center",
+        "date": "Jul. 2022 - Sep. 2022",
+        "points": {
+          "0": "Did an end-of-studies internship as part of the Orange Summer Challenge 2022 on the theme of 'tech4good' (in other words, technology for good), organised by the Orange Digital Center as part of my BIHAR Master of Sciences degree, in which I was tasked with building a mobile application."
+        }
+      },
+      "TELMA": {
+        "experienceTitle": "Web App Developer",
+        "companyName": "TELMA",
+        "date": "Dec. 2020 - Mar. 2021",
+        "points": {
+          "0": "Did an internship with a view to obtaining a Bachelor's degree in Computer Science with a Development option, during which I redesigned the document management web application for Telma's Information Systems Department."
+        }
+      }
+    }
+  },
   "NotFoundPage": {},
   "Footer": {
     "copyright": "Copyright © {year} All rights reserved.",

@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import Education from "@/components/about/educations/Education";
-import Experience from "@/components/about/experiences/Experience";
+import Experience from "@/components/about/Experience";
 import Skills from "@/components/about/skills/Skills";
 import Layout from "@/components/layout/Layout";
 import AnimatedNumbers from "@/components/sub/AnimatedNumbers";
