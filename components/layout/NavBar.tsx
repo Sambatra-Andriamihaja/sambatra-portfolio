@@ -40,7 +40,7 @@ const NavBar = (props: INavBar) => {
       }`}
     >
       <nav>
-        <CustomLink href="/" title={t("home")} className="mr-4" />
+        <CustomLink href={`/${lang}`} title={t("home")} className="mr-4" />
         <CustomLink
           href={`/${lang}/about`}
           title={t("about")}
