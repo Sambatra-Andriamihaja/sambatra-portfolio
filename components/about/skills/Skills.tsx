@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { AiSkillData, DbSkillData, DevSkillData } from "@/data/skill";
+import { AiSkillData, DbSkillData, DevSkillData } from "@/constants/skill";
 import SkillDataProvider from "./SkillDataProvider";
 
 const Skills = () => {

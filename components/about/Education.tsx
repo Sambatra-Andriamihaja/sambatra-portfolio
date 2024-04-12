@@ -8,15 +8,93 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { Formats, TranslationValues, useTranslations } from "next-intl";
 import { useInView } from "react-intersection-observer";
+import { IEducations, ESTIA, ITU, STGAB } from "@/constants/educations";
+
+interface IEducationVerticalTimelineElement {
+  education: IEducations;
+  visible: boolean;
+  t: (
+    key: string,
+    values?: TranslationValues | undefined,
+    formats?: Partial<Formats> | undefined
+  ) => string;
+}
+
+const EducationVerticalTimelineElement = React.forwardRef<
+  HTMLDivElement,
+  IEducationVerticalTimelineElement
+>(({ education, visible, t }, ref) => {
+  return (
+    <div ref={ref} className="vertical-timeline-element">
+      <VerticalTimelineElement
+        visible={visible}
+        date={t(`${education.key}.date`)}
+        iconStyle={{ background: education.iconBg }}
+        icon={
+          <div className="flex justify-center items-center w-full h-full">
+            <img
+              src={education.iconSrc}
+              alt={education.schoolName}
+              className="w-[60%] h-[60%] object-contain"
+            />
+          </div>
+        }
+        contentStyle={{
+          borderBottom: "8px",
+          borderStyle: "solid",
+          borderBottomColor: education.borderBottomColor,
+          boxShadow: "none",
+        }}
+      >
+        <div>
+          <h3 className="text-black text-xl font-poppins font-semibold">
+            {t(`${education.key}.educationLevel`)}
+          </h3>
+          <a
+            href={education.websiteLink}
+            target="_blank"
+            className="text-primary capitalize flex items-center"
+          >
+            {education.logoSrc && education.logoWidth ? (
+              <div
+                style={{
+                  height: "auto",
+                  width: `${education.logoWidth}px`,
+                }}
+              >
+                <Image
+                  src={education.logoSrc}
+                  alt={education.schoolName}
+                  width={education.logoWidth}
+                  height={100}
+                />
+              </div>
+            ) : (
+              <p
+                className="text-black-500 font-medium text-base"
+                style={{ margin: 0 }}
+              >
+                {education.schoolName}
+              </p>
+            )}
+          </a>
+        </div>
+        <p className="text-black-500/50 font-normal text-sm my-5 ml-5 space-y-2">
+          {t(`${education.key}.point`)}
+        </p>
+      </VerticalTimelineElement>
+    </div>
+  );
+});
+
+EducationVerticalTimelineElement.displayName =
+  "EducationVerticalTimelineElement";
 
 const Education = () => {
   const t = useTranslations("About.Educations");
 
-  const triggerOnceOtions = {
-    triggerOnce: true,
-  };
   const options = {
     threshold: 0,
   };
@@ -29,141 +107,24 @@ const Education = () => {
       <h2 className="font-bold text-8xl mb-32 w-full text-center">Education</h2>
       <section className="mt-12 flex">
         <VerticalTimeline>
-          {/* ESTIA */}
-          <div ref={estiaRef} className="vertical-timeline-element">
-            <VerticalTimelineElement
-              visible={estiaInView}
-              key={t("ESTIA.schoolName")}
-              date={t("ESTIA.date")}
-              iconStyle={{ background: "#ffffff" }}
-              icon={
-                <div className="flex justify-center items-center w-full h-full">
-                  <img
-                    src={"/images/educations/estia-favicon.png"}
-                    alt={t("ESTIA.schoolName")}
-                    className="w-[60%] h-[60%] object-contain"
-                  />
-                </div>
-              }
-              contentStyle={{
-                borderBottom: "8px",
-                borderStyle: "solid",
-                borderBottomColor: "#52bbe6",
-                boxShadow: "none",
-              }}
-            >
-              <div>
-                <h3 className="text-black text-xl font-poppins font-semibold">
-                  {t("ESTIA.educationLevel")}
-                </h3>
-                <a
-                  href={"https://www.estia.fr/"}
-                  target="_blank"
-                  className="text-primary capitalize flex items-center"
-                >
-                  <div style={{ height: "auto", width: `${150}px` }}>
-                    <Image
-                      src={"/images/educations/estia-logo.png"}
-                      alt={t("ESTIA.schoolName")}
-                      width={150}
-                      height={100}
-                    />
-                  </div>
-                </a>
-              </div>
-              <p className="my-5 ml-5 space-y-2">{t("ESTIA.point")}</p>
-            </VerticalTimelineElement>
-          </div>
-
-          {/* ITU */}
-          <div ref={ituRef} className="vertical-timeline-element">
-            <VerticalTimelineElement
-              visible={ituInView}
-              key={t("ITU.schoolName")}
-              date={t("ITU.date")}
-              iconStyle={{ background: "#273d91" }}
-              icon={
-                <div className="flex justify-center items-center w-full h-full">
-                  <img
-                    src={"/images/educations/itu-favicon.png"}
-                    alt={t("ITU.schoolName")}
-                    className="w-[60%] h-[60%] object-contain"
-                  />
-                </div>
-              }
-              contentStyle={{
-                borderBottom: "8px",
-                borderStyle: "solid",
-                borderBottomColor: "#bbcc08",
-                boxShadow: "none",
-              }}
-            >
-              <div>
-                <h3 className="text-black text-xl font-poppins font-semibold">
-                  {t("ITU.educationLevel")}
-                </h3>
-                <a
-                  href={"https://www.ituniversity-mg.com/page/"}
-                  target="_blank"
-                  className="text-primary capitalize flex items-center"
-                >
-                  <div style={{ height: "auto", width: `${220}px` }}>
-                    <Image
-                      src={"/images/educations/itu-logo.png"}
-                      alt={t("ITU.schoolName")}
-                      width={220}
-                      height={100}
-                    />
-                  </div>
-                </a>
-              </div>
-              <p className="my-5 ml-5 space-y-2">{t("ITU.point")}</p>
-            </VerticalTimelineElement>
-          </div>
-
-          {/* SAINT GAB */}
-          <div ref={stGabRef} className="vertical-timeline-element">
-            <VerticalTimelineElement
-              visible={stGabInView}
-              key={t("STGAB.schoolName")}
-              date={t("STGAB.date")}
-              iconStyle={{ background: "#ffffff" }}
-              icon={
-                <div className="flex justify-center items-center w-full h-full">
-                  <img
-                    src={"/images/educations/st-gab-favicon.png"}
-                    alt={t("STGAB.schoolName")}
-                    className="w-[60%] h-[60%] object-contain"
-                  />
-                </div>
-              }
-              contentStyle={{
-                borderBottom: "8px",
-                borderStyle: "solid",
-                borderBottomColor: "#fdfd7a",
-                boxShadow: "none",
-              }}
-            >
-              <div>
-                <h3 className="text-black text-xl font-poppins font-semibold">
-                  {t("STGAB.educationLevel")}
-                </h3>
-                <a
-                  href={"https://www.montfort-stgabrielmahajanga.mg/lycee/"}
-                  target="_blank"
-                  className="text-primary capitalize flex items-center"
-                >
-                  <p
-                    className="text-black-500 font-medium text-base"
-                    style={{ margin: 0 }}
-                  >
-                    {t("STGAB.schoolName")}
-                  </p>
-                </a>
-              </div>
-              <p className="my-5 ml-5 space-y-2">{t("STGAB.point")}</p>
-            </VerticalTimelineElement>
-          </div>
+          <EducationVerticalTimelineElement
+            education={ESTIA}
+            ref={estiaRef}
+            visible={estiaInView}
+            t={t}
+          />
+          <EducationVerticalTimelineElement
+            education={ITU}
+            ref={ituRef}
+            visible={ituInView}
+            t={t}
+          />
+          <EducationVerticalTimelineElement
+            education={STGAB}
+            ref={stGabRef}
+            visible={stGabInView}
+            t={t}
+          />
         </VerticalTimeline>
       </section>
     </div>

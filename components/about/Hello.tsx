@@ -1,11 +1,14 @@
-/* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuoteRight, faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import MyProfilePic from "@/public/images/profile/sambatra-andriamihaja-with-bg.png";
+import { useTranslations } from "next-intl";
+import { About } from "@/constants/about";
 
 const Hello = () => {
+  const t = useTranslations("About.Me");
+
   return (
     <section className="mx-auto bg-white p-5 sm:p-12 grid grid-cols-1 sm:grid-cols-[1fr_3fr] md:grid-cols-[1fr_4fr] items-center gap-5 md:gap-8 rounded-xl overflow-hidden">
       {/* Left Section */}
@@ -23,8 +26,8 @@ const Hello = () => {
 
         {/* Little Info */}
         <div>
-          <h2 className="text-xl font-medium">Sambatra Andriamihaja</h2>
-          <p className="text-gray-600">IT Engineer | Versatile Developer</p>
+          <h2 className="text-xl font-medium">{About.name}</h2>
+          <p className="text-gray-600">{t("title")}</p>
         </div>
       </div>
 
@@ -38,20 +41,7 @@ const Hello = () => {
           className="text-dark/80 dark:text-white/65"
         />
         <div className="leading-[30px] font-semibold">
-          <p className="mx-4 font-medium">
-            As an IT enthusiast, I've witnessed the profound metamorphosis of
-            our world through technology. Embracing the digital age, I embarked
-            on a transformative journey at ITUniveristy Andoharanofotsy, a
-            bastion of excellence in Madagascar's technology education
-            landscape. There, amidst a plethora of programming languages and
-            cutting-edge tools, I cultivated my skills and honed my craft
-            through immersive projects and internships. Armed with a Master's
-            degree in Computer Science, my passion for programming burns
-            brighter than ever. I thrive on every challenge, driven by an
-            insatiable hunger for knowledge and innovation. Join me as I
-            navigate the ever-evolving field of technology, where every obstacle
-            is an opportunity and learning is a lifelong adventure.
-          </p>
+          <p className="mx-4 font-medium">{t("quote")}</p>
         </div>
         <FontAwesomeIcon
           icon={faQuoteRight}

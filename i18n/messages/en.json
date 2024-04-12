@@ -16,10 +16,13 @@
     "yearsOfExperience": "years of experience"
   },
   "About": {
+    "Me": {
+      "title": "IT Engineer | Versatile Developer",
+      "quote": "As an IT enthusiast, I've witnessed the profound metamorphosis of our world through technology. Embracing the digital age, I embarked on a transformative journey at ITUniveristy Andoharanofotsy, a bastion of excellence in Madagascar's technology education landscape. There, amidst a plethora of programming languages and cutting-edge tools, I cultivated my skills and honed my craft through immersive projects and internships. Armed with a Master's degree in Computer Science, my passion for programming burns brighter than ever. I thrive on every challenge, driven by an insatiable hunger for knowledge and innovation. Join me as I navigate the ever-evolving field of technology, where every obstacle is an opportunity and learning is a lifelong adventure."
+    },
     "Experiences": {
       "SP": {
         "experienceTitle": "Fullstack Developer JS",
-        "companyName": "Smart Predict",
         "date": "Sep. 2022 - Present",
         "points": {
           "0": "Worked on a team responsible for maintaining and developing new features on mobile for Orizon's project called Orizon.",
@@ -28,7 +31,6 @@
       },
       "MGBI": {
         "experienceTitle": "Software Developer",
-        "companyName": "Madagascar Business Intelligence",
         "date": "Jan. 2023 - Jul. 2023",
         "points": {
           "0": "Developed web applications",
@@ -37,7 +39,6 @@
       },
       "ODC": {
         "experienceTitle": "Mobile Developer",
-        "companyName": "Orange Digital Center",
         "date": "Jul. 2022 - Sep. 2022",
         "points": {
           "0": "Did an end-of-studies internship as part of the Orange Summer Challenge 2022 on the theme of 'tech4good' (in other words, technology for good), organised by the Orange Digital Center as part of my BIHAR Master of Sciences degree, in which I was tasked with building a mobile application."
@@ -45,7 +46,6 @@
       },
       "TELMA": {
         "experienceTitle": "Web App Developer",
-        "companyName": "TELMA",
         "date": "Dec. 2020 - Mar. 2021",
         "points": {
           "0": "Did an internship with a view to obtaining a Bachelor's degree in Computer Science with a Development option, during which I redesigned the document management web application for Telma's Information Systems Department."
@@ -55,13 +55,11 @@
     "Educations": {
       "ESTIA": {
         "educationLevel": "Master Student",
-        "schoolName": "ESTIA",
         "date": "Apr. 2021 - Dec. 2023",
         "point": "I specialised in AI and Big Data by following the BIHAR course at the ESTIA engineering school online in partnership with ITUniversity, where I obtained the Master of Science Big data Intellignece for Human Augmented Reality diploma."
       },
       "ITU": {
         "educationLevel": "Bachelor Student",
-        "schoolName": "IT University",
         "date": "Sep. 2017 - Mar. 2021",
         "point": "I studied Computer Science at the IT University in Antananarivo, Madagascar, top 1 in the field nationwide, where I graduated with a Bachelor's degree in Computer Science, Development option"
       },
