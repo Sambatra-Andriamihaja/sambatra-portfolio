@@ -51,6 +51,26 @@
           "0": "Did an internship with a view to obtaining a Bachelor's degree in Computer Science with a Development option, during which I redesigned the document management web application for Telma's Information Systems Department."
         }
       }
+    },
+    "Educations": {
+      "ESTIA": {
+        "educationLevel": "Master Student",
+        "schoolName": "ESTIA",
+        "date": "Apr. 2021 - Dec. 2023",
+        "point": "I specialised in AI and Big Data by following the BIHAR course at the ESTIA engineering school online in partnership with ITUniversity, where I obtained the Master of Science Big data Intellignece for Human Augmented Reality diploma."
+      },
+      "ITU": {
+        "educationLevel": "Bachelor Student",
+        "schoolName": "IT University",
+        "date": "Sep. 2017 - Mar. 2021",
+        "point": "I studied Computer Science at the IT University in Antananarivo, Madagascar, top 1 in the field nationwide, where I graduated with a Bachelor's degree in Computer Science, Development option"
+      },
+      "STGAB": {
+        "educationLevel": "Collegial Student",
+        "schoolName": "Lycée Saint Gabriel in Mahajanga, Madagascar",
+        "date": "Sep. 2014 - Jul. 2017",
+        "point": "I studied at the Lycée Saint Gabriel in Mahajanga, Madagascar, one of the city's most prestigious, where I obtained my Scientific Baccalaureate"
+      }
     }
   },
   "NotFoundPage": {},

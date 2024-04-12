@@ -51,6 +51,26 @@
           "0": "J'ai effectué un stage en vue d'obtenir une licence en informatique option Développement, au cours duquel j'ai redessiné l'application web de gestion des documents pour le département des systèmes d'information de Telma."
         }
       }
+    },
+    "Educations": {
+      "ESTIA": {
+        "educationLevel": "Étudiant en Master",
+        "schoolName": "ESTIA",
+        "date": "Avr. 2021 - Déc. 2023",
+        "point": "Je me suis spécialisé en IA et Big Data en suivant le cursus BIHAR à l'école d'ingénieurs ESTIA en ligne en partenariat avec l'ITUniversity, où j'ai obtenu le diplôme de Master of Science Big data Intellignece for Human Augmented Reality."
+      },
+      "ITU": {
+        "educationLevel": "Étudiant en Licence",
+        "schoolName": "IT University",
+        "date": "Sep. 2017 - Mars 2021",
+        "point": "J'ai étudié l'informatique à l'IT University à Antananarivo, Madagascar, numéro 1 dans ce domaine à l'échelle nationale, où j'ai obtenu une licence en informatique, option Développement."
+      },
+      "STGAB": {
+        "educationLevel": "Lycéen",
+        "schoolName": "Lycée Saint Gabriel à Mahajanga, Madagascar",
+        "date": "Sep. 2014 - Juil. 2017",
+        "point": "J'ai étudié au Lycée Saint Gabriel à Mahajanga, Madagascar, l'un des plus prestigieux de la ville, où j'ai obtenu mon Baccalauréat Scientifique."
+      }
     }
   },
   "NotFoundPage": {},
