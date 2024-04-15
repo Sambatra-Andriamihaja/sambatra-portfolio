@@ -45,13 +45,20 @@ const SkillDataProvider = (props: ISkillDataProvider) => {
       animate={inView ? "visible" : "hidden"}
       custom={index}
       transition={{ delay: index * animationDelay }}
-      style={{ position: "relative", display: "inline-block" }}
+      style={{
+        position: "relative",
+        display: "inline-block",
+        width: "80px",
+        height: "80px",
+      }}
+      className="rounded-full bg-white dark:bg-white/75"
     >
       <motion.div
         whileHover={{ y: -10 }}
         whileTap={{ scale: 1.5 }}
         onMouseEnter={handleHover}
         onMouseLeave={handleHoverExit}
+        className="flex rounded-full w-full h-full justify-center items-center"
       >
         <Image src={src} width={width} height={height} alt={name} />
       </motion.div>
