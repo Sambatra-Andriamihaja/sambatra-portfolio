@@ -14,4 +14,19 @@
   --bgColor--day: #9ee3fb;
   --toggleBtn-bgColor--day: var(--bgColor--day);
   /* End Toggle Theme */
+
+  /* Mobile */
+  --phone-color: #000000a8;
+  --phone-notch-color: #000000c2;
+  --phone-border: 4px;
+  --phone-radius: 20px;
+  --phone-height: 1280px;
+  --phone-width: 663px;
+  --phone-scale: 1;
+  --phone-x: 0;
+  --phone-y: 0;
+  --bgs-view-color: #efefef;
+  --notch-height: 14px;
+  --notch-width: 38%;
+  /* End Mobile*/
 }

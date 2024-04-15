@@ -32,7 +32,7 @@ const singleWord = {
 
 interface IAnimatedText {
   text: string;
-  className: string;
+  className?: string;
 }
 
 const AnimatedText = (props: IAnimatedText) => {
