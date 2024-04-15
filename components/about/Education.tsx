@@ -53,7 +53,7 @@ const EducationVerticalTimelineElement = React.forwardRef<
         }}
       >
         <div>
-          <h3 className="text-black text-xl font-poppins font-semibold">
+          <h3 className="text-black dark:text-light text-xl font-poppins font-semibold">
             {t(`${education.key}.educationLevel`)}
           </h3>
           <a
@@ -77,8 +77,8 @@ const EducationVerticalTimelineElement = React.forwardRef<
               </div>
             ) : (
               <p
-                className="text-black-500 font-medium text-base"
-                style={{ margin: 0 }}
+                className="text-black-500 dark:text-light/55 font-medium"
+                style={{ margin: 0, fontSize: "24px" }}
               >
                 {education.schoolName}
               </p>
