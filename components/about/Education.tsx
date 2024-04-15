@@ -11,6 +11,7 @@ import Image from "next/image";
 import { Formats, TranslationValues, useTranslations } from "next-intl";
 import { useInView } from "react-intersection-observer";
 import { IEducations, ESTIA, ITU, STGAB } from "@/constants/educations";
+import useDarkMode from "@/hooks/useDarkMode";
 
 interface IEducationVerticalTimelineElement {
   education: IEducations;
@@ -26,6 +27,8 @@ const EducationVerticalTimelineElement = React.forwardRef<
   HTMLDivElement,
   IEducationVerticalTimelineElement
 >(({ education, visible, t }, ref) => {
+  const isDarkMode = useDarkMode();
+
   return (
     <div ref={ref} className="vertical-timeline-element">
       <VerticalTimelineElement
@@ -42,6 +45,7 @@ const EducationVerticalTimelineElement = React.forwardRef<
           </div>
         }
         contentStyle={{
+          background: isDarkMode ? "#060717" : "",
           borderBottom: "8px",
           borderStyle: "solid",
           borderBottomColor: education.borderBottomColor,

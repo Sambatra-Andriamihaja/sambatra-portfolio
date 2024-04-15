@@ -23,7 +23,7 @@ const config: Config = {
       colors: {
         dark: "#17182f",
         light: "#f5f5f5",
-        // primary: "#B63E96",
+        blueDark: "#060717",
         primary: "#10203a",
         primaryDark: "#58E6D9",
         spBackground: "#000000",

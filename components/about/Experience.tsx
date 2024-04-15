@@ -11,6 +11,7 @@ import Image from "next/image";
 import { Formats, TranslationValues, useTranslations } from "next-intl";
 import { useInView } from "react-intersection-observer";
 import { SP, MGBI, ODC, TELMA, IExperiences } from "@/constants/experiences";
+import useDarkMode from "@/hooks/useDarkMode";
 
 interface IExperienceVerticalTimelineElement {
   experience: IExperiences;
@@ -26,6 +27,8 @@ const ExperienceVerticalTimelineElement = React.forwardRef<
   HTMLDivElement,
   IExperienceVerticalTimelineElement
 >(({ experience, visible, t }, ref) => {
+  const isDarkMode = useDarkMode();
+
   const renderPoints = () => {
     const points = [];
     for (let i = 0; i < experience.points; i++) {
@@ -57,7 +60,9 @@ const ExperienceVerticalTimelineElement = React.forwardRef<
             />
           </div>
         }
+        className=""
         contentStyle={{
+          background: isDarkMode ? "#060717" : "",
           borderBottom: "8px",
           borderStyle: "solid",
           borderBottomColor: experience.borderBottomColor,
@@ -65,7 +70,7 @@ const ExperienceVerticalTimelineElement = React.forwardRef<
         }}
       >
         <div>
-          <h3 className="text-black text-xl font-poppins font-semibold">
+          <h3 className="text-black dark:text-light text-xl font-poppins font-semibold">
             {experience.companyName}
           </h3>
           <a

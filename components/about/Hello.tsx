@@ -10,7 +10,7 @@ const Hello = () => {
   const t = useTranslations("About.Me");
 
   return (
-    <section className="mx-auto bg-white p-5 sm:p-12 grid grid-cols-1 sm:grid-cols-[1fr_3fr] md:grid-cols-[1fr_4fr] items-center gap-5 md:gap-8 rounded-xl overflow-hidden">
+    <section className="mx-auto bg-white dark:bg-blueDark p-5 sm:p-12 grid grid-cols-1 sm:grid-cols-[1fr_3fr] md:grid-cols-[1fr_4fr] items-center gap-5 md:gap-8 rounded-xl overflow-hidden">
       {/* Left Section */}
       <div className="space-y-5 text-center">
         {/* Image */}
@@ -27,7 +27,7 @@ const Hello = () => {
         {/* Little Info */}
         <div>
           <h2 className="text-xl font-medium">{About.name}</h2>
-          <p className="text-gray-600">{t("title")}</p>
+          <p className="text-gray-600 dark:text-white/50">{t("title")}</p>
         </div>
       </div>
 
