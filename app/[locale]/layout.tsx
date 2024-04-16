@@ -7,6 +7,7 @@ import Footer from "@/components/layout/Footer";
 import HireMe from "@/components/sub/HireMe";
 import { NextIntlClientProvider, useMessages } from "next-intl";
 import { ThemeProvider } from "@/components/providers/theme-provider";
+import { Metadata } from "next";
 
 config.autoAddCss = false;
 
@@ -14,6 +15,23 @@ const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
 });
+
+export const metadata: Metadata = {
+  icons: {
+    icon: [
+      {
+        media: "(prefers-color-scheme: light)",
+        url: "/images/icons/app/S_light.png",
+        href: "/images/icons/app/S_light.png",
+      },
+      {
+        media: "(prefers-color-scheme: dark)",
+        url: "/images/icons/app/S_dark.png",
+        href: "/images/icons/app/S_dark.png",
+      },
+    ],
+  },
+};
 
 interface ILocaleLayout {
   children: React.ReactNode;

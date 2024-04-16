@@ -13,6 +13,7 @@ import AnimatedNumbers from "@/components/sub/AnimatedNumbers";
 import checkmark from "@/public/images/icons/icons8-checkmark-100.png";
 import medal from "@/public/images/icons/icons8-medal-100.png";
 import stack from "@/public/images/icons/icons8-stack-100.png";
+import S from "@/components/home/S";
 
 export const metadata: Metadata = {
   title: "Sambatra | Portfolio",
@@ -31,7 +32,8 @@ export default function Home() {
           <div className="flex flex-row w-full items-center justify-between ">
             <div className="w-1/2 ">
               {/* <Image src={profilePic} alt="CodeBucks" className="w-full h-auto" /> */}
-              <ModelViewer />
+              {/* <ModelViewer /> */}
+              <S />
             </div>
             <div className="w-1/2 flex flex-col items-center self-center z-10">
               <AnimatedText

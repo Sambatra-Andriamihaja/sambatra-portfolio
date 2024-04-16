@@ -9,7 +9,7 @@ const useDarkMode = () => {
     setIsDarkMode(resolvedTheme === "dark");
   }, [resolvedTheme]);
 
-  return isDarkMode;
+  return { isDarkMode, resolvedTheme };
 };
 
 export default useDarkMode;
