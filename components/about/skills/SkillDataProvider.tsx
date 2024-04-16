@@ -51,7 +51,7 @@ const SkillDataProvider = (props: ISkillDataProvider) => {
         width: "80px",
         height: "80px",
       }}
-      className="rounded-full bg-white dark:bg-white/75"
+      className="rounded-full bg-white dark:bg-white/80 dark:shadow-gray-900 shadow-xl"
     >
       <motion.div
         whileHover={{ y: -10 }}
