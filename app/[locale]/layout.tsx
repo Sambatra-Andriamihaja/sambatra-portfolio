@@ -8,6 +8,7 @@ import HireMe from "@/components/sub/HireMe";
 import { NextIntlClientProvider, useMessages } from "next-intl";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { Metadata } from "next";
+import { AnimatePresence } from "framer-motion";
 
 config.autoAddCss = false;
 
@@ -52,7 +53,10 @@ export default function LocaleLayout({
         <ThemeProvider>
           <NextIntlClientProvider locale={locale} messages={messages}>
             <NavBar lang={locale} />
+
+            {/* <AnimatePresence> */}
             <div className="pt-[navbarHeight]">{children}</div>
+            {/* </AnimatePresence> */}
             <div className="absolute right-8 bottom-8 ">
               <HireMe lang={locale} />
             </div>

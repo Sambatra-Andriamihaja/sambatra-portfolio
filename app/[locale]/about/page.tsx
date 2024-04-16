@@ -1,31 +1,13 @@
 import React from "react";
 import { Metadata } from "next";
-import Education from "@/components/about/Education";
-import Experience from "@/components/about/Experience";
-import Skills from "@/components/about/skills/Skills";
-import Layout from "@/components/layout/Layout";
-import AnimatedText from "@/components/sub/AnimatedText";
-import ParticlesBackground from "@/components/sub/ParticlesBackground";
-import Hello from "@/components/about/Hello";
+
+import AboutPage from "@/components/about/AboutPage";
 
 export const metadata: Metadata = {
   title: "Sambatra | About",
   description: "About Sambatra",
 };
 
-const About = () => {
-  return (
-    <main className="flex w-full flex-col items-center justify-center dark:text-light">
-      <Layout className="pt-16">
-        <ParticlesBackground />
-        <AnimatedText text="Passion Fuels Purpose!" className="mb-16" />
-        <Hello />
-        <Skills />
-        <Experience />
-        <Education />
-      </Layout>
-    </main>
-  );
-};
-
-export default About;
+export default function About() {
+  return <AboutPage />;
+}
