@@ -34,20 +34,21 @@ const Hello = () => {
       {/* Right Section */}
       <div className="text-[16px] sm:text-[18px] space-y-3">
         {/* Testimonial */}
-
-        <FontAwesomeIcon
-          icon={faQuoteLeft}
-          size="3x"
-          className="text-dark/80 dark:text-white/65"
-        />
-        <div className="leading-[30px] font-semibold">
-          <p className="mx-4 font-medium">{t("quote")}</p>
+        <div className="relative">
+          <FontAwesomeIcon
+            icon={faQuoteLeft}
+            size="3x"
+            className="absolute left-0 -top-5 text-dark/80 dark:text-white/65"
+          />
+          <div className="leading-[30px] font-semibold pl-10">
+            <p className="mx-4 font-medium">{t("quote")}</p>
+          </div>
+          <FontAwesomeIcon
+            icon={faQuoteRight}
+            size="3x"
+            className="absolute right-0 -bottom-5 text-dark/80 dark:text-white/65"
+          />
         </div>
-        <FontAwesomeIcon
-          icon={faQuoteRight}
-          size="3x"
-          className="text-dark/80 dark:text-white/65"
-        />
       </div>
     </section>
   );
