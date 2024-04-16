@@ -112,11 +112,11 @@ const Experience = () => {
   const [telmaRef, telmaInView] = useInView(options);
 
   return (
-    <div className="my-64">
+    <section id="experience" className="mb-64">
       <h2 className="font-bold text-8xl mb-32 w-full text-center">
         Experience
       </h2>
-      <section className="mt-12 flex">
+      <div className="mt-12 flex">
         <VerticalTimeline>
           {/* SP */}
           <ExperienceVerticalTimelineElement
@@ -147,8 +147,8 @@ const Experience = () => {
             t={t}
           />
         </VerticalTimeline>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 

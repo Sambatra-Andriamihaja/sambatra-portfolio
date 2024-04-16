@@ -10,7 +10,10 @@ const Hello = () => {
   const t = useTranslations("About.Me");
 
   return (
-    <section className="mx-auto bg-white dark:bg-blueDark p-5 sm:p-12 grid grid-cols-1 sm:grid-cols-[1fr_3fr] md:grid-cols-[1fr_4fr] items-center gap-5 md:gap-8 rounded-xl overflow-hidden">
+    <section
+      id="hello"
+      className="mx-auto bg-white dark:bg-blueDark p-5 sm:p-12 grid grid-cols-1 sm:grid-cols-[1fr_3fr] md:grid-cols-[1fr_4fr] items-center gap-5 md:gap-8 rounded-xl overflow-hidden"
+    >
       {/* Left Section */}
       <div className="space-y-5 text-center">
         {/* Image */}

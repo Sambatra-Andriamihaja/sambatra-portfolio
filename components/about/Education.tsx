@@ -107,9 +107,9 @@ const Education = () => {
   const [stGabRef, stGabInView] = useInView(options);
 
   return (
-    <div className="my-64">
+    <section id="education" className="mb-32">
       <h2 className="font-bold text-8xl mb-32 w-full text-center">Education</h2>
-      <section className="mt-12 flex">
+      <div className="mt-12 flex">
         <VerticalTimeline>
           <EducationVerticalTimelineElement
             education={ESTIA}
@@ -130,8 +130,8 @@ const Education = () => {
             t={t}
           />
         </VerticalTimeline>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 
