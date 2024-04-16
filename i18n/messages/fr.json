@@ -73,7 +73,7 @@
   },
   "NotFoundPage": {},
   "Footer": {
-    "copyright": "Droit d'auteur © {year} Tous droits réservés.",
+    "copyright": "Droit d'auteur © {year} Tous droits réservés",
     "buildBy": "Construit par"
   }
 }

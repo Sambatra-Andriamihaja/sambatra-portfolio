@@ -20,7 +20,7 @@ const ParticlesBackground = () => {
     []
   );
 
-  const isDarkMode = useDarkMode();
+  const { isDarkMode } = useDarkMode();
 
   return (
     <div id="particles-background" className="relative z-0">

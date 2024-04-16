@@ -9,13 +9,17 @@ const Footer = () => {
 
   return (
     <footer
-      className="w-full border-t-2 border-solid border-dark
-      font-medium text-lg
-      dark:text-light dark:border-light
-    "
+      className="absolute w-full
+      text-lightGrey dark:text-gray-300/80 text-center text-sm font-normal
+      "
     >
-      <Layout className="py-8 flex items-center justify-between">
+      <Layout
+        className="py-8 flex items-center justify-center 
+        bg-offLight dark:bg-offDark
+        shadow-inner"
+      >
         <span>{t("copyright", { year: new Date().getFullYear() })}</span>
+        &nbsp;|&nbsp;
         <div className="flex items-center">
           {t("buildBy")} &nbsp;
           <Link href="/" className="underline underline-offset-2">

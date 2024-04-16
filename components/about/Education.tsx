@@ -27,7 +27,7 @@ const EducationVerticalTimelineElement = React.forwardRef<
   HTMLDivElement,
   IEducationVerticalTimelineElement
 >(({ education, visible, t }, ref) => {
-  const isDarkMode = useDarkMode();
+  const { isDarkMode } = useDarkMode();
 
   return (
     <div ref={ref} className="vertical-timeline-element">

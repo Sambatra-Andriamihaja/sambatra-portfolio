@@ -27,7 +27,7 @@ export default function Home() {
     <main className="flex items-center text-dark w-full min-h-screen dark:text-light">
       <Layout className="pt-[navbarHeight] h-screen">
         <ParticlesBackground />
-        <LottieContainer />
+        {/* <LottieContainer /> */}
         <div className="flex items-center justify-center w-full h-[50%]">
           <div className="flex flex-row w-full items-center justify-between ">
             <div className="w-1/2 ">

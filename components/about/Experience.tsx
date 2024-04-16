@@ -27,7 +27,7 @@ const ExperienceVerticalTimelineElement = React.forwardRef<
   HTMLDivElement,
   IExperienceVerticalTimelineElement
 >(({ experience, visible, t }, ref) => {
-  const isDarkMode = useDarkMode();
+  const { isDarkMode } = useDarkMode();
 
   const renderPoints = () => {
     const points = [];

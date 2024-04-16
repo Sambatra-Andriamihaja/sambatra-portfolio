@@ -73,7 +73,7 @@
   },
   "NotFoundPage": {},
   "Footer": {
-    "copyright": "Copyright © {year} All rights reserved.",
+    "copyright": "Copyright © {year} All rights reserved",
     "buildBy": "Build by"
   }
 }

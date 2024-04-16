@@ -67,7 +67,7 @@ export const MySLogo = ({ className = "", theme = "light", ...rest }) => (
     height="500.000000pt"
     viewBox="0 0 500.000000 500.000000"
     preserveAspectRatio="xMidYMid meet"
-    className={`w-full h-auto ${className}`}
+    className={`w-auto h-full max-h-[500px] ${className}`}
     {...rest}
   >
     <g

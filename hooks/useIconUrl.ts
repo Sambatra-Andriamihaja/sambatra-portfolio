@@ -1,7 +1,7 @@
 import useDarkMode from "./useDarkMode";
 
 const useIconUrl = () => {
-  const isDarkMode = useDarkMode();
+  const { isDarkMode } = useDarkMode();
 
   return isDarkMode
     ? "/images/icons/app/S_dark.png"
