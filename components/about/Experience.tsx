@@ -71,7 +71,7 @@ const ExperienceVerticalTimelineElement = React.forwardRef<
       >
         <div>
           <h3 className="text-black dark:text-light text-xl font-poppins font-semibold">
-            {experience.companyName}
+            {t(`${experience.key}.experienceTitle`)}
           </h3>
           <a
             href={experience.websiteLink}
