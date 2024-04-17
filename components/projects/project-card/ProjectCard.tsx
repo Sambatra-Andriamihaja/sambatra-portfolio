@@ -94,7 +94,7 @@ function ProjectCard(props: IProjectCard) {
     );
   } else if (isBothMobileAndWebCard) {
     cardContent = (
-      <div className="flex flex-row w-full">
+      <div className="flex flex-row w-full -mt-[60px]">
         <div
           className={`${styles.mobileContainer} w-[30%] z-[1] scale-[70%] transform-origin-center `}
         >

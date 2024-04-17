@@ -21,7 +21,7 @@ const PageTransitionEffect = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <AnimatePresence mode="wait">
-      <div key={key}>
+      <FrozenRouter key={key}>
         <motion.div
           className="fixed right-0 h-screen w-screen bottom-full z-30 bg-offDark dark:bg-offLight"
           variants={transitionVariants}
@@ -47,8 +47,8 @@ const PageTransitionEffect = ({ children }: { children: React.ReactNode }) => {
           animate="animate"
           transition={{ delay: 0.4, duration: 0.5, ease: "easeInOut" }}
         />
-        <FrozenRouter>{children}</FrozenRouter>
-      </div>
+        {children}
+      </FrozenRouter>
     </AnimatePresence>
   );
 };
