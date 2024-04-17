@@ -1,17 +1,39 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 
 import Layout from "@/components/layout/Layout";
 import AnimatedText from "@/components/sub/AnimatedText";
 import ProjectCardList from "@/components/projects/ProjectCardList";
+import ProjectCategory from "./ProjectCategory";
+import projects, {
+  ALL,
+  IProject,
+  TProductCategory,
+} from "@/constants/projects";
 
 const ProjectsPage = () => {
+  const [projectList, setProjectList] = useState<IProject[]>(projects);
+
+  //Filter Function
+  const filter = (category: TProductCategory) => {
+    if (category === ALL) {
+      setProjectList(projects);
+      return;
+    }
+
+    const filteredData = projects.filter(
+      (project) => project.category === category
+    );
+    setProjectList(filteredData);
+  };
+
   return (
     <main className="w-full mb-16 flex flex-col items-center justify-center">
       <Layout className="pt-16 px-28">
         <AnimatedText text="Imagination Trumps Knowledge!" />
-        <ProjectCardList />
+        <ProjectCategory filter={filter} />
+        <ProjectCardList overwriteProjects={projectList} />
       </Layout>
     </main>
   );

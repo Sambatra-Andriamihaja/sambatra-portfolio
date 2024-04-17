@@ -71,6 +71,14 @@
       }
     }
   },
+  "Projects": {
+    "category": {
+      "all": "Tout",
+      "professional": "Professionel",
+      "personal": "Personnel",
+      "studies": "Études"
+    }
+  },
   "NotFoundPage": {},
   "Footer": {
     "copyright": "Droit d'auteur © {year} Tous droits réservés",

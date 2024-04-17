@@ -1,3 +1,14 @@
+export const PERSONAL = "personal";
+export const PROFESSIONAL = "professional";
+export const STUDIES = "studies";
+export const ALL = "all";
+
+export type TProductCategory =
+  | typeof PERSONAL
+  | typeof PROFESSIONAL
+  | typeof STUDIES
+  | typeof ALL;
+
 export interface ITag {
   name: string;
   img: string;
@@ -5,6 +16,7 @@ export interface ITag {
 
 export interface IProject {
   id: number;
+  category: TProductCategory;
   isWeb?: boolean;
   isMobile?: boolean;
   isSpecial?: boolean;
@@ -19,6 +31,7 @@ export interface IProject {
 const projects: IProject[] = [
   {
     id: 0,
+    category: STUDIES,
     isWeb: true,
     title: "WikIT - Document management system",
     desc: "Complete overhaul of TELMA S.A.'s Information Systems documentation management system.",
@@ -54,6 +67,7 @@ const projects: IProject[] = [
   },
   {
     id: 1,
+    category: STUDIES,
     isMobile: true,
     title: "Biogas Smart App",
     desc: "Development of an application for the Orange Summer Challenge 2022, showcasing technology at the service of good. The application allows medium-range remote interaction with a gas production kit, enabling the user to see the details of the kit, turn the gas fire on and off, and even make a prediction of when the gas stock in the kit will run out.",
@@ -82,6 +96,7 @@ const projects: IProject[] = [
   },
   {
     id: 2,
+    category: PROFESSIONAL,
     title: "Odoo Module - Generate item reference and barcode",
     desc: "Development of a customized module for automatic barcode and reference generation. The module automatically generates the barcode and/or part number of a target product.",
     img: `/images/test.png`,
@@ -110,6 +125,7 @@ const projects: IProject[] = [
   },
   {
     id: 3,
+    category: PROFESSIONAL,
     title: "FOCICOM Réunion",
     desc: "Contributed to the development of an e-commerce site for a client on Reunion Island. The site is based on packaging items, and allows users to search for items and make purchases online via the platform.",
     img: `/images/test.png`,
@@ -139,6 +155,7 @@ const projects: IProject[] = [
   },
   {
     id: 4,
+    category: PROFESSIONAL,
     title: "MGBI Project Monitoring",
     desc: "Contribution to the redesign of a project monitoring system used by MGBI's internal team.  This is a system for managing all projects issued from inception to closure, including the bodies involved, and an interface enabling everyone to see tasks still to be completed and validated.",
     img: `/images/test.png`,
@@ -160,6 +177,7 @@ const projects: IProject[] = [
   },
   {
     id: 5,
+    category: PERSONAL,
     is1sa: true,
     title: "1sa",
     desc: "Development of a javascript module to transcribe a number into Malagasy letters.",
@@ -178,6 +196,7 @@ const projects: IProject[] = [
   },
   {
     id: 6,
+    category: PROFESSIONAL,
     title: "Odoo Module - Article master print template",
     desc: "Development of an item sheet printing module. The module allows you to download a PDF of the item for sale with all its details.",
     img: `/images/test.png`,
@@ -206,6 +225,7 @@ const projects: IProject[] = [
   },
   {
     id: 7,
+    category: PROFESSIONAL,
     title: "Odoo Module - Bill print template",
     desc: "Development of a draft printing module. The module allows you to download PDF drafts of one (or more) invoice(s).",
     img: `/images/test.png`,
@@ -234,6 +254,7 @@ const projects: IProject[] = [
   },
   {
     id: 8,
+    category: PROFESSIONAL,
     isWeb: true,
     title: "Wimtim Orizon",
     desc: "Contributed to the development of the backend of the Wimtim Orizon platform.",
@@ -256,6 +277,7 @@ const projects: IProject[] = [
   },
   {
     id: 9,
+    category: PROFESSIONAL,
     isMobile: true,
     title: "Wimtim Orizon Mobile",
     desc: "Contribution to the development of a mobile version of the Wimtim Orizon platform.",

@@ -71,6 +71,14 @@
       }
     }
   },
+  "Projects": {
+    "category": {
+      "all": "All",
+      "professional": "Professional",
+      "personal": "Personal",
+      "studies": "Studies"
+    }
+  },
   "NotFoundPage": {},
   "Footer": {
     "copyright": "Copyright © {year} All rights reserved",
