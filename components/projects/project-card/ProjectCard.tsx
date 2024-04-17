@@ -17,6 +17,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { GithubIcon } from "@/components/sub/Icons";
 import { ITag } from "@/constants/projects";
+import SkillImage from "@/components/sub/SkillImage";
 
 interface IProjectCard {
   project: any;
@@ -243,21 +244,19 @@ function ProjectCard(props: IProjectCard) {
         <p className="text-fun-gray text-left text-sm dark:text-light/80">
           {project.desc}
         </p>
-        <ul className="flex flex-wrap items-center mt-2 -ml-2 list-none">
-          {project.tags.map((tag: ITag, index: number) => {
-            return (
-              <li key={index}>
-                {tag.img ? (
-                  <Image src={tag.img} width={50} height={50} alt={tag.name} />
-                ) : (
-                  <div className="m-1 rounded-lg text-sm bg-funPinkDark dark:bg-light/85 py-1 px-2 cursor-pointer hover:opacity-75">
-                    {tag.name}
-                  </div>
-                )}
-              </li>
-            );
-          })}
-        </ul>
+        <div className="flex flex-row justify-around flex-wrap mt-2 gap-2 items-center">
+          {project.tags.map((tag: ITag, index: number) => (
+            <SkillImage
+              key={index}
+              src={tag.img}
+              name={tag.name}
+              width={40}
+              height={40}
+              index={index}
+              className="!w-[60px] !h-[60px]"
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

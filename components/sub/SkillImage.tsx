@@ -3,16 +3,17 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 
-interface ISkillDataProvider {
+interface ISkillImage {
   index: number;
   src: string;
   name: string;
   width: number;
   height: number;
+  className?: string;
 }
 
-const SkillDataProvider = (props: ISkillDataProvider) => {
-  const { src, name, width, height, index } = props;
+const SkillImage = (props: ISkillImage) => {
+  const { src, name, width, height, index, className = "" } = props;
 
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -51,7 +52,7 @@ const SkillDataProvider = (props: ISkillDataProvider) => {
         width: "80px",
         height: "80px",
       }}
-      className="rounded-full bg-white dark:bg-white/80 dark:shadow-gray-900 shadow-xl"
+      className={`rounded-full bg-white dark:bg-white/80 dark:shadow-gray-900 shadow-xl ${className}`}
     >
       <motion.div
         whileHover={{ y: -10 }}
@@ -81,4 +82,4 @@ const SkillDataProvider = (props: ISkillDataProvider) => {
   );
 };
 
-export default SkillDataProvider;
+export default SkillImage;

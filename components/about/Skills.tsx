@@ -3,7 +3,7 @@
 import React from "react";
 
 import { AiSkillData, DbSkillData, DevSkillData } from "@/constants/skill";
-import SkillDataProvider from "./SkillDataProvider";
+import SkillImage from "../sub/SkillImage";
 
 const Skills = () => {
   return (
@@ -16,7 +16,7 @@ const Skills = () => {
 
       <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
         {DevSkillData.map((image, index) => (
-          <SkillDataProvider
+          <SkillImage
             key={index}
             src={image.Image}
             name={image.skill_name}
@@ -29,7 +29,7 @@ const Skills = () => {
 
       <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
         {AiSkillData.map((image, index) => (
-          <SkillDataProvider
+          <SkillImage
             key={index}
             src={image.Image}
             name={image.skill_name}
@@ -41,7 +41,7 @@ const Skills = () => {
       </div>
       <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
         {DbSkillData.map((image, index) => (
-          <SkillDataProvider
+          <SkillImage
             key={index}
             src={image.Image}
             name={image.skill_name}
