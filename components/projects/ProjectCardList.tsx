@@ -22,6 +22,7 @@ const ProjectCardList = (props: IProjectCardList) => {
               project={item}
               isMobileCard={item.isMobile || false}
               isWebCard={item.isWeb || false}
+              isBothMobileAndWebCard={item.isBothMobileAndWebCard || false}
               is1saCard={item.is1sa || false}
               isSpecialCard={item.isSpecial || false}
             />

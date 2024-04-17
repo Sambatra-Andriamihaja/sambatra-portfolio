@@ -23,12 +23,20 @@ interface IProjectCard {
   project: any;
   isMobileCard: boolean;
   isWebCard: boolean;
+  isBothMobileAndWebCard: boolean;
   isSpecialCard: boolean;
   is1saCard: boolean;
 }
 
 function ProjectCard(props: IProjectCard) {
-  const { project, isMobileCard, isWebCard, isSpecialCard, is1saCard } = props;
+  const {
+    project,
+    isMobileCard,
+    isWebCard,
+    isBothMobileAndWebCard,
+    isSpecialCard,
+    is1saCard,
+  } = props;
 
   let cardContent: React.JSX.Element;
 
@@ -82,6 +90,58 @@ function ProjectCard(props: IProjectCard) {
         </div>
         <div className={styles.pcBase}></div>
         <div className={styles.pcNotch}></div>
+      </div>
+    );
+  } else if (isBothMobileAndWebCard) {
+    cardContent = (
+      <div className="flex flex-row w-full">
+        <div
+          className={`${styles.mobileContainer} w-[30%] z-[1] scale-[70%] transform-origin-center `}
+        >
+          <div
+            className={`${styles.mobile} ${styles.mobileObj} !animate-none !shadow-none`}
+          >
+            <div className={styles.mobileIn}>
+              <div className={styles.mobileStatusBar}>
+                <div className={styles.mobileNotch}>
+                  <div className={styles.mobileAudio}></div>
+                  <div className={styles.mobileCamera}></div>
+                </div>
+              </div>
+              <div className={styles.mobileScreen}>
+                {/* <div className={styles.mobileAppCont}></div> */}
+                <Image alt={project.title} src={project.img} fill />
+              </div>
+            </div>
+
+            <div
+              className={`${styles.mobileButton} ${styles.mobileButtonRight} ${styles.mobileButtonLarge}`}
+            ></div>
+            <div
+              className={`${styles.mobileButton} ${styles.mobileButtonLeft} ${styles.mobileButtonDown}`}
+            ></div>
+            <div
+              className={`${styles.mobileButton} ${styles.mobileButtonLeft}`}
+            ></div>
+          </div>
+        </div>
+        <div
+          className={`${styles.pc} w-[70%] self-end z-0 scale-[125%] transform-origin-center `}
+        >
+          <div className={styles.pcScreen}>
+            <div
+              className={styles.pcViewport}
+              style={{
+                backgroundImage: `url(${
+                  project.img ||
+                  "https://s3-us-west-2.amazonaws.com/s.cdpn.io/451895/datauri-generator-preview.jpg"
+                })`,
+              }}
+            ></div>
+          </div>
+          <div className={styles.pcBase}></div>
+          <div className={styles.pcNotch}></div>
+        </div>
       </div>
     );
   } else if (isSpecialCard) {

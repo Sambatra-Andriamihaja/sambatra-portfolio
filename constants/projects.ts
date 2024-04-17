@@ -19,6 +19,7 @@ export interface IProject {
   category: TProductCategory;
   isWeb?: boolean;
   isMobile?: boolean;
+  isBothMobileAndWebCard?: boolean;
   isSpecial?: boolean;
   is1sa?: boolean;
   title: string;
@@ -127,6 +128,7 @@ const projects: IProject[] = [
     id: 3,
     category: PROFESSIONAL,
     title: "FOCICOM Réunion",
+    isWeb: true,
     desc: "Contributed to the development of an e-commerce site for a client on Reunion Island. The site is based on packaging items, and allows users to search for items and make purchases online via the platform.",
     img: `/images/test.png`,
     link: "https://focicom.re/",
@@ -255,37 +257,18 @@ const projects: IProject[] = [
   {
     id: 8,
     category: PROFESSIONAL,
-    isWeb: true,
+    isBothMobileAndWebCard: true,
     title: "Wimtim Orizon",
-    desc: "Contributed to the development of the backend of the Wimtim Orizon platform.",
-    img: `/images/test.png`,
-    link: "https://app.wimtim.com/",
-    tags: [
-      {
-        name: "React",
-        img: "/images/svgs/tech-stack/frontend-development/react-original-wordmark.svg",
-      },
-      {
-        name: "GraphQL",
-        img: "/images/svgs/tech-stack/backend-development/graphql.svg",
-      },
-      {
-        name: "Prisma",
-        img: "/images/svgs/tech-stack/backend-development/prisma.svg",
-      },
-    ],
-  },
-  {
-    id: 9,
-    category: PROFESSIONAL,
-    isMobile: true,
-    title: "Wimtim Orizon Mobile",
-    desc: "Contribution to the development of a mobile version of the Wimtim Orizon platform.",
+    desc: "Contributed to the development of the backend of the Wimtim Orizon platform and the development of the corresponding mobile version ",
     img: `/images/test.png`,
     tags: [
       {
         name: "React Native",
         img: "/images/svgs/tech-stack/mobile-app-development/react-native.svg",
+      },
+      {
+        name: "React",
+        img: "/images/svgs/tech-stack/frontend-development/react-original-wordmark.svg",
       },
       {
         name: "GraphQL",
