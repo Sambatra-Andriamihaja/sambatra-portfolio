@@ -4,8 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 
-import { AnimatePresence } from "framer-motion";
-
 import Layout from "@/components/layout/Layout";
 import AnimatedText from "@/components/sub/AnimatedText";
 import { LinkArrow } from "@/components/sub/Icons";
@@ -17,7 +15,6 @@ import checkmark from "@/public/images/icons/icons8-checkmark-100.png";
 import medal from "@/public/images/icons/icons8-medal-100.png";
 import stack from "@/public/images/icons/icons8-stack-100.png";
 import S from "@/components/home/S";
-import PageTransition from "@/components/sub/PageTransition";
 
 const HomePage = () => {
   const t = useTranslations("HomePage");

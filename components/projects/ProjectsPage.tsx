@@ -2,12 +2,9 @@
 
 import React from "react";
 
-import { AnimatePresence } from "framer-motion";
-
 import Layout from "@/components/layout/Layout";
 import AnimatedText from "@/components/sub/AnimatedText";
 import ProjectCardList from "@/components/projects/ProjectCardList";
-import PageTransition from "../sub/PageTransition";
 
 const ProjectsPage = () => {
   return (
