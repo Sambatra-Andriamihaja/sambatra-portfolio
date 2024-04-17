@@ -244,7 +244,7 @@ function ProjectCard(props: IProjectCard) {
         <p className="text-fun-gray text-left text-sm dark:text-light/80">
           {project.desc}
         </p>
-        <div className="flex flex-row justify-around flex-wrap mt-2 gap-2 items-center">
+        <div className="flex flex-row flex-wrap mt-2 gap-2 items-center">
           {project.tags.map((tag: ITag, index: number) => (
             <SkillImage
               key={index}
