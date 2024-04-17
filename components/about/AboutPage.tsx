@@ -15,19 +15,16 @@ import PageTransition from "../sub/PageTransition";
 
 const AboutPage = () => {
   return (
-    <AnimatePresence mode="wait">
-      <PageTransition key={"aboutPageKey"} />
-      <main className="flex w-full flex-col items-center justify-center dark:text-light">
-        <Layout className="pt-16">
-          <ParticlesBackground />
-          <AnimatedText text="Passion Fuels Purpose!" className="mb-16" />
-          <Hello />
-          <Skills />
-          <Experience />
-          <Education />
-        </Layout>
-      </main>
-    </AnimatePresence>
+    <main className="flex w-full flex-col items-center justify-center dark:text-light">
+      <Layout className="pt-16">
+        <ParticlesBackground />
+        <AnimatedText text="Passion Fuels Purpose!" className="mb-16" />
+        <Hello />
+        <Skills />
+        <Experience />
+        <Education />
+      </Layout>
+    </main>
   );
 };
 

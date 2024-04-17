@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
@@ -7,8 +8,7 @@ import Footer from "@/components/layout/Footer";
 import HireMe from "@/components/sub/HireMe";
 import { NextIntlClientProvider, useMessages } from "next-intl";
 import { ThemeProvider } from "@/components/providers/theme-provider";
-import { Metadata } from "next";
-import { AnimatePresence } from "framer-motion";
+import PageTransitionEffect from "@/components/sub/PageTransitionEffect";
 
 config.autoAddCss = false;
 
@@ -53,10 +53,9 @@ export default function LocaleLayout({
         <ThemeProvider>
           <NextIntlClientProvider locale={locale} messages={messages}>
             <NavBar lang={locale} />
-
-            {/* <AnimatePresence> */}
-            <div className="pt-[navbarHeight]">{children}</div>
-            {/* </AnimatePresence> */}
+            <PageTransitionEffect>
+              <div className="pt-[navbarHeight]">{children}</div>
+            </PageTransitionEffect>
             <div className="absolute right-8 bottom-8 ">
               <HireMe lang={locale} />
             </div>

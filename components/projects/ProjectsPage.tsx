@@ -11,15 +11,12 @@ import PageTransition from "../sub/PageTransition";
 
 const ProjectsPage = () => {
   return (
-    <AnimatePresence mode="wait">
-      <PageTransition key={"projectsPageKey"} />
-      <main className="w-full mb-16 flex flex-col items-center justify-center">
-        <Layout className="pt-16 px-28">
-          <AnimatedText text="Imagination Trumps Knowledge!" />
-          <ProjectCardList />
-        </Layout>
-      </main>
-    </AnimatePresence>
+    <main className="w-full mb-16 flex flex-col items-center justify-center">
+      <Layout className="pt-16 px-28">
+        <AnimatedText text="Imagination Trumps Knowledge!" />
+        <ProjectCardList />
+      </Layout>
+    </main>
   );
 };
 
