@@ -2,7 +2,13 @@ import { useLocale } from "next-intl";
 import { useRouter } from "next/navigation";
 import React, { ChangeEvent, useState, useTransition } from "react";
 
-const LanguageSwitcher = () => {
+interface ILanguageSwitcher {
+  isHamburgerNavbar?: boolean;
+}
+
+const LanguageSwitcher = (props: ILanguageSwitcher) => {
+  const { isHamburgerNavbar = false } = props;
+
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
   const localeActive = useLocale();
@@ -37,13 +43,19 @@ const LanguageSwitcher = () => {
         defaultValue={localeActive}
         onChange={handleLanguageChange}
         disabled={isPending}
-        className="appearance-none bg-transparent border border-gray-300 rounded-md py-2 px-4 pr-8 leading-tight focus:outline-none focus:border-gray-300
-        text-xs font-semibold"
+        className={`appearance-none bg-transparent border border-gray-300 rounded-md py-2 px-4 pr-8 leading-tight focus:outline-none focus:border-gray-300
+        text-xs font-semibold ${
+          isHamburgerNavbar && "dark:border-dark text-light dark:text-dark"
+        }`}
       >
         <option value="en">🇺🇸 &nbsp; EN</option>
         <option value="fr">🇫🇷 &nbsp; FR</option>
       </select>
-      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+      <div
+        className={`pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 ${
+          isHamburgerNavbar && "text-light dark:text-dark"
+        }`}
+      >
         <svg
           className="fill-current h-4 w-4"
           xmlns="http://www.w3.org/2000/svg"
