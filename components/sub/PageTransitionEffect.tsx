@@ -3,6 +3,7 @@
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { FrozenRouter } from "../providers/frozen-router";
+import { useEffect, useState } from "react";
 
 const transitionVariants: Variants = {
   initial: {
@@ -18,10 +19,15 @@ const transitionVariants: Variants = {
 const PageTransitionEffect = ({ children }: { children: React.ReactNode }) => {
   // The `key` is tied to the url using the `usePathname` hook.
   const key = usePathname();
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   return (
     <AnimatePresence mode="wait">
-      <FrozenRouter key={key}>
+      <div key={key}>
         <motion.div
           className="fixed right-0 h-screen w-screen bottom-full z-30 bg-offDark dark:bg-offLight"
           variants={transitionVariants}
@@ -47,8 +53,8 @@ const PageTransitionEffect = ({ children }: { children: React.ReactNode }) => {
           animate="animate"
           transition={{ delay: 0.4, duration: 0.5, ease: "easeInOut" }}
         />
-        {children}
-      </FrozenRouter>
+        {isMounted ? <FrozenRouter>{children}</FrozenRouter> : <>{children}</>}
+      </div>
     </AnimatePresence>
   );
 };
