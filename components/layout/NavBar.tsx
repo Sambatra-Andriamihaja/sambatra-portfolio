@@ -38,7 +38,7 @@ const NavBar = (props: INavBar) => {
 
   return (
     <header
-      className={`w-full px-32 py-8 font-medium flex items-center justify-between
+      className={`w-full md:px-32 px-16 py-8 font-medium flex items-center justify-between
       fixed top-0 left-0 right-0 z-50 bg-light dark:bg-dark dark:text-light backdrop-blur-sm ${
         isScrolled ? "bg-light/85 dark:bg-dark/85 shadow-2xl" : ""
       }`}

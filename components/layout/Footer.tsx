@@ -14,7 +14,7 @@ const Footer = () => {
       "
     >
       <Layout
-        className="py-8 flex items-center justify-center 
+        className="!py-8 flex items-center justify-center 
         bg-offLight dark:bg-offDark
         shadow-inner"
       >
