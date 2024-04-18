@@ -31,7 +31,11 @@ const ProjectsPage = () => {
   return (
     <main className="w-full mb-16 flex flex-col items-center justify-center">
       <Layout className="pt-16 px-28">
-        <AnimatedText text="Imagination Trumps Knowledge!" />
+        <AnimatedText
+          text="Imagination Trumps Knowledge!"
+          className="!text-2xl xl:!text-6xl lg:!text-5xl md:!text-4xl sm:!text-3xl
+          py-10 xl:py-0"
+        />
         <ProjectCategory filter={filter} />
         <ProjectCardList overwriteProjects={projectList} />
       </Layout>

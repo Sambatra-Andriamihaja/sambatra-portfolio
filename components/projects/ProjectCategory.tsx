@@ -31,10 +31,10 @@ const ProjectCategory = (props: IProjectCategory) => {
   return (
     <section
       id="project-type"
-      className="w-full flex items-center justify-center"
+      className="w-full flex items-center justify-center "
     >
       <div
-        className="inline-flex rounded-md shadow-sm justify-between items-center m-4 w-[30rem]"
+        className="flex flex-row flex-wrap mt-2 gap-2 rounded-md shadow-sm justify-between items-center m-4 w-[30rem] "
         role="group"
       >
         {types.map((type, index) => (
