@@ -41,8 +41,7 @@ const NavBar = (props: INavBar) => {
       className={`w-full px-32 py-8 font-medium flex items-center justify-between
       fixed top-0 left-0 right-0 z-50 bg-light dark:bg-dark dark:text-light backdrop-blur-sm ${
         isScrolled ? "bg-light/85 dark:bg-dark/85 shadow-2xl" : ""
-      }
-      relative`}
+      }`}
     >
       <button
         className="flex-col justify-center items-center flex lg:hidden"
@@ -124,11 +123,12 @@ const NavBar = (props: INavBar) => {
       </div>
       {isOpen && (
         <motion.div
-          initial={{ scale: 0, opacity: 0, x: "-50%", y: "3rem" }}
+          initial={{ scale: 0, opacity: 0, x: "-50%", y: "1.75rem" }}
           animate={{ scale: 1, opacity: 1 }}
           className={`min-w-[70vw] flex flex-col justify-between items-center 
-        fixed top-[3rem] left-1/2 -translate-x-1/2 translate-y-[3rem] z-30
-        bg-dark/80 dark:bg-light/80 rounded-lg backdrop-blur-md py-32
+        fixed top-[3rem] left-1/2 -translate-x-1/2 translate-y-[1.75rem] z-30
+        bg-dark/80 dark:bg-light/80 backdrop-blur-md py-32
+         ${isScrolled ? "rounded-b-lg" : "rounded-lg"}
         lg:hidden`}
         >
           <nav className="flex items-baseline mb-4 flex-col justify-center ">
