@@ -112,7 +112,7 @@ const Experience = () => {
   const [telmaRef, telmaInView] = useInView(options);
 
   return (
-    <section id="experience" className="mb-64">
+    <section id="experience" className="pt-[10rem] mb-64 ">
       <h2 className="font-bold text-8xl mb-32 w-full text-center">
         Experience
       </h2>

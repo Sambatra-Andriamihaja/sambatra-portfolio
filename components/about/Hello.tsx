@@ -11,7 +11,7 @@ const Hello = () => {
 
   return (
     <section
-      id="hello"
+      id="intro"
       className="mx-auto bg-white dark:bg-blueDark p-5 sm:p-12 grid grid-cols-1 sm:grid-cols-[1fr_3fr] md:grid-cols-[1fr_4fr] items-center gap-5 md:gap-8 rounded-xl overflow-hidden"
     >
       {/* Left Section */}

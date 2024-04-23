@@ -5,6 +5,10 @@
   "NavBar": {
     "home": "Home",
     "about": "About",
+    "intro": "Introduction",
+    "skills": "Skills",
+    "experience": "Experience",
+    "education": "Education",
     "projects": "Projects"
   },
   "HomePage": {

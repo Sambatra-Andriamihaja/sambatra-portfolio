@@ -9,12 +9,15 @@ import Layout from "@/components/layout/Layout";
 import AnimatedText from "@/components/sub/AnimatedText";
 import ParticlesBackground from "@/components/sub/ParticlesBackground";
 import Hello from "@/components/about/Hello";
+import SectionNavBar from "./SectionNavBar";
+import { aboutSubMenu } from "@/constants/menu";
 
 const AboutPage = () => {
   return (
     <main className="flex w-full flex-col items-center justify-center dark:text-light">
-      <Layout className="pt-16">
+      <Layout className="pt-16 lg:!pl-48">
         <ParticlesBackground />
+        <SectionNavBar items={aboutSubMenu} />
         <AnimatedText text="Passion Fuels Purpose!" className="mb-16" />
         <Hello />
         <Skills />

@@ -54,7 +54,7 @@ export default function LocaleLayout({
           <NextIntlClientProvider locale={locale} messages={messages}>
             <NavBar lang={locale} />
             <PageTransitionEffect>
-              <div className="pt-[navbarHeight]">{children}</div>
+              <div className="pt-20 lg:pt-28">{children}</div>
             </PageTransitionEffect>
             <div className="absolute right-8 bottom-8 ">
               <HireMe lang={locale} />

@@ -1,12 +1,13 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import React from "react";
+import { IMenu } from "@/constants/menu";
+import { useTranslations } from "next-intl";
 
 interface ICustomLink {
-  href: string;
-  title: string;
+  menu: IMenu;
   className: string;
   isDisplayedOnSmallScreen?: boolean;
   toggle?: () => void;
@@ -14,19 +15,19 @@ interface ICustomLink {
 
 const CustomLink = (props: ICustomLink) => {
   const {
-    href,
-    title,
+    menu,
     className = "",
     isDisplayedOnSmallScreen = false,
     toggle = () => {},
   } = props;
 
-  const pathname = usePathname();
+  const t = useTranslations("NavBar");
 
+  const pathname = usePathname();
   const router = useRouter();
   const handleClick = () => {
     toggle?.();
-    router.push(href);
+    router.push(menu.url);
   };
 
   return isDisplayedOnSmallScreen ? (
@@ -34,13 +35,13 @@ const CustomLink = (props: ICustomLink) => {
       onClick={handleClick}
       className={`${className} relative group text-light dark:text-dark`}
     >
-      {title}
+      {t(`${menu.title}`)}
       <span
         className={`
           h-[2px] block bg-light
           absolute left-1/2 transform -translate-x-1/2 -bottom-0.5
           group-hover:w-full transition-width ease duration-300
-          ${pathname === href ? "w-full" : "w-0"}
+          ${pathname === menu.url ? "w-full" : "w-0"}
           dark:bg-dark
         `}
       >
@@ -48,14 +49,14 @@ const CustomLink = (props: ICustomLink) => {
       </span>
     </button>
   ) : (
-    <Link href={href} passHref className={`${className} relative group`}>
-      {title}
+    <Link href={menu.url} passHref className={`${className} relative group`}>
+      {t(`${menu.title}`)}
       <span
         className={`
           h-[2px] block bg-dark
           absolute left-1/2 transform -translate-x-1/2 -bottom-0.5
           group-hover:w-full transition-width ease duration-300
-          ${pathname === href ? "w-full" : "w-0"}
+          ${pathname === menu.url ? "w-full" : "w-0"}
           dark:bg-light
         `}
       >

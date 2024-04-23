@@ -10,6 +10,7 @@ import { GithubIcon, LinkedInIcon } from "../sub/Icons";
 import CustomLink from "../sub/CustomLink";
 import LanguageSwitcher from "../sub/language-switcher/LanguageSwitcher";
 import { useTranslations } from "next-intl";
+import { menuItemsData } from "@/constants/menu";
 
 interface INavBar {
   lang: string;
@@ -71,17 +72,9 @@ const NavBar = (props: INavBar) => {
 
       <div className="w-full justify-between items-center hidden lg:flex">
         <nav>
-          <CustomLink href={`/${lang}`} title={t("home")} className="mr-4" />
-          <CustomLink
-            href={`/${lang}/about`}
-            title={t("about")}
-            className="mx-4"
-          />
-          <CustomLink
-            href={`/${lang}/projects`}
-            title={t("projects")}
-            className="mx-4"
-          />
+          {menuItemsData(lang).map((item) => (
+            <CustomLink key={item.title} menu={item} className="mx-4" />
+          ))}
         </nav>
 
         <nav className="flex items-center justify-center flex-wrap">
@@ -131,27 +124,15 @@ const NavBar = (props: INavBar) => {
         lg:hidden`}
         >
           <nav className="flex items-baseline mb-4 flex-col justify-center ">
-            <CustomLink
-              href={`/${lang}`}
-              title={t("home")}
-              className="mb-2"
-              isDisplayedOnSmallScreen
-              toggle={handleClick}
-            />
-            <CustomLink
-              href={`/${lang}/about`}
-              title={t("about")}
-              className="mb-2"
-              isDisplayedOnSmallScreen
-              toggle={handleClick}
-            />
-            <CustomLink
-              href={`/${lang}/projects`}
-              title={t("projects")}
-              className="mb-2"
-              isDisplayedOnSmallScreen
-              toggle={handleClick}
-            />
+            {menuItemsData(lang).map((item) => (
+              <CustomLink
+                key={item.title}
+                menu={item}
+                className="mb-2"
+                isDisplayedOnSmallScreen
+                toggle={handleClick}
+              />
+            ))}
           </nav>
 
           <nav className="flex items-center justify-center flex-wrap">
