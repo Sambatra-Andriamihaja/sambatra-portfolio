@@ -10,7 +10,6 @@ import { GithubIcon, LinkedInIcon } from "../sub/Icons";
 import CustomLink from "../sub/CustomLink";
 import LanguageSwitcher from "../sub/language-switcher/LanguageSwitcher";
 import { useTranslations } from "next-intl";
-import CustomMobileLink from "../sub/CustomMobileLink";
 
 interface INavBar {
   lang: string;
@@ -132,22 +131,25 @@ const NavBar = (props: INavBar) => {
         lg:hidden`}
         >
           <nav className="flex items-baseline mb-4 flex-col justify-center ">
-            <CustomMobileLink
+            <CustomLink
               href={`/${lang}`}
               title={t("home")}
               className="mb-2"
+              isDisplayedOnSmallScreen
               toggle={handleClick}
             />
-            <CustomMobileLink
+            <CustomLink
               href={`/${lang}/about`}
               title={t("about")}
               className="mb-2"
+              isDisplayedOnSmallScreen
               toggle={handleClick}
             />
-            <CustomMobileLink
+            <CustomLink
               href={`/${lang}/projects`}
               title={t("projects")}
               className="mb-2"
+              isDisplayedOnSmallScreen
               toggle={handleClick}
             />
           </nav>
