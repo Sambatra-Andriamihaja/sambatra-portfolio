@@ -6,26 +6,29 @@ import Layout from "@/components/layout/Layout";
 import AnimatedText from "@/components/sub/AnimatedText";
 import ProjectCardList from "@/components/projects/ProjectCardList";
 import ProjectCategory from "./ProjectCategory";
-import projects, {
-  ALL,
-  IProject,
-  TProductCategory,
-} from "@/constants/projects";
+import projects, { IProject, KW, TProductCategory } from "@/constants/projects";
+import { SearchInput } from "./SearchInput";
+import { useSearchParams } from "next/navigation";
+import { getFilteredData, getSearchedData } from "@/hooks/useFilterProjects";
 
 const ProjectsPage = () => {
   const [projectList, setProjectList] = useState<IProject[]>(projects);
+  const [filteredProjectList, setFilteredProjectList] =
+    useState<IProject[]>(projectList);
 
   //Filter Function
   const filter = (category: TProductCategory) => {
-    if (category === ALL) {
-      setProjectList(projects);
-      return;
-    }
+    const filteredProjects = getFilteredData(category, projects);
+    setFilteredProjectList(filteredProjects);
+    setProjectList(filteredProjects);
+  };
 
-    const filteredData = projects.filter(
-      (project) => project.category === category
-    );
-    setProjectList(filteredData);
+  // Search Function
+  const searchParams = useSearchParams();
+  const keyWords = searchParams.get(KW)?.toLowerCase() ?? "";
+  const search = () => {
+    const searchedProjects = getSearchedData(keyWords, filteredProjectList);
+    setProjectList(searchedProjects);
   };
 
   return (
@@ -36,6 +39,7 @@ const ProjectsPage = () => {
           className="!text-2xl xl:!text-6xl lg:!text-5xl md:!text-4xl sm:!text-3xl
           py-10 xl:py-0"
         />
+        <SearchInput keyWords={keyWords} search={search} />
         <ProjectCategory filter={filter} />
         <ProjectCardList overwriteProjects={projectList} />
       </Layout>

@@ -8,6 +8,7 @@ import {
   TProductCategory,
 } from "@/constants/projects";
 import { useTranslations } from "next-intl";
+import { usePathname, useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 interface IProjectCategory {
@@ -19,9 +20,13 @@ const ProjectCategory = (props: IProjectCategory) => {
 
   const t = useTranslations("Projects.category");
 
+  const router = useRouter();
+  const pathname = usePathname();
+
   const [currentCategory, setCurrentCategory] = useState<TProductCategory>(ALL);
 
   const handleFilter = (category: TProductCategory) => {
+    router.replace(pathname, undefined);
     setCurrentCategory(category);
     filter(category);
   };

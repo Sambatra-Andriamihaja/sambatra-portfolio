@@ -1,3 +1,5 @@
+export const KW = "kw";
+
 export const PERSONAL = "personal";
 export const PROFESSIONAL = "professional";
 export const STUDIES = "studies";
