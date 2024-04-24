@@ -62,7 +62,8 @@ const SectionNavBar = (props: ISectionNavBar) => {
             href={item.url}
             onClick={() => handleClick(item.title)}
             className={`block px-4 py-2 text-dark dark:text-light hover:bg-light hover:dark:bg-dark ${
-              item.title == active && "bg-light dark:bg-dark"
+              item.title == active &&
+              "bg-light dark:bg-dark font-extrabold underline"
             }`}
           >
             {t(`${item.title}`)}
