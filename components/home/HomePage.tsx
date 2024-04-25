@@ -40,27 +40,8 @@ const HomePage = () => {
       <Layout className="pt-0 bg-transparent">
         <ParticlesBackground />
         {/* <LottieContainer /> */}
-        <div className="flex items-center justify-center w-full h-[50%]">
+        <div className="flex justify-center w-full h-[50%]">
           <div className="flex flex-col md:flex-row w-full items-center justify-between ">
-            <div className="md:w-1/2 w-full h-[20rem] md:h-full z-10 hidden md:block">
-              {/* <Image src={profilePic} alt="CodeBucks" className="w-full h-auto" /> */}
-              {/* <ModelViewer /> */}
-              {/* <S /> */}
-
-              <Cmd setInputText={setInputText} isDisabled={openSumUp} />
-              <AnimatePresence>
-                {openSumUp && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -50 }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    <WhoIs />
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
             <div className="md:w-1/2 w-full px-8 flex flex-col items-center self-center z-10">
               <AnimatedText
                 className="!text-2xl !text-left xl:!text-6xl lg:!text-5xl md:!text-4xl sm:!text-3xl"
@@ -82,6 +63,25 @@ const HomePage = () => {
                   {t("resume")} <LinkArrow className={"w-6 ml-1"} />
                 </Link>
               </div>
+            </div>
+            <div className="md:w-1/2 w-full h-[20rem] md:h-full z-10 hidden md:block">
+              {/* <Image src={profilePic} alt="CodeBucks" className="w-full h-auto" /> */}
+              {/* <ModelViewer /> */}
+              {/* <S /> */}
+
+              <Cmd setInputText={setInputText} isDisabled={openSumUp} />
+              <AnimatePresence>
+                {openSumUp && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -50 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <WhoIs />
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </div>
         </div>
