@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 import Layout from "@/components/layout/Layout";
 import AnimatedText from "@/components/sub/AnimatedText";
@@ -20,17 +20,20 @@ import styles from "./HomePage.module.css";
 import terminalStyles from "@/components/projects/project-card/ProjectCard.module.css";
 import { useEffect, useState } from "react";
 import useDarkMode from "@/hooks/useDarkMode";
+import WhoIs from "./WhoIs";
 
 const HomePage = () => {
   const t = useTranslations("HomePage");
   const { isDarkMode } = useDarkMode();
 
-  const [text, setText] = useState("");
+  const [text, setText] = useState<string>("");
+  const [openSumUp, setOpenSumUp] = useState<boolean>(false);
 
   useEffect(() => {
     const handleInput = () => {
       if (text === "whois") {
         console.log("WWWWWWWWW");
+        setOpenSumUp(true);
       }
     };
     handleInput();
@@ -43,10 +46,11 @@ const HomePage = () => {
         {/* <LottieContainer /> */}
         <div className="flex items-center justify-center w-full h-[50%]">
           <div className="flex flex-col md:flex-row w-full items-center justify-between ">
-            <div className="md:w-1/2 w-full h-[20rem] md:h-full z-10">
+            <div className="md:w-1/2 w-full h-[20rem] md:h-full z-10 hidden md:block">
               {/* <Image src={profilePic} alt="CodeBucks" className="w-full h-auto" /> */}
               {/* <ModelViewer /> */}
               {/* <S /> */}
+
               <div className={styles.cmd}>
                 <div className="flex gap-3">
                   <motion.p
@@ -116,6 +120,7 @@ const HomePage = () => {
                         className="ml-2"
                       >
                         <input
+                          disabled={openSumUp}
                           type="text"
                           placeholder="whois"
                           onChange={(e) => setText(e.target.value)}
@@ -126,6 +131,18 @@ const HomePage = () => {
                   </div>
                 </div>
               </div>
+              <AnimatePresence>
+                {openSumUp && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -50 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <WhoIs />
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
             <div className="md:w-1/2 w-full px-8 flex flex-col items-center self-center z-10">
               <AnimatedText

@@ -12,7 +12,7 @@ const Hello = () => {
   return (
     <section
       id="intro"
-      className="mx-auto bg-white dark:bg-blueDark p-5 sm:p-12 grid grid-cols-1 sm:grid-cols-[1fr_3fr] md:grid-cols-[1fr_4fr] items-center gap-5 md:gap-8 rounded-xl overflow-hidden"
+      className="mx-auto bg-white dark:bg-blueDark p-5 sm:p-12 grid relative z-10 grid-cols-1 md:grid-cols-[1fr_3fr] items-center gap-5 md:gap-8 rounded-xl overflow-hidden"
     >
       {/* Left Section */}
       <div className="space-y-5 text-center">
@@ -46,11 +46,11 @@ const Hello = () => {
           <div className="leading-[30px] font-semibold pl-10">
             <p className="mx-4 font-medium">{t("quote")}</p>
           </div>
-          <FontAwesomeIcon
+          {/* <FontAwesomeIcon
             icon={faQuoteRight}
             size="3x"
             className="absolute right-0 -bottom-5 text-dark/80 dark:text-white/65"
-          />
+          /> */}
         </div>
       </div>
     </section>

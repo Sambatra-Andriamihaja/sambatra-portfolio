@@ -1,0 +1,41 @@
+.container {
+  padding: 20px;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.left_number {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+}
+
+.vertical_line {
+  width: 1px;
+  height: 300px;
+  margin: auto;
+  margin-left: 1rem;
+  background-color: rgba(226, 226, 226, 0.2);
+}
+
+.text_fade_01 {
+  opacity: 0.1;
+}
+.text_fade_02 {
+  opacity: 0.3;
+}
+.text_fade_03 {
+  opacity: 0.6;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  /* margin-top: 1rem; */
+  justify-content: center;
+  margin-left: 14px;
+  color: rgb(151, 153, 163);
+}
