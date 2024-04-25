@@ -1,0 +1,18 @@
+.cmd .input {
+  display: flex;
+  align-items: center;
+}
+.cmd .input p {
+  color: rgb(199, 160, 242);
+  font-size: 16px;
+}
+.cmd .input input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  margin-left: 10px;
+  color: rgb(199, 160, 242);
+}
+.input input::placeholder {
+  color: rgb(86, 76, 97);
+}
