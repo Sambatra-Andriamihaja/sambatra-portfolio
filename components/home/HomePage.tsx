@@ -16,28 +16,24 @@ import checkmark from "@/public/images/icons/icons8-checkmark-100.png";
 import medal from "@/public/images/icons/icons8-medal-100.png";
 import stack from "@/public/images/icons/icons8-stack-100.png";
 import S from "@/components/home/S";
-import styles from "./HomePage.module.css";
-import terminalStyles from "@/components/projects/project-card/ProjectCard.module.css";
 import { useEffect, useState } from "react";
-import useDarkMode from "@/hooks/useDarkMode";
 import WhoIs from "./WhoIs";
+import Cmd from "./Cmd";
 
 const HomePage = () => {
   const t = useTranslations("HomePage");
-  const { isDarkMode } = useDarkMode();
 
-  const [text, setText] = useState<string>("");
+  const [inputText, setInputText] = useState<string>("");
   const [openSumUp, setOpenSumUp] = useState<boolean>(false);
 
   useEffect(() => {
     const handleInput = () => {
-      if (text === "whois") {
-        console.log("WWWWWWWWW");
+      if (inputText === "whois") {
         setOpenSumUp(true);
       }
     };
     handleInput();
-  }, [text]);
+  }, [inputText]);
 
   return (
     <main className="flex items-center text-dark w-full min-h-screen dark:text-light">
@@ -51,86 +47,7 @@ const HomePage = () => {
               {/* <ModelViewer /> */}
               {/* <S /> */}
 
-              <div className={styles.cmd}>
-                <div className="flex gap-3">
-                  <motion.p
-                    initial="hidden"
-                    animate="visible"
-                    variants={{
-                      hidden: {
-                        x: "-100px",
-                        opacity: 0,
-                      },
-                      visible: {
-                        x: 0,
-                        opacity: 1,
-                        transition: {
-                          delay: 0.4,
-                          duration: 0.4,
-                        },
-                      },
-                    }}
-                  ></motion.p>
-                  <motion.p
-                    className="mb-2 text-sm"
-                    initial="hidden"
-                    animate="visible"
-                    variants={{
-                      hidden: {
-                        x: "100px",
-                        opacity: 0,
-                      },
-                      visible: {
-                        x: 0,
-                        opacity: 1,
-                        transition: {
-                          delay: 0.4,
-                          duration: 0.4,
-                        },
-                      },
-                    }}
-                  >
-                    Write the code below to sum up who am I :
-                  </motion.p>
-                </div>
-
-                <div
-                  className={`h-14 text-sm text-white font-medium bg-black dark:bg-gradient-to-b dark:from-terminal dark:bg-transparent p-2`}
-                >
-                  <div
-                    className={` ${
-                      isDarkMode
-                        ? `${terminalStyles.terminalPrompt}`
-                        : "flex ml-1"
-                    } `}
-                  >
-                    <span className="text-white dark:text-terminalUser">
-                      {"sambatra :"}
-                    </span>
-                    {!isDarkMode && <span>&nbsp;</span>}
-                    <span className="text-white dark:text-terminalLocation">
-                      {isDarkMode ? "~" : "\\"}
-                    </span>
-                    <span className="text-white">{isDarkMode ? "$" : ">"}</span>
-                    <motion.div className="flex items-center">
-                      <motion.span
-                        animate={{ opacity: 1 }}
-                        initial={{ opacity: 0 }}
-                        transition={{ delay: 0.4, duration: 0.4 }}
-                        className="ml-2"
-                      >
-                        <input
-                          disabled={openSumUp}
-                          type="text"
-                          placeholder="whois"
-                          onChange={(e) => setText(e.target.value)}
-                          className="bg-transparent border-none outline-none"
-                        />
-                      </motion.span>
-                    </motion.div>
-                  </div>
-                </div>
-              </div>
+              <Cmd setInputText={setInputText} isDisabled={openSumUp} />
               <AnimatePresence>
                 {openSumUp && (
                   <motion.div
