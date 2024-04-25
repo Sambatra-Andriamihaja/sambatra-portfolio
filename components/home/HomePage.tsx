@@ -36,13 +36,13 @@ const HomePage = () => {
   }, [inputText]);
 
   return (
-    <main className="flex items-center text-dark w-full min-h-screen dark:text-light">
+    <main className="flex text-dark w-full min-h-screen dark:text-light">
       <Layout className="pt-0 bg-transparent">
         <ParticlesBackground />
         {/* <LottieContainer /> */}
         <div className="flex justify-center w-full h-[50%]">
-          <div className="flex flex-col md:flex-row w-full items-center justify-between ">
-            <div className="md:w-1/2 w-full px-8 flex flex-col items-center self-center z-10">
+          <div className="flex flex-col md:flex-row w-full justify-between ">
+            <div className="md:w-1/2 w-full h-full px-8 flex flex-col items-center self-center z-10 relative top-0">
               <AnimatedText
                 className="!text-2xl !text-left xl:!text-6xl lg:!text-5xl md:!text-4xl sm:!text-3xl"
                 text={t("title")}
