@@ -2,8 +2,10 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { IMenu } from "@/constants/menu";
 import { useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
+import { IMenu } from "@/constants/menu";
+import { ABOUT_PATHNAME } from "@/constants/about";
 
 interface ISectionNavBar {
   items: IMenu[];
@@ -14,12 +16,13 @@ const SectionNavBar = (props: ISectionNavBar) => {
 
   const t = useTranslations("NavBar");
 
+  const pathname = usePathname();
+
   const [active, setActive] = useState<string>("");
 
   const handleClick = (section: string) => {
     setActive(section);
     document.getElementById(section)?.scrollIntoView({ behavior: "smooth" });
-    updateUrlFragment(section);
   };
 
   const updateUrlFragment = (fragment: string) => {
@@ -38,7 +41,9 @@ const SectionNavBar = (props: ISectionNavBar) => {
         const visibleEntry = entries.find((entry) => entry.isIntersecting);
         if (visibleEntry) {
           setActive(visibleEntry.target.id);
-          updateUrlFragment(visibleEntry.target.id);
+          if (pathname.includes(ABOUT_PATHNAME)) {
+            updateUrlFragment(visibleEntry.target.id);
+          }
         }
       },
       { threshold: 0.5 }
@@ -60,7 +65,7 @@ const SectionNavBar = (props: ISectionNavBar) => {
         observerRef.current.disconnect(); // Disconnect observer
       }
     };
-  }, [items]); // Re-run useEffect on items change
+  }, [items, pathname]); // Re-run useEffect on items change
 
   return (
     <div className="fixed left-4 top-32 z-10 bg-white dark:bg-blueDark shadow-lg lg:block hidden w-[10rem]">
