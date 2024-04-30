@@ -19,6 +19,14 @@ const SectionNavBar = (props: ISectionNavBar) => {
   const handleClick = (section: string) => {
     setActive(section);
     document.getElementById(section)?.scrollIntoView({ behavior: "smooth" });
+    updateUrlFragment(section);
+  };
+
+  const updateUrlFragment = (fragment: string) => {
+    const currentUrl = window.location.href;
+    const baseUrl = currentUrl.split("#")[0];
+    const newUrl = fragment ? `${baseUrl}#${fragment}` : baseUrl;
+    window.history.replaceState({}, "", newUrl);
   };
 
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -30,6 +38,7 @@ const SectionNavBar = (props: ISectionNavBar) => {
         const visibleEntry = entries.find((entry) => entry.isIntersecting);
         if (visibleEntry) {
           setActive(visibleEntry.target.id);
+          updateUrlFragment(visibleEntry.target.id);
         }
       },
       { threshold: 0.5 }
