@@ -59,7 +59,7 @@ export const LinkArrow = ({ className = "", ...rest }) => (
   </svg>
 );
 
-export const MySLogo = ({ className = "", fill = "#17182f", ...rest }) => (
+export const MySLogo = ({ className = "", fill = "#f5f5f5", ...rest }) => (
   <svg
     version="1.0"
     xmlns="http://www.w3.org/2000/svg"

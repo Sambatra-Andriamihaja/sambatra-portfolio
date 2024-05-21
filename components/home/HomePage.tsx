@@ -22,6 +22,7 @@ import WhoIs from "./WhoIs";
 import Cmd from "./Cmd";
 import { About } from "@/constants/about";
 import StatCard from "./StatCard";
+import CvButton from "./CvButton";
 
 const HomePage = () => {
   const t = useTranslations("HomePage");
@@ -58,19 +59,7 @@ const HomePage = () => {
               />
               <p className="my-4 text-base font-medium">{t("description")}</p>
               <div className="flex items-center self-start mt-2">
-                <Link
-                  href="/CV-Sambatra.pdf"
-                  target={"_blank"}
-                  className="flex items-center bg-dark text-light p-2.5 px-6
-                  rounded-lg text-lg font-semibold hover:bg-transparent hover:text-dark
-                  border border-solid border-transparent hover:border-dark
-                  dark:bg-light dark:text-dark hover:dark:bg-dark hover:dark:text-light
-                  hover:dark:border-light
-                  "
-                  download={true}
-                >
-                  {t("resume")} <LinkArrow className={"w-6 ml-1"} />
-                </Link>
+                <CvButton />
               </div>
             </div>
             <div className="md:w-1/2 w-full h-[20rem] md:h-full z-10 hidden md:block">
