@@ -12,9 +12,10 @@
     "projects": "Projects"
   },
   "HomePage": {
-    "title": "Breathing life into ideas through coding",
+    "title": "Hi ! I'm",
     "description": "As a versatile full-stack developer, I am committed to transforming concepts into cutting-edge solutions. Delve into my recent endeavors that highlight my proficiency in software engineering.",
     "resume": "Resume",
+    "cmdSumUp": "Write the code below to sum up who am I :",
     "technoUsed": "technologies used",
     "projectsCompleted": "projects completed",
     "yearsOfExperience": "years of experience"

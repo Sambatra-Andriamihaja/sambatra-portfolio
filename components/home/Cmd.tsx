@@ -1,5 +1,7 @@
 import React, { Dispatch, SetStateAction } from "react";
 
+import { useTranslations } from "next-intl";
+
 import { motion } from "framer-motion";
 
 import styles from "./Cmd.module.css";
@@ -13,6 +15,8 @@ interface ICmd {
 
 const Cmd = (props: ICmd) => {
   const { isDisabled, setInputText } = props;
+
+  const t = useTranslations("HomePage");
 
   const { isDarkMode } = useDarkMode();
 
@@ -56,7 +60,7 @@ const Cmd = (props: ICmd) => {
             },
           }}
         >
-          Write the code below to sum up who am I :
+          {t('cmdSumUp')}
         </motion.p>
       </div>
 

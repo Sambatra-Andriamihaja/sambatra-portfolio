@@ -1,5 +1,6 @@
 "use client";
 
+import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
@@ -19,9 +20,12 @@ import S from "@/components/home/S";
 import { useEffect, useState } from "react";
 import WhoIs from "./WhoIs";
 import Cmd from "./Cmd";
+import { About } from "@/constants/about";
 
 const HomePage = () => {
   const t = useTranslations("HomePage");
+  const pathname = usePathname();
+  const router = useRouter()
 
   const [inputText, setInputText] = useState<string>("");
   const [openSumUp, setOpenSumUp] = useState<boolean>(false);
@@ -44,13 +48,17 @@ const HomePage = () => {
           <div className="flex flex-col md:flex-row w-full justify-between ">
             <div className="md:w-1/2 w-full h-full px-8 flex flex-col items-center self-center z-10 relative top-0">
               <AnimatedText
-                className="!text-2xl !text-left xl:!text-6xl lg:!text-5xl md:!text-4xl sm:!text-3xl"
+                className="!font-normal normal-case !text-xl !text-left xl:!text-4xl lg:!text-3xl md:!text-2xl sm:!text-xl"
                 text={t("title")}
+              />
+              <AnimatedText
+                className="!text-2xl !text-left xl:!text-6xl lg:!text-5xl md:!text-4xl sm:!text-3xl"
+                text={About.name}
               />
               <p className="my-4 text-base font-medium">{t("description")}</p>
               <div className="flex items-center self-start mt-2">
                 <Link
-                  href="/CV-Sambatra-Andriamihaja.pdf"
+                  href="/CV-Sambatra.pdf"
                   target={"_blank"}
                   className="flex items-center bg-dark text-light p-2.5 px-6
                   rounded-lg text-lg font-semibold hover:bg-transparent hover:text-dark
@@ -86,9 +94,15 @@ const HomePage = () => {
           </div>
         </div>
 
-        <div className="flex flex-row items-end justify-between h-[50%] w-[75%]">
-          <div className="flex flex-col items-end justify-center">
-            <Image src={stack} alt="Stack" className="w-12 h-auto" />
+        <div className="grid grid-cols-1 2lg:grid-cols-3 gap-8 w-[75%] m-8">
+          <div className="flex flex-col items-end justify-center border border-solid border-black dark:border-light rounded-lg z-10 p-2 w-64 h-44 bg-white dark:bg-blueDark
+            cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl" 
+            onClick={() => router.push(`${pathname}/about#skills`)}>
+            <Image
+              src={stack}
+              alt="Stack"
+              className="w-12 h-auto absolute -mt-40 -mr-6"
+            />
             <span className="inline-block text-7xl font-bold">
               <AnimatedNumbers value={20} />+
             </span>
@@ -96,8 +110,14 @@ const HomePage = () => {
               {t("technoUsed")}
             </h2>
           </div>
-          <div className="flex flex-col items-end justify-center">
-            <Image src={checkmark} alt="Check Mark" className="w-12 h-auto" />
+          <div className="flex flex-col items-end justify-center border border-solid border-black dark:border-light rounded-lg z-10 p-2 w-64 h-44 bg-white dark:bg-blueDark 
+            cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl" 
+            onClick={() => router.push(`${pathname}/projects`)}>
+            <Image
+              src={checkmark}
+              alt="Check Mark"
+              className="w-12 h-auto absolute -mt-40 -mr-7"
+            />
             <span className="inline-block text-7xl font-bold">
               <AnimatedNumbers value={10} />+
             </span>
@@ -105,8 +125,14 @@ const HomePage = () => {
               {t("projectsCompleted")}
             </h2>
           </div>
-          <div className="flex flex-col items-end justify-center">
-            <Image src={medal} alt="Medal" className="w-12 h-auto" />
+          <div className="flex flex-col items-end justify-center border border-solid border-black dark:border-light rounded-lg z-10 p-2 w-64 h-44 bg-white dark:bg-blueDark
+            cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl" 
+            onClick={() => router.push(`${pathname}/about#experience`)}>
+            <Image
+              src={medal}
+              alt="Medal"
+              className="w-12 h-auto absolute -mt-40 -mr-7"
+            />
             <span className="inline-block text-7xl font-bold">
               <AnimatedNumbers value={2} />+
             </span>

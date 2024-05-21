@@ -56,7 +56,7 @@ export default function LocaleLayout({
             <PageTransitionEffect>
               <div className="pt-20 lg:pt-28">{children}</div>
             </PageTransitionEffect>
-            <div className="absolute right-8 bottom-8 ">
+            <div className="fixed right-8 bottom-8 z-10">
               <HireMe lang={locale} />
             </div>
             <Footer />

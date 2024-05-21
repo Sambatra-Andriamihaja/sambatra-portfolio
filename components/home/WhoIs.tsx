@@ -218,6 +218,12 @@ const WhoIs = () => {
             <br />
             &nbsp;&nbsp;&nbsp;&nbsp;
             <span className="text-green-600 dark:text-green-400">
+              &quot;NestJS&quot;
+            </span>
+            <span className="text-blue-800 dark:text-blue-400">,</span>
+            <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <span className="text-green-600 dark:text-green-400">
               &quot;Next.js&quot;
             </span>
             <span className="text-blue-800 dark:text-blue-400">,</span>

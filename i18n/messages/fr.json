@@ -12,9 +12,10 @@
     "projects": "Projets"
   },
   "HomePage": {
-    "title": "Donner vie aux idées par le codage",
+    "title": "Hi ! Je suis",
     "description": "En tant que développeur polyvalent, je m'engage à transformer les concepts en solutions de pointe. Jetez un coup d'œil à mes récentes réalisations qui mettent en évidence mes compétences en ingénierie logicielle.",
     "resume": "CV",
+    "cmdSumUp": "Ecrivez le code ci-dessous pour résumer qui je suis :",
     "technoUsed": "technologies utilisées",
     "projectsCompleted": "projets achevés",
     "yearsOfExperience": "années d' expérience"
