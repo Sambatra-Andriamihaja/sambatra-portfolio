@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import React, { useRef } from "react";
+import React, { forwardRef } from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -23,7 +23,7 @@ interface IExperienceVerticalTimelineElement {
   ) => string;
 }
 
-const ExperienceVerticalTimelineElement = React.forwardRef<
+const ExperienceVerticalTimelineElement = forwardRef<
   HTMLDivElement,
   IExperienceVerticalTimelineElement
 >(({ experience, visible, t }, ref) => {
@@ -97,7 +97,7 @@ const ExperienceVerticalTimelineElement = React.forwardRef<
 ExperienceVerticalTimelineElement.displayName =
   "ExperienceVerticalTimelineElement";
 
-const Experience = () => {
+const Experience = forwardRef<HTMLElement, {}>((props, ref) => {
   const t = useTranslations("About.Experiences");
 
   const triggerOnceOtions = {
@@ -112,7 +112,7 @@ const Experience = () => {
   const [telmaRef, telmaInView] = useInView(options);
 
   return (
-    <section id="experience" className="pt-[10rem] mb-64 ">
+    <section id="experience" ref={ref} className="pt-[10rem] mb-64">
       <h2 className="font-bold text-8xl mb-32 w-full text-center">
         Experience
       </h2>
@@ -150,6 +150,8 @@ const Experience = () => {
       </div>
     </section>
   );
-};
+});
+
+Experience.displayName = "Experience";
 
 export default Experience;

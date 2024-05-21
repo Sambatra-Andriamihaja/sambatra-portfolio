@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuoteRight, faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
@@ -6,12 +6,13 @@ import MyProfilePic from "@/public/images/profile/sambatra-andriamihaja-with-bg.
 import { useTranslations } from "next-intl";
 import { About } from "@/constants/about";
 
-const Hello = () => {
+const Hello = forwardRef<HTMLElement, {}>((props, ref) => {
   const t = useTranslations("About.Me");
 
   return (
     <section
       id="intro"
+      ref={ref}
       className="mx-auto bg-white dark:bg-blueDark p-5 sm:p-12 grid relative z-10 grid-cols-1 md:grid-cols-[1fr_3fr] items-center gap-5 md:gap-8 rounded-xl overflow-hidden"
     >
       {/* Left Section */}
@@ -55,6 +56,8 @@ const Hello = () => {
       </div>
     </section>
   );
-};
+});
+
+Hello.displayName = "Hello";
 
 export default Hello;

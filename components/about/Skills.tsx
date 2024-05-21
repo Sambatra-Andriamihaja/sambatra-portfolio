@@ -1,16 +1,17 @@
 "use client";
 
-import React from "react";
+import React, { forwardRef } from "react";
 
 import { AiSkillData, DbSkillData, DevSkillData } from "@/constants/skill";
 import SkillImage from "../sub/SkillImage";
 
-const Skills = () => {
+const Skills = forwardRef<HTMLElement, {}>((props, ref) => {
   return (
     <section
       id="skills"
+      ref={ref}
       className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden mb-40"
-      style={{ transform: "scale(0.9" }}
+      style={{ transform: "scale(0.9)" }}
     >
       <h2 className="font-bold text-8xl mt-64 w-full text-center">Skills</h2>
 
@@ -53,6 +54,8 @@ const Skills = () => {
       </div>
     </section>
   );
-};
+});
+
+Skills.displayName = "Skills";
 
 export default Skills;

@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import React, { useRef } from "react";
+import React, { forwardRef } from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -23,7 +23,7 @@ interface IEducationVerticalTimelineElement {
   ) => string;
 }
 
-const EducationVerticalTimelineElement = React.forwardRef<
+const EducationVerticalTimelineElement = forwardRef<
   HTMLDivElement,
   IEducationVerticalTimelineElement
 >(({ education, visible, t }, ref) => {
@@ -96,7 +96,7 @@ const EducationVerticalTimelineElement = React.forwardRef<
 EducationVerticalTimelineElement.displayName =
   "EducationVerticalTimelineElement";
 
-const Education = () => {
+const Education = forwardRef<HTMLElement, {}>((props, ref) => {
   const t = useTranslations("About.Educations");
 
   const options = {
@@ -107,7 +107,7 @@ const Education = () => {
   const [stGabRef, stGabInView] = useInView(options);
 
   return (
-    <section id="education" className="pt-[10rem] mb-32">
+    <section id="education" ref={ref} className="pt-[10rem] mb-32">
       <h2 className="font-bold text-8xl mb-32 w-full text-center">Education</h2>
       <div className="mt-12 flex">
         <VerticalTimeline>
@@ -133,6 +133,8 @@ const Education = () => {
       </div>
     </section>
   );
-};
+});
+
+Education.displayName = "Education";
 
 export default Education;
