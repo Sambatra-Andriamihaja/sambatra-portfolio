@@ -21,11 +21,12 @@ import { useEffect, useState } from "react";
 import WhoIs from "./WhoIs";
 import Cmd from "./Cmd";
 import { About } from "@/constants/about";
+import StatCard from "./StatCard";
 
 const HomePage = () => {
   const t = useTranslations("HomePage");
   const pathname = usePathname();
-  const router = useRouter()
+  const router = useRouter();
 
   const [inputText, setInputText] = useState<string>("");
   const [openSumUp, setOpenSumUp] = useState<boolean>(false);
@@ -95,51 +96,27 @@ const HomePage = () => {
         </div>
 
         <div className="grid grid-cols-1 2lg:grid-cols-3 gap-8 w-[75%] m-8">
-          <div className="flex flex-col items-end justify-center border border-solid border-black dark:border-light rounded-lg z-10 p-2 w-64 h-44 bg-white dark:bg-blueDark
-            cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl" 
-            onClick={() => router.push(`${pathname}/about#skills`)}>
-            <Image
-              src={stack}
-              alt="Stack"
-              className="w-12 h-auto absolute -mt-40 -mr-6"
-            />
-            <span className="inline-block text-7xl font-bold">
-              <AnimatedNumbers value={20} />+
-            </span>
-            <h2 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75">
-              {t("technoUsed")}
-            </h2>
-          </div>
-          <div className="flex flex-col items-end justify-center border border-solid border-black dark:border-light rounded-lg z-10 p-2 w-64 h-44 bg-white dark:bg-blueDark 
-            cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl" 
-            onClick={() => router.push(`${pathname}/projects`)}>
-            <Image
-              src={checkmark}
-              alt="Check Mark"
-              className="w-12 h-auto absolute -mt-40 -mr-7"
-            />
-            <span className="inline-block text-7xl font-bold">
-              <AnimatedNumbers value={10} />+
-            </span>
-            <h2 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75">
-              {t("projectsCompleted")}
-            </h2>
-          </div>
-          <div className="flex flex-col items-end justify-center border border-solid border-black dark:border-light rounded-lg z-10 p-2 w-64 h-44 bg-white dark:bg-blueDark
-            cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl" 
-            onClick={() => router.push(`${pathname}/about#experience`)}>
-            <Image
-              src={medal}
-              alt="Medal"
-              className="w-12 h-auto absolute -mt-40 -mr-7"
-            />
-            <span className="inline-block text-7xl font-bold">
-              <AnimatedNumbers value={2} />+
-            </span>
-            <h2 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75">
-              {t("yearsOfExperience")}
-            </h2>
-          </div>
+          <StatCard
+            numberValue={20}
+            onClick={() => router.push(`${pathname}/about#skills`)}
+            description={t("technoUsed")}
+            icon={stack}
+            alt="Stack"
+          />
+          <StatCard
+            numberValue={10}
+            onClick={() => router.push(`${pathname}/projects`)}
+            description={t("projectsCompleted")}
+            icon={checkmark}
+            alt="Check Mark"
+          />
+          <StatCard
+            numberValue={2}
+            onClick={() => router.push(`${pathname}/about#experience`)}
+            description={t("yearsOfExperience")}
+            icon={medal}
+            alt="Medal"
+          />
         </div>
       </Layout>
     </main>
