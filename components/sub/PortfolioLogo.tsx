@@ -7,11 +7,10 @@ const MotionLink = motion(Link);
 
 interface IPortfolioLogo {
   className?: string;
-  reverse?: boolean;
 }
 
 const PortfolioLogo = (props: IPortfolioLogo) => {
-  const { className = "", reverse = false } = props;
+  const { className = "" } = props;
 
   return (
     <div className={`flex items-center justify-center mt-2 ${className}`}>
@@ -22,12 +21,12 @@ const PortfolioLogo = (props: IPortfolioLogo) => {
         flex items-center justify-center 
         rounded-full
         text-5xl font-bold
-        border border-solid border-transparent        
-        ${reverse ? "bg-light dark:bg-dark" : "bg-dark dark:bg-light"}
+        border border-solid
+        bg-dark border-light
         `}
         whileHover={{ scale: 1.1 }}
       >
-        <S reverse={reverse} />
+        <S />
       </MotionLink>
     </div>
   );

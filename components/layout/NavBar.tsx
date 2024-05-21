@@ -125,7 +125,7 @@ const NavBar = (props: INavBar) => {
         lg:hidden`}
         >
           <nav className="flex items-baseline mb-4 flex-col justify-center ">
-            <PortfolioLogo className="-mt-5 mb-5" reverse />
+            <PortfolioLogo className="-mt-5 mb-5" />
             {menuItemsData(lang).map((item) => (
               <CustomLink
                 key={item.title}
