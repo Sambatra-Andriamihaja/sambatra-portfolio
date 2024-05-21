@@ -53,7 +53,7 @@ export const particlesOptions: RecursivePartial<IOptions> = {
         default: "bounce",
       },
       random: false,
-      speed: 1.5,
+      speed: 0.5,
       straight: false,
       attract: {
         enable: false,
@@ -142,7 +142,7 @@ export const starsOptions: RecursivePartial<IOptions> = {
       },
     },
     opacity: {
-      value: 1,
+      value: 0.75,
       random: true,
       anim: {
         enable: false,
