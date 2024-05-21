@@ -71,7 +71,8 @@ const NavBar = (props: INavBar) => {
       </button>
 
       <div className="w-full justify-between items-center hidden lg:flex">
-        <nav>
+        <PortfolioLogo className="absolute left-[30px] top-2 translate-x-[30px]" />
+        <nav className="ml-5">
           {menuItemsData(lang).map((item) => (
             <CustomLink key={item.title} menu={item} className="mx-4" />
           ))}
@@ -124,6 +125,7 @@ const NavBar = (props: INavBar) => {
         lg:hidden`}
         >
           <nav className="flex items-baseline mb-4 flex-col justify-center ">
+            <PortfolioLogo className="-mt-5 mb-5" reverse />
             {menuItemsData(lang).map((item) => (
               <CustomLink
                 key={item.title}

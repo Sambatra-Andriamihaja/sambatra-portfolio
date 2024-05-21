@@ -59,7 +59,7 @@ export const LinkArrow = ({ className = "", ...rest }) => (
   </svg>
 );
 
-export const MySLogo = ({ className = "", theme = "light", ...rest }) => (
+export const MySLogo = ({ className = "", fill = "#17182f", ...rest }) => (
   <svg
     version="1.0"
     xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +72,7 @@ export const MySLogo = ({ className = "", theme = "light", ...rest }) => (
   >
     <g
       transform="translate(0.000000,500.000000) scale(0.100000,-0.100000)"
-      fill={`${theme === "dark" ? "#f5f5f5" : "#17182f"}`}
+      fill={fill}
       stroke="none"
     >
       <path
