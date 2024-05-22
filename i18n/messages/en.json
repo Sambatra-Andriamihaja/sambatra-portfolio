@@ -76,6 +76,7 @@
     },
     "Educations": {
       "header": "Education",
+      "viewDiploma": "View Diploma",
       "ESTIA": {
         "educationLevel": "Master Student",
         "date": "Apr. 2021 - Dec. 2023",

@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { Modal, ModalContent, ModalHeader, ModalBody } from "@nextui-org/react";
 import Image, { StaticImageData } from "next/image";
+import Zoom from "react-medium-image-zoom";
+import "react-medium-image-zoom/dist/styles.css";
 
 export interface InfoDiploma {
   title: string;
@@ -26,6 +28,7 @@ export const Diploma = (props: IDiploma) => {
           onClose={onClose}
           isDismissable={false}
           isKeyboardDismissDisabled={true}
+          className="bg-white"
         >
           <ModalContent>
             {(onClose) => (
@@ -34,13 +37,15 @@ export const Diploma = (props: IDiploma) => {
                   {infoDiploma.title}
                 </ModalHeader>
                 <ModalBody className="flex justify-center items-center">
-                  <Image
-                    alt={infoDiploma.title}
-                    src={infoDiploma.diploma}
-                    width={infoDiploma.diploma.width}
-                    height={infoDiploma.diploma.height}
-                    layout="responsive"
-                  />
+                  <Zoom>
+                    <Image
+                      alt={infoDiploma.title}
+                      src={infoDiploma.diploma}
+                      width={infoDiploma.diploma.width}
+                      height={infoDiploma.diploma.height}
+                      layout="responsive"
+                    />
+                  </Zoom>
                 </ModalBody>
               </>
             )}
