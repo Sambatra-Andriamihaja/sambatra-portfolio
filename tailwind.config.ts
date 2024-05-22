@@ -1,11 +1,13 @@
 import type { Config } from "tailwindcss";
 const { fontFamily } = require("tailwindcss/defaultTheme");
+const { nextui } = require("@nextui-org/react");
 
 const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   darkMode: "class",
   theme: {
@@ -41,17 +43,17 @@ const config: Config = {
         "spin-slow": "spin 8s linear infinite",
       },
       screens: {
-        'tablet': '640px',
+        tablet: "640px",
         // => @media (min-width: 640px) { ... }
-        'laptop': '1024px',
+        laptop: "1024px",
         // => @media (min-width: 1024px) { ... }
-        'desktop': '1280px',
+        desktop: "1280px",
         // => @media (min-width: 1280px) { ... }
-        '2lg' : '1190px'
+        "2lg": "1190px",
         // => @media (min-width: 1190px) { ... }
       },
     },
   },
-  plugins: [],
+  plugins: [nextui()],
 };
 export default config;

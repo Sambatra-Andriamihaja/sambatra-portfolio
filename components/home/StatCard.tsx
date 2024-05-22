@@ -15,7 +15,7 @@ const StatCard = (props: IStatCard) => {
 
   return (
     <div
-      className="flex flex-col items-end justify-center border border-solid border-black dark:border-light rounded-lg z-10 p-2 w-64 h-44 bg-white dark:bg-blueDark cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+      className="flex flex-col items-end justify-center border border-solid border-[#d9d4d8] dark:border-light rounded-lg z-10 p-2 w-64 h-44 bg-white dark:bg-blueDark cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl"
       onClick={onClick}
     >
       <Image

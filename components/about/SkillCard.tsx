@@ -29,7 +29,7 @@ const SkillCard = (props: ISkillCard) => {
   } = props;
 
   return (
-    <div className="relative flex flex-col items-start p-4 bg-white dark:bg-blueDark rounded-lg">
+    <div className="relative flex flex-col items-start p-4 bg-white dark:bg-blueDark rounded-lg border border-solid border-[#d9d4d8] dark:border-light">
       <Player
         autoplay
         loop
@@ -44,12 +44,12 @@ const SkillCard = (props: ISkillCard) => {
         }}
       />
       <div className={`pl-40 z-10 ${headerClassName}`}>
-        <h2 className="text-xl font-bold">{title}</h2>
-        <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
+        <h2 className="text-2xl font-bold">{title}</h2>
+        <p className="mt-2 text-md text-gray-600 dark:text-gray-300">
           {description}
         </p>
       </div>
-      <div className="w-full flex flex-row justify-around flex-wrap mt-16 gap-5 items-center p-4">
+      <div className="w-full flex flex-row justify-around flex-wrap mt-16 gap-5 items-center p-4 ">
         {skills.map((image, index) => (
           <SkillImage
             key={index}
