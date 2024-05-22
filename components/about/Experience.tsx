@@ -12,6 +12,7 @@ import { Formats, TranslationValues, useTranslations } from "next-intl";
 import { useInView } from "react-intersection-observer";
 import { SP, MGBI, ODC, TELMA, IExperiences } from "@/constants/experiences";
 import useDarkMode from "@/hooks/useDarkMode";
+import AnimatedText from "../sub/AnimatedText";
 
 interface IExperienceVerticalTimelineElement {
   experience: IExperiences;
@@ -106,16 +107,17 @@ const Experience = forwardRef<HTMLElement, {}>((props, ref) => {
   const options = {
     threshold: 0,
   };
-  const [spRef, spInView] = useInView(options);
-  const [mgbiRef, mgbiInView] = useInView(options);
-  const [odcRef, odcInView] = useInView(options);
-  const [telmaRef, telmaInView] = useInView(options);
+  const [spRef, spInView] = useInView(triggerOnceOtions);
+  const [mgbiRef, mgbiInView] = useInView(triggerOnceOtions);
+  const [odcRef, odcInView] = useInView(triggerOnceOtions);
+  const [telmaRef, telmaInView] = useInView(triggerOnceOtions);
 
   return (
     <section id="experience" ref={ref} className="pt-[10rem] mb-64">
-      <h2 className="font-bold text-8xl mb-32 w-full text-center">
-        Experience
-      </h2>
+      <AnimatedText
+        className="!text-2xl !text-left xl:!text-6xl lg:!text-5xl md:!text-4xl sm:!text-3xl flex items-center justify-center mb-4 z-10"
+        text={t("header")}
+      />
       <div className="mt-12 flex">
         <VerticalTimeline>
           {/* SP */}

@@ -22,10 +22,27 @@
   },
   "About": {
     "Me": {
+      "header": "La passion alimente les objectifs",
       "title": "Ingénieur Informatique | Développeur Polyvalent",
       "quote": "En tant que passionné d'informatique, j'ai été témoin de la profonde métamorphose de notre monde à travers la technologie. Embrassant l'ère numérique, j'ai entamé un parcours transformateur à l'ITUniveristy Andoharanofotsy, un bastion d'excellence dans le paysage de l'enseignement technologique malgache. Là, au milieu d'une pléthore de langages de programmation et d'outils de pointe, j'ai cultivé mes compétences et perfectionné mon savoir-faire à travers des projets immersifs et des stages. Armé d'un Master en Informatique, ma passion pour la programmation brûle plus que jamais. Je m'épanouis face à chaque défi, animé par une soif insatiable de connaissances et d'innovation. Rejoignez-moi dans la navigation de ce domaine technologique en constante évolution, où chaque obstacle est une opportunité et l'apprentissage, une aventure perpétuelle."
     },
+    "Skills": {
+      "header": "Compétences",
+      "dev": {
+        "title": "Développement",
+        "description": "Expertise en développement mobile, web et logiciel à l'aide de technologies modernes."
+      },
+      "ai": {
+        "title": "Machine Learning",
+        "description": "Maîtrise de la création et du déploiement de modèles d'IA"
+      },
+      "dba": {
+        "title": "Administration des bases de données",
+        "description": "Expérience dans la gestion et l'optimisation des bases de données"
+      }
+    },
     "Experiences": {
+      "header": "Expérience",
       "SP": {
         "experienceTitle": "Développeur Full Stack JS",
         "date": "Sep. 2022 - Présent",
@@ -58,6 +75,7 @@
       }
     },
     "Educations": {
+      "header": "Éducation",
       "ESTIA": {
         "educationLevel": "Étudiant en Master",
         "date": "Avr. 2021 - Déc. 2023",

@@ -37,10 +37,9 @@ const AboutPage = () => {
 
   return (
     <main className="flex w-full flex-col items-center justify-center dark:text-light">
-      <Layout className="pt-16 lg:!pl-48">
+      <Layout className="!pt-2 lg:!pl-48">
         <ParticlesBackground />
         <SectionNavBar items={aboutSubMenu} />
-        <AnimatedText text="Passion Fuels Purpose!" className="mb-16" />
         <Hello ref={helloSectionRef} />
         <Skills ref={skillsSectionRef} />
         <Experience ref={experienceSectionRef} />

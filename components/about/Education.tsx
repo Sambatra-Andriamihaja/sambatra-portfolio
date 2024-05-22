@@ -12,6 +12,7 @@ import { Formats, TranslationValues, useTranslations } from "next-intl";
 import { useInView } from "react-intersection-observer";
 import { IEducations, ESTIA, ITU, STGAB } from "@/constants/educations";
 import useDarkMode from "@/hooks/useDarkMode";
+import AnimatedText from "../sub/AnimatedText";
 
 interface IEducationVerticalTimelineElement {
   education: IEducations;
@@ -100,7 +101,7 @@ const Education = forwardRef<HTMLElement, {}>((props, ref) => {
   const t = useTranslations("About.Educations");
 
   const options = {
-    threshold: 0,
+    triggerOnce: true,
   };
   const [estiaRef, estiaInView] = useInView(options);
   const [ituRef, ituInView] = useInView(options);
@@ -108,7 +109,10 @@ const Education = forwardRef<HTMLElement, {}>((props, ref) => {
 
   return (
     <section id="education" ref={ref} className="pt-[10rem] mb-32">
-      <h2 className="font-bold text-8xl mb-32 w-full text-center">Education</h2>
+      <AnimatedText
+        className="!text-2xl !text-left xl:!text-6xl lg:!text-5xl md:!text-4xl sm:!text-3xl flex items-center justify-center mb-4 z-10"
+        text={t("header")}
+      />
       <div className="mt-12 flex">
         <VerticalTimeline>
           <EducationVerticalTimelineElement

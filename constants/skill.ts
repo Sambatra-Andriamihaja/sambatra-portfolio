@@ -1,3 +1,10 @@
+export interface ISkill {
+  skill_name: string;
+  Image: string;
+  width: number;
+  height: number;
+}
+
 export const DevSkillData = [
   {
     skill_name: "java",
@@ -24,12 +31,6 @@ export const DevSkillData = [
     height: 60,
   },
   {
-    skill_name: "c++",
-    Image: "/images/svgs/tech-stack/languages/cplusplus-original.svg",
-    width: 60,
-    height: 60,
-  },
-  {
     skill_name: "c#",
     Image: "/images/svgs/tech-stack/languages/csharp-original.svg",
     width: 60,
@@ -46,18 +47,6 @@ export const DevSkillData = [
     Image: "/images/svgs/tech-stack/languages/embeddedc-original-wordmark.svg",
     width: 60,
     height: 60,
-  },
-  {
-    skill_name: "go",
-    Image: "/images/svgs/tech-stack/languages/go-original.svg",
-    width: 60,
-    height: 60,
-  },
-  {
-    skill_name: "rust",
-    Image: "/images/svgs/tech-stack/languages/rust-plain.svg",
-    width: 70,
-    height: 70,
   },
   {
     skill_name: "php",
@@ -86,12 +75,12 @@ export const DevSkillData = [
     width: 50,
     height: 50,
   },
+
   {
-    skill_name: "angularjs",
-    Image:
-      "/images/svgs/tech-stack/frontend-development/angularjs-original-wordmark.svg",
-    width: 75,
-    height: 75,
+    skill_name: "Nextjs",
+    Image: "/images/svgs/tech-stack/frontend-development/nextjs-original.svg",
+    width: 60,
+    height: 60,
   },
   {
     skill_name: "react",
@@ -100,13 +89,7 @@ export const DevSkillData = [
     width: 55,
     height: 55,
   },
-  {
-    skill_name: "vuejs",
-    Image:
-      "/images/svgs/tech-stack/frontend-development/vuejs-original-wordmark.svg",
-    width: 55,
-    height: 55,
-  },
+
   {
     skill_name: "spring",
     Image:
@@ -127,6 +110,12 @@ export const DevSkillData = [
       "/images/svgs/tech-stack/backend-development/express-original-wordmark.svg",
     width: 70,
     height: 70,
+  },
+  {
+    skill_name: "NestJS",
+    Image: "/images/svgs/tech-stack/backend-development/nestjs-original.svg",
+    width: 60,
+    height: 60,
   },
   {
     skill_name: "nginx",
@@ -153,20 +142,6 @@ export const DevSkillData = [
     Image: "/images/svgs/tech-stack/mobile-app-development/react-native.svg",
     width: 50,
     height: 50,
-  },
-  {
-    skill_name: "android",
-    Image:
-      "/images/svgs/tech-stack/mobile-app-development/android-original-wordmark.svg",
-    width: 60,
-    height: 60,
-  },
-  {
-    skill_name: "ionic",
-    Image:
-      "/images/svgs/tech-stack/mobile-app-development/ionic-original-wordmark.svg",
-    width: 70,
-    height: 70,
   },
   {
     skill_name: "flask",
@@ -244,16 +219,16 @@ export const DbSkillData = [
     height: 55,
   },
   {
-    skill_name: "oracle",
-    Image: "/images/svgs/tech-stack/db/oracle-original.svg",
-    width: 70,
-    height: 70,
-  },
-  {
     skill_name: "mongodb",
     Image: "/images/svgs/tech-stack/db/mongodb-original-wordmark.svg",
     width: 60,
     height: 60,
+  },
+  {
+    skill_name: "oracle",
+    Image: "/images/svgs/tech-stack/db/oracle-original.svg",
+    width: 70,
+    height: 70,
   },
 ];
 

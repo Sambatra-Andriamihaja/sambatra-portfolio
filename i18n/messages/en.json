@@ -22,10 +22,27 @@
   },
   "About": {
     "Me": {
+      "header": "Passion fuels purpose",
       "title": "IT Engineer | Versatile Developer",
       "quote": "As an IT enthusiast, I've witnessed the profound metamorphosis of our world through technology. Embracing the digital age, I embarked on a transformative journey at ITUniveristy Andoharanofotsy, a bastion of excellence in Madagascar's technology education landscape. There, amidst a plethora of programming languages and cutting-edge tools, I cultivated my skills and honed my craft through immersive projects and internships. Armed with a Master's degree in Computer Science, my passion for programming burns brighter than ever. I thrive on every challenge, driven by an insatiable hunger for knowledge and innovation. Join me as I navigate the ever-evolving field of technology, where every obstacle is an opportunity and learning is a lifelong adventure."
     },
+    "Skills": {
+      "header": "Skills",
+      "dev": {
+        "title": "Development",
+        "description": "Expertise in mobile, web and software development using modern technologies"
+      },
+      "ai": {
+        "title": "Machine Learning",
+        "description": "Proficiency in creating and deploying machine learning models"
+      },
+      "dba": {
+        "title": "Database Administration",
+        "description": "Experience in managing and optimizing databases"
+      }
+    },
     "Experiences": {
+      "header": "Experience",
       "SP": {
         "experienceTitle": "Fullstack Developer JS",
         "date": "Sep. 2022 - Present",
@@ -58,6 +75,7 @@
       }
     },
     "Educations": {
+      "header": "Education",
       "ESTIA": {
         "educationLevel": "Master Student",
         "date": "Apr. 2021 - Dec. 2023",
