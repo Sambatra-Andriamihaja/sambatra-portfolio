@@ -86,7 +86,7 @@ const HomePage = () => {
 
         <div className="grid grid-cols-1 2lg:grid-cols-3 gap-8 w-[75%] m-8">
           <StatCard
-            numberValue={20}
+            numberValue={40}
             onClick={() => router.push(`${pathname}/about#skills`)}
             description={t("technoUsed")}
             icon={stack}

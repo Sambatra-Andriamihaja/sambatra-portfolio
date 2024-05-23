@@ -96,6 +96,7 @@
     }
   },
   "Projects": {
+    "header": "Plongez dans mes projets",
     "category": {
       "all": "Tout",
       "professional": "Professionel",

@@ -47,7 +47,7 @@ export const SearchInput = (props: ISearchInput) => {
       id="project-search"
       className="w-full items-center justify-center hidden sm:flex"
     >
-      <div className="search__input w-[30rem] border border-solid border-dark dark:border-light flex flex-row items-center gap-5 p-1 rounded-[15px] mb-3">
+      <div className="search__input w-[30rem] border border-solid border-dark dark:border-light flex flex-row items-center gap-5 p-1 rounded-[15px] mb-3 bg-light dark:bg-dark z-10">
         <FontAwesomeIcon
           icon={faSearch}
           className="m-2 text-dark dark:text-light cursor-pointer"

@@ -263,9 +263,10 @@ function ProjectCard(props: IProjectCard) {
 
   return (
     <div
-      className={`max-w-sm mx-auto flex flex-col projects-center md:projects-start md:justify-center border border-gray-300 rounded-lg overflow-hidden p-6 ${
+      className={`max-w-sm mx-auto flex flex-col projects-center md:projects-start md:justify-center rounded-lg overflow-hidden p-6 ${
         !isWebCard ? "items-center" : ""
-      }`}
+      }
+      z-10 bg-offLight dark:bg-offDark shadow-inner`}
       key={project.id}
     >
       {cardContent}

@@ -39,7 +39,7 @@ const ProjectCategory = (props: IProjectCategory) => {
       className="w-full flex items-center justify-center "
     >
       <div
-        className="flex flex-row flex-wrap mt-2 gap-2 rounded-md shadow-sm justify-between items-center m-4 w-[30rem] "
+        className="flex flex-row flex-wrap mt-2 gap-2 rounded-md shadow-sm justify-between items-center m-4 w-[30rem]"
         role="group"
       >
         {types.map((type, index) => (
@@ -52,7 +52,7 @@ const ProjectCategory = (props: IProjectCategory) => {
               type === currentCategory
                 ? "font-semibold rounded py-2 px-4 bg-offDark dark:bg-offLight text-light dark:text-dark"
                 : "bg-transparent font-semibold rounded py-2 px-4 border hover:bg-offDark hover:dark:bg-offLight text-gray-800 dark:text-gray-300  hover:text-light hover:dark:text-dark  border-offDark dark:border-offLight hover:border-transparent "
-            }`}
+            } z-10`}
           >
             {t(`${type}`)}
           </button>

@@ -96,6 +96,7 @@
     }
   },
   "Projects": {
+    "header": "Dive into my journeys",
     "category": {
       "all": "All",
       "professional": "Professional",
