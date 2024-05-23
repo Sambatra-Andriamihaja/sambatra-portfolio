@@ -2,6 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Image from "next/image";
+import { useLocale } from "next-intl";
 import styles from "./ProjectCard.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -18,6 +19,7 @@ import {
 import { GithubIcon } from "@/components/sub/Icons";
 import { ITag } from "@/constants/projects";
 import SkillImage from "@/components/sub/SkillImage";
+import { EN } from "@/constants/lang";
 
 interface IProjectCard {
   project: any;
@@ -37,6 +39,7 @@ function ProjectCard(props: IProjectCard) {
     isSpecialCard,
     is1saCard,
   } = props;
+  const locale = useLocale();
 
   let cardContent: React.JSX.Element;
 
@@ -274,7 +277,7 @@ function ProjectCard(props: IProjectCard) {
         <div className="flex projects-center justify-between">
           <a href={project.link || project.github} target="_blank">
             <h3 className="text-lg font-bold dark:text-light">
-              {project.title}
+              {locale === EN ? project.titleEn : project.titleFr}
             </h3>
           </a>
           <div className="space-x-2">
@@ -303,7 +306,7 @@ function ProjectCard(props: IProjectCard) {
           </div>
         </div>
         <p className="text-fun-gray text-left text-sm dark:text-light/80">
-          {project.desc}
+          {locale === EN ? project.descEn : project.descFr}
         </p>
         <div className="flex flex-row flex-wrap mt-2 gap-2 items-center">
           {project.tags.map((tag: ITag, index: number) => (
