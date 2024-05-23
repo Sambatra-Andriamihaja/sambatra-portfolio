@@ -83,7 +83,7 @@ const projects: IProject[] = [
     descEn:
       "Development of an application for the Orange Summer Challenge 2022, showcasing technology at the service of good. The application allows medium-range remote interaction with a gas production kit, enabling the user to see the details of the kit, turn the gas fire on and off, and even make a prediction of when the gas stock in the kit will run out.",
     descFr:
-      "Développement d'une application pour l'Orange Summer Challenge 2022, mettant en avant la technologie au service du bien. L'application permet une interaction à distance de moyenne portée avec un kit de production de gaz, permettant à l'utilisateur de voir les détails du kit, d'allumer et d'éteindre le feu à gaz, et même de prédire quand le stock de gaz dans le kit sera épuisé.",
+      "Développement d'une application lors de l'Orange Summer Challenge 2022, mettant en avant la technologie au service du bien. L'application permet une interaction à distance de moyenne portée avec un kit de production de gaz, permettant à l'utilisateur de voir les détails du kit, d'allumer et d'éteindre le feu à gaz, et même de prédire quand le stock de gaz dans le kit sera épuisé.",
     img: `/images/test.png`,
     link: "www.google.com",
     tags: [
