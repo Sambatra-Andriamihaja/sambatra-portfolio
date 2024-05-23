@@ -29,7 +29,7 @@ const SkillCard = (props: ISkillCard) => {
   } = props;
 
   return (
-    <div className="relative flex flex-col items-start p-4 bg-white dark:bg-blueDark rounded-lg border border-solid border-[#d9d4d8] dark:border-light">
+    <div className="relative flex flex-col items-start p-4 bg-offLight dark:bg-offDark rounded-lg border border-solid border-light dark:border-dark shadow-inner">
       <Player
         autoplay
         loop

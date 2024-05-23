@@ -70,11 +70,13 @@ const EducationVerticalTimelineElement = forwardRef<
           </div>
         }
         contentStyle={{
-          background: isDarkMode ? "#060717" : "",
+          background: isDarkMode ? "#25263f" : "",
           borderBottom: "8px",
           borderStyle: "solid",
           borderBottomColor: education.borderBottomColor,
           boxShadow: "none",
+          display: "flex",
+          flexDirection: "column",
         }}
       >
         <div>
@@ -87,12 +89,7 @@ const EducationVerticalTimelineElement = forwardRef<
             className="text-primary capitalize flex items-center"
           >
             {education.logoSrc && education.logoWidth ? (
-              <div
-                style={{
-                  height: "auto",
-                  width: `${education.logoWidth}px`,
-                }}
-              >
+              <div className="h-auto">
                 <Image
                   src={education.logoSrc}
                   alt={education.schoolName}
@@ -113,23 +110,25 @@ const EducationVerticalTimelineElement = forwardRef<
         <p className="text-black-500/50 font-normal text-sm my-5 ml-5 space-y-2">
           {t(`${education.key}.point`)}
         </p>
-        <Button
-          style={{
-            backgroundColor: education.borderBottomColor,
-            color: getDarkerShade(education.borderBottomColor, 45),
-            fontWeight: "bold",
-          }}
-          onPress={onOpen}
-          startContent={
-            <FontAwesomeIcon
-              icon={faFile}
-              style={{ marginRight: "0.5rem" }}
-              color={getDarkerShade(education.borderBottomColor, 50)}
-            />
-          }
-        >
-          {t("viewDiploma")}
-        </Button>
+        <div className="mt-4 mb-4">
+          <Button
+            style={{
+              backgroundColor: education.borderBottomColor,
+              color: getDarkerShade(education.borderBottomColor, 45),
+              fontWeight: "bold",
+            }}
+            onPress={onOpen}
+            startContent={
+              <FontAwesomeIcon
+                icon={faFile}
+                style={{ marginRight: "0.5rem" }}
+                color={getDarkerShade(education.borderBottomColor, 50)}
+              />
+            }
+          >
+            {t("viewDiploma")}
+          </Button>
+        </div>
       </VerticalTimelineElement>
     </div>
   );

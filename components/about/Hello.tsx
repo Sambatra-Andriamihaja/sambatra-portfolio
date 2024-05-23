@@ -16,7 +16,7 @@ const Hello = forwardRef<HTMLElement, {}>((props, ref) => {
         className="!text-2xl !text-left xl:!text-6xl lg:!text-5xl md:!text-4xl sm:!text-3xl flex items-center justify-center mb-4 z-10"
         text={t("header")}
       />
-      <div className="mx-auto bg-white dark:bg-blueDark p-5 sm:p-12 grid relative z-10 grid-cols-1 md:grid-cols-[1fr_3fr] items-center gap-5 md:gap-8 rounded-xl overflow-hidden">
+      <div className="mx-auto bg-white dark:bg-offDark p-5 sm:p-12 grid relative z-10 grid-cols-1 md:grid-cols-[1fr_3fr] items-center gap-5 md:gap-8 rounded-xl overflow-hidden">
         {/* Left Section */}
         <div className="space-y-5 text-center">
           {/* Image */}

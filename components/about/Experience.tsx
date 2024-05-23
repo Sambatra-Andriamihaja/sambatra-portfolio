@@ -61,9 +61,8 @@ const ExperienceVerticalTimelineElement = forwardRef<
             />
           </div>
         }
-        className=""
         contentStyle={{
-          background: isDarkMode ? "#060717" : "",
+          background: isDarkMode ? "#25263f" : "",
           borderBottom: "8px",
           borderStyle: "solid",
           borderBottomColor: experience.borderBottomColor,
@@ -79,7 +78,7 @@ const ExperienceVerticalTimelineElement = forwardRef<
             target="_blank"
             className="text-primary capitalize flex items-center"
           >
-            <div style={{ height: "auto", width: `${experience.logoWidth}px` }}>
+            <div>
               <Image
                 src={experience.logoSrc}
                 alt={experience.companyName}

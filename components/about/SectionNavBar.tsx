@@ -68,7 +68,7 @@ const SectionNavBar = (props: ISectionNavBar) => {
   }, [items, pathname]); // Re-run useEffect on items change
 
   return (
-    <div className="fixed left-4 top-32 z-10 bg-white dark:bg-blueDark shadow-lg lg:block hidden w-[10rem]">
+    <div className="fixed left-4 top-32 z-10 bg-white dark:bg-offDark shadow-lg lg:block hidden w-[10rem]">
       {items.map((item) => {
         return (
           <Link
