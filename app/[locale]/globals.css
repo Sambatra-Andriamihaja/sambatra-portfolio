@@ -30,3 +30,24 @@
   --notch-width: 38%;
   /* End Mobile*/
 }
+
+/* CUSTOM LINE COLOR */
+/* The line */
+.vertical-timeline.vertical-timeline-dark-mode::before {
+  background: #060717 !important;
+  width: 6px;
+}
+
+/* Icon container's border */
+.vertical-timeline.vertical-timeline-dark-mode
+  .vertical-timeline-element
+  .vertical-timeline-element-icon {
+  box-shadow: 0 0 0 4px #060717, inset 0 2px 0 rgba(0, 0, 0, 0.08),
+    0 3px 0 4px rgba(0, 0, 0, 0.05) !important;
+}
+
+@media only screen and (min-width: 1170px) {
+  .vertical-timeline.vertical-timeline-dark-mode.vertical-timeline--two-columns::before {
+    margin-left: -3px;
+  }
+}

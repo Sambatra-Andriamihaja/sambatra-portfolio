@@ -68,6 +68,9 @@ const ExperienceVerticalTimelineElement = forwardRef<
           borderBottomColor: experience.borderBottomColor,
           boxShadow: "none",
         }}
+        contentArrowStyle={{
+          borderRight: isDarkMode ? "7px solid #25263f" : "",
+        }}
       >
         <div>
           <h3 className="text-black dark:text-light text-xl font-poppins font-semibold">
@@ -100,6 +103,8 @@ ExperienceVerticalTimelineElement.displayName =
 const Experience = forwardRef<HTMLElement, {}>((props, ref) => {
   const t = useTranslations("About.Experiences");
 
+  const { isDarkMode } = useDarkMode();
+
   const triggerOnceOtions = {
     triggerOnce: true,
   };
@@ -118,7 +123,9 @@ const Experience = forwardRef<HTMLElement, {}>((props, ref) => {
         text={t("header")}
       />
       <div className="mt-12 flex">
-        <VerticalTimeline>
+        <VerticalTimeline
+          className={`${isDarkMode ? "vertical-timeline-dark-mode" : ""}`}
+        >
           {/* SP */}
           <ExperienceVerticalTimelineElement
             ref={spRef}

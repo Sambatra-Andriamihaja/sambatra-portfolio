@@ -78,6 +78,9 @@ const EducationVerticalTimelineElement = forwardRef<
           display: "flex",
           flexDirection: "column",
         }}
+        contentArrowStyle={{
+          borderRight: isDarkMode ? "7px solid #25263f" : "",
+        }}
       >
         <div>
           <h3 className="text-black dark:text-light text-xl font-poppins font-semibold">
@@ -139,6 +142,8 @@ EducationVerticalTimelineElement.displayName =
 
 const Education = forwardRef<HTMLElement, {}>((props, ref) => {
   const t = useTranslations("About.Educations");
+
+  const { isDarkMode } = useDarkMode();
 
   const options = {
     triggerOnce: true,
@@ -202,7 +207,9 @@ const Education = forwardRef<HTMLElement, {}>((props, ref) => {
         infoDiploma={currentDiplomaView!}
       />
       <div className="mt-12 flex">
-        <VerticalTimeline>
+        <VerticalTimeline
+          className={`${isDarkMode ? "vertical-timeline-dark-mode" : ""}`}
+        >
           <EducationVerticalTimelineElement
             education={ESTIA}
             ref={estiaRef}
