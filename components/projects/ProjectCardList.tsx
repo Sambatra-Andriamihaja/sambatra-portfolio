@@ -25,6 +25,8 @@ const ProjectCardList = (props: IProjectCardList) => {
               isBothMobileAndWebCard={item.isBothMobileAndWebCard || false}
               is1saCard={item.is1sa || false}
               isSpecialCard={item.isSpecial || false}
+              isOdooCard={item.isOdoo || false}
+              isOnlyIconCard={item.isOnlyIcon || false}
             />
           );
         })}

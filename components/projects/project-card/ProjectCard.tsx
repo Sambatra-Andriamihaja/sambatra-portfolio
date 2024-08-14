@@ -28,6 +28,8 @@ interface IProjectCard {
   isBothMobileAndWebCard: boolean;
   isSpecialCard: boolean;
   is1saCard: boolean;
+  isOdooCard: boolean;
+  isOnlyIconCard: boolean;
 }
 
 function ProjectCard(props: IProjectCard) {
@@ -38,6 +40,8 @@ function ProjectCard(props: IProjectCard) {
     isBothMobileAndWebCard,
     isSpecialCard,
     is1saCard,
+    isOdooCard,
+    isOnlyIconCard,
   } = props;
   const locale = useLocale();
 
@@ -247,6 +251,46 @@ function ProjectCard(props: IProjectCard) {
             <span className={styles.terminalCursor}></span>
           </div>
         </div>
+      </div>
+    );
+  } else if (isOdooCard) {
+    cardContent = (
+      <div
+        className={`w-full relative rounded-xl border-fun-gray border p-2 transition hover:-translate-y-2 hover:opacity-75 hover:border-fun-pink will-change-projectCard`}
+      >
+        <Image
+          alt={project.title}
+          className="rounded-md"
+          src={project.img}
+          // style={{ minHeight: 180, maxHeight: 180, width: "100%" }}
+          style={{ height: "auto", width: "auto" }}
+          width={500}
+          height={500}
+        />
+
+        <div className="absolute -top-3 -left-3">
+          <Image
+            alt={`${project.title} small image`}
+            className="rounded-sm border border-white"
+            src={project.imgIcon}
+            style={{ width: 80, height: 80 }}
+            width={80}
+            height={80}
+          />
+        </div>
+      </div>
+    );
+  } else if (isOnlyIconCard) {
+    cardContent = (
+      <div className="w-full">
+        <Image
+          alt={project.title} // Use curly braces for dynamic values
+          className="rounded-md"
+          src={project.img}
+          style={{ height: "auto", width: "auto" }}
+          width={500}
+          height={500}
+        />
       </div>
     );
   } else {

@@ -100,7 +100,7 @@ const HomePage = () => {
             alt="Check Mark"
           />
           <StatCard
-            numberValue={2}
+            numberValue={3}
             onClick={() => router.push(`${pathname}/about#experience`)}
             description={t("yearsOfExperience")}
             icon={medal}

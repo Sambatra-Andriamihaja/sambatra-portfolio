@@ -24,6 +24,9 @@ export interface IProject {
   isBothMobileAndWebCard?: boolean;
   isSpecial?: boolean;
   is1sa?: boolean;
+  imgIcon?: string;
+  isOdoo?: boolean;
+  isOnlyIcon?: boolean;
   titleEn: string;
   titleFr: string;
   descEn: string;
@@ -113,6 +116,7 @@ const projects: IProject[] = [
   {
     id: 2,
     category: PROFESSIONAL,
+    isOnlyIcon: true,
     titleEn: "Odoo Module - Generate item reference and barcode",
     titleFr:
       "Module Odoo - Génération de référence et de code-barres d'articles",
@@ -120,7 +124,7 @@ const projects: IProject[] = [
       "Development of a customized module for automatic barcode and reference generation. The module automatically generates the barcode and/or part number of a target product.",
     descFr:
       "Développement d'un module personnalisé pour la génération automatique de codes-barres et de références. Le module génère automatiquement le code-barres et/ou le numéro de pièce d'un produit cible.",
-    img: `/images/test.png`,
+    img: "/images/projects/barcode_and_ref_generator.png",
     tags: [
       {
         name: "Odoo",
@@ -215,7 +219,6 @@ const projects: IProject[] = [
       "Development of a javascript module to transcribe a number into Malagasy letters.",
     descFr:
       "Développement d'un module javascript pour transcrire un nombre en lettres malgaches.",
-    img: `/images/test.png`,
     link: "https://github.com/Sambatra-Andriamihaja/1sa",
     tags: [
       {
@@ -231,13 +234,15 @@ const projects: IProject[] = [
   {
     id: 6,
     category: PROFESSIONAL,
+    isOdoo: true,
     titleEn: "Odoo Module - Article master print template",
     titleFr: "Module Odoo - Modèle d'impression de fiche article",
     descEn:
       "Development of an item sheet printing module. The module allows you to download a PDF of the item for sale with all its details.",
     descFr:
       "Développement d'un module d'impression de fiches articles. Le module permet de télécharger un PDF de l'article à vendre avec tous ses détails.",
-    img: `/images/test.png`,
+    imgIcon: "/images/projects/article_print_template_icon.png",
+    img: "/images/projects/Article_117_Pcs_tools_set.png",
     tags: [
       {
         name: "Odoo",
@@ -264,13 +269,15 @@ const projects: IProject[] = [
   {
     id: 7,
     category: PROFESSIONAL,
+    isOdoo: true,
     titleEn: "Odoo Module - Bill print template",
     titleFr: "Module Odoo - Modèle d'impression de facture",
     descEn:
       "Development of a draft printing module. The module allows you to download PDF drafts of one (or more) invoice(s).",
     descFr:
       "Développement d'un module d'impression de brouillons. Ce module permet de télécharger des brouillons PDF d'une (ou plusieurs) facture(s).",
-    img: `/images/test.png`,
+    imgIcon: "/images/projects/bill_print_icon.png",
+    img: "/images/projects/Impression_traites_18.png",
     tags: [
       {
         name: "Odoo",
