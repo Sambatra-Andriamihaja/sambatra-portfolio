@@ -47,6 +47,12 @@ body {
   top: 0;
   margin: 4.3% 3.2%;
   background: #333;
+  background-size: cover; /* Ensures the image covers the entire div */
+  background-position: center;
+}
+
+.pcDefaultImgViewport {
+  background-position: initial !important;
 }
 
 .pcBase {
@@ -118,7 +124,7 @@ body {
 /* Screenshot Hover Scroll Additions
     -------------------------------------------------------------- */
 
-.pc .pcViewport {
+/* .pc .pcViewport {
   transition: background-position 3s ease;
   background-position: 0 0;
   background-size: 100% auto;
@@ -143,7 +149,7 @@ body {
   position: absolute;
   right: 0;
   top: 0;
-}
+} */
 /* END PC */
 
 /* MOBILE */
@@ -163,7 +169,7 @@ body {
 }
 
 .mobileObj {
-  cursor: all-scroll;
+  /* cursor: all-scroll; */
   position: relative;
 }
 .mobile {

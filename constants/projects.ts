@@ -28,7 +28,10 @@ export interface IProject {
   titleFr: string;
   descEn: string;
   descFr: string;
-  img: string;
+  img?: string;
+  mobileImg?: string;
+  pcImg?: string;
+  defaultBgImg?: boolean;
   link?: string;
   tags: ITag[];
 }
@@ -84,7 +87,7 @@ const projects: IProject[] = [
       "Development of an application for the Orange Summer Challenge 2022, showcasing technology at the service of good. The application allows medium-range remote interaction with a gas production kit, enabling the user to see the details of the kit, turn the gas fire on and off, and even make a prediction of when the gas stock in the kit will run out.",
     descFr:
       "Développement d'une application lors de l'Orange Summer Challenge 2022, mettant en avant la technologie au service du bien. L'application permet une interaction à distance de moyenne portée avec un kit de production de gaz, permettant à l'utilisateur de voir les détails du kit, d'allumer et d'éteindre le feu à gaz, et même de prédire quand le stock de gaz dans le kit sera épuisé.",
-    img: `/images/test.png`,
+    img: "/images/projects/bgs.jpg",
     link: "www.google.com",
     tags: [
       {
@@ -151,7 +154,7 @@ const projects: IProject[] = [
       "Contributed to the development of an e-commerce site for a client on Reunion Island. The site is based on packaging items, and allows users to search for items and make purchases online via the platform.",
     descFr:
       "Contribution au développement d'un site de e-commerce pour le compte d' un client de l'île de la Réunion. Le site est basé sur les articles d'emballage et permet aux utilisateurs de rechercher des articles et d'effectuer des achats en ligne via la plateforme.",
-    img: `/images/test.png`,
+    img: "/images/projects/focicom.png",
     link: "https://focicom.re/",
     tags: [
       {
@@ -293,6 +296,28 @@ const projects: IProject[] = [
   },
   {
     id: 8,
+    category: PERSONAL,
+    titleEn: "Color Picker",
+    titleFr: "Sélectionneur de couleur",
+    descEn:
+      "Creation of an electron js application to help the designer enter the different colour values.",
+    descFr:
+      "Création d'une application electron js pour aider le designer à saisir les différentes valeurs de couleur.",
+    img: "/images/projects/color_picker.png",
+    defaultBgImg: true,
+    tags: [
+      {
+        name: "Electron JS",
+        img: "/images/svgs/tech-stack/frameworks/electron-original.svg",
+      },
+      {
+        name: "JavaScript",
+        img: "/images/svgs/tech-stack/languages/javascript-original.svg",
+      },
+    ],
+  },
+  {
+    id: 9,
     category: PROFESSIONAL,
     isBothMobileAndWebCard: true,
     titleEn: "Wimtim Orizon",
@@ -301,7 +326,9 @@ const projects: IProject[] = [
       "Contributed to the development of the backend of the Wimtim Orizon platform and the development of the corresponding mobile version.",
     descFr:
       "Contribution au développement du backend de la plateforme Wimtim Orizon et au développement de la version mobile correspondante.",
-    img: `/images/test.png`,
+    mobileImg: "/images/projects/wimtim_mobile.png",
+    pcImg: "/images/projects/wimtim.png",
+    defaultBgImg: true,
     tags: [
       {
         name: "React Native",

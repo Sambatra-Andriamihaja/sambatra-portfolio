@@ -82,7 +82,9 @@ function ProjectCard(props: IProjectCard) {
       <div className={styles.pc}>
         <div className={styles.pcScreen}>
           <div
-            className={styles.pcViewport}
+            className={`${styles.pcViewport} ${
+              project.defaultBgImg && styles.pcDefaultImgViewport
+            }`}
             style={{
               backgroundImage: `url(${
                 project.img ||
@@ -113,7 +115,7 @@ function ProjectCard(props: IProjectCard) {
               </div>
               <div className={styles.mobileScreen}>
                 {/* <div className={styles.mobileAppCont}></div> */}
-                <Image alt={project.title} src={project.img} fill />
+                <Image alt={project.title} src={project.mobileImg} fill />
               </div>
             </div>
 
@@ -133,10 +135,12 @@ function ProjectCard(props: IProjectCard) {
         >
           <div className={styles.pcScreen}>
             <div
-              className={styles.pcViewport}
+              className={`${styles.pcViewport} ${
+                project.defaultBgImg && styles.pcDefaultImgViewport
+              }`}
               style={{
                 backgroundImage: `url(${
-                  project.img ||
+                  project.pcImg ||
                   "https://s3-us-west-2.amazonaws.com/s.cdpn.io/451895/datauri-generator-preview.jpg"
                 })`,
               }}
@@ -247,9 +251,7 @@ function ProjectCard(props: IProjectCard) {
     );
   } else {
     cardContent = (
-      <a
-        href={project.link || project.github}
-        target="_blank"
+      <div
         className={`w-full relative rounded-xl border-fun-gray border p-2 transition hover:-translate-y-2 hover:opacity-75 hover:border-fun-pink will-change-projectCard`}
       >
         <Image
@@ -257,10 +259,10 @@ function ProjectCard(props: IProjectCard) {
           className="rounded-md"
           src={project.img}
           style={{ minHeight: 180, maxHeight: 180, width: "100%" }}
-          width={100}
-          height={100}
+          width={500}
+          height={500}
         />
-      </a>
+      </div>
     );
   }
 
