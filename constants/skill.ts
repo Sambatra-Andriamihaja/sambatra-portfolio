@@ -5,292 +5,106 @@ export interface ISkill {
   height: number;
 }
 
-export const DevSkillData = [
-  {
-    skill_name: "java",
-    Image: "/images/svgs/tech-stack/languages/java-original-wordmark.svg",
-    width: 65,
-    height: 65,
-  },
-  {
-    skill_name: "javascript",
-    Image: "/images/svgs/tech-stack/languages/javascript-original.svg",
-    width: 50,
-    height: 50,
-  },
-  {
-    skill_name: "python",
-    Image: "/images/svgs/tech-stack/languages/python-original-wordmark.svg",
-    width: 60,
-    height: 60,
-  },
-  {
-    skill_name: "c",
-    Image: "/images/svgs/tech-stack/languages/c-original.svg",
-    width: 60,
-    height: 60,
-  },
-  {
-    skill_name: "c#",
-    Image: "/images/svgs/tech-stack/languages/csharp-original.svg",
-    width: 60,
-    height: 60,
-  },
-  {
-    skill_name: "elixir",
-    Image: "/images/svgs/tech-stack/languages/elixir-original-wordmark.svg",
-    width: 75,
-    height: 75,
-  },
-  {
-    skill_name: "embedded c",
-    Image: "/images/svgs/tech-stack/languages/embeddedc-original-wordmark.svg",
-    width: 60,
-    height: 60,
-  },
-  {
-    skill_name: "php",
-    Image: "/images/svgs/tech-stack/languages/php-plain.svg",
-    width: 70,
-    height: 70,
-  },
-  {
-    skill_name: "html5",
-    Image:
-      "/images/svgs/tech-stack/frontend-development/html5-original-wordmark.svg",
-    width: 60,
-    height: 60,
-  },
-  {
-    skill_name: "css3",
-    Image:
-      "/images/svgs/tech-stack/frontend-development/css3-original-wordmark.svg",
-    width: 60,
-    height: 60,
-  },
-  {
-    skill_name: "bootstrap",
-    Image:
-      "/images/svgs/tech-stack/frontend-development/bootstrap-plain-wordmark.svg",
-    width: 50,
-    height: 50,
-  },
+const ROOT = "/images/svgs/tech-stack";
 
-  {
-    skill_name: "Nextjs",
-    Image: "/images/svgs/tech-stack/frontend-development/nextjs-original.svg",
-    width: 60,
-    height: 60,
-  },
-  {
-    skill_name: "react",
-    Image:
-      "/images/svgs/tech-stack/frontend-development/react-original-wordmark.svg",
-    width: 55,
-    height: 55,
-  },
+const s = (skill_name: string, path: string, size = 60): ISkill => ({
+  skill_name,
+  Image: `${ROOT}/${path}`,
+  width: size,
+  height: size,
+});
 
-  {
-    skill_name: "spring",
-    Image:
-      "/images/svgs/tech-stack/backend-development/spring-original-wordmark.svg",
-    width: 60,
-    height: 60,
-  },
-  {
-    skill_name: "nodejs",
-    Image:
-      "/images/svgs/tech-stack/backend-development/nodejs-original-wordmark.svg",
-    width: 75,
-    height: 75,
-  },
-  {
-    skill_name: "express",
-    Image:
-      "/images/svgs/tech-stack/backend-development/express-original-wordmark.svg",
-    width: 70,
-    height: 70,
-  },
-  {
-    skill_name: "NestJS",
-    Image: "/images/svgs/tech-stack/backend-development/nestjs-original.svg",
-    width: 60,
-    height: 60,
-  },
-  {
-    skill_name: "nginx",
-    Image: "/images/svgs/tech-stack/backend-development/nginx-original.svg",
-    width: 70,
-    height: 70,
-  },
-  {
-    skill_name: "dart",
-    Image:
-      "/images/svgs/tech-stack/mobile-app-development/dart-original-wordmark.svg",
-    width: 75,
-    height: 75,
-  },
-  {
-    skill_name: "flutter",
-    Image:
-      "/images/svgs/tech-stack/mobile-app-development/flutter-original.svg",
-    width: 40,
-    height: 40,
-  },
-  {
-    skill_name: "react native",
-    Image: "/images/svgs/tech-stack/mobile-app-development/react-native.svg",
-    width: 50,
-    height: 50,
-  },
-  {
-    skill_name: "flask",
-    Image: "/images/svgs/tech-stack/frameworks/flask-original-wordmark.svg",
-    width: 70,
-    height: 70,
-  },
-  {
-    skill_name: "fastapi",
-    Image: "/images/svgs/tech-stack/frameworks/fastapi-original-wordmark.svg",
-    width: 80,
-    height: 80,
-  },
-  {
-    skill_name: "phoenix",
-    Image: "/images/svgs/tech-stack/frameworks/phoenix-original-wordmark.svg",
-    width: 55,
-    height: 55,
-  },
-  {
-    skill_name: "dot-net",
-    Image: "/images/svgs/tech-stack/frameworks/dot-net-original-wordmark.svg",
-    width: 55,
-    height: 55,
-  },
-  {
-    skill_name: "code igniter",
-    Image: "/images/svgs/tech-stack/frameworks/codeigniter-plain-wordmark.svg",
-    width: 60,
-    height: 60,
-  },
-  {
-    skill_name: "ssh",
-    Image: "/images/svgs/tech-stack/other-tools/ssh-original-wordmark.svg",
-    width: 60,
-    height: 60,
-  },
-  {
-    skill_name: "bash",
-    Image: "/images/svgs/tech-stack/devops/bash-original.svg",
-    width: 60,
-    height: 60,
-  },
-  {
-    skill_name: "docker",
-    Image: "/images/svgs/tech-stack/devops/docker-original-wordmark.svg",
-    width: 55,
-    height: 55,
-  },
-  {
-    skill_name: "odoo",
-    Image: "/images/svgs/tech-stack/other-tools/Odoo-Logo.wine.svg",
-    width: 80,
-    height: 80,
-  },
+/**
+ * Automation & AI operations — the current job. Glyphs for these tools are
+ * drawn in-house (public/images/svgs/tech-stack/automation) so the whole
+ * grid shares one visual weight.
+ */
+export const AutoSkillData: ISkill[] = [
+  s("Make", "automation/make.svg"),
+  s("Brevo", "automation/brevo.svg"),
+  s("Supabase", "automation/supabase.svg"),
+  s("LangChain", "automation/langchain.svg"),
+  s("Dust", "automation/dust.svg"),
+  s("Slack", "automation/slack.svg"),
+  s("PandaDoc", "automation/pandadoc.svg"),
+  s("Planhat", "automation/planhat.svg"),
+  s("Qobra", "automation/qobra.svg"),
+  s("Gong", "automation/gong.svg"),
+  s("Chilipiper", "automation/chilipiper.svg"),
+  s("Webhooks", "automation/webhook.svg"),
 ];
 
-export const DbSkillData = [
-  {
-    skill_name: "postgresql",
-    Image: "/images/svgs/tech-stack/db/postgresql-original-wordmark.svg",
-    width: 55,
-    height: 55,
-  },
-  {
-    skill_name: "mysql",
-    Image: "/images/svgs/tech-stack/db/mysql-original-wordmark.svg",
-    width: 70,
-    height: 70,
-  },
-  {
-    skill_name: "mariadb",
-    Image: "/images/svgs/tech-stack/db/mariadb-icon.svg",
-    width: 55,
-    height: 55,
-  },
-  {
-    skill_name: "mongodb",
-    Image: "/images/svgs/tech-stack/db/mongodb-original-wordmark.svg",
-    width: 60,
-    height: 60,
-  },
-  {
-    skill_name: "oracle",
-    Image: "/images/svgs/tech-stack/db/oracle-original.svg",
-    width: 70,
-    height: 70,
-  },
+export const DevSkillData: ISkill[] = [
+  s("TypeScript", "languages/typescript.svg"),
+  s("JavaScript", "languages/javascript-original.svg", 50),
+  s("Python", "languages/python-original-wordmark.svg"),
+  s("Elixir", "languages/elixir-original-wordmark.svg", 75),
+  s("Dart", "mobile-app-development/dart-original-wordmark.svg", 75),
+  s("PHP", "languages/php-plain.svg", 70),
+  s("Java", "languages/java-original-wordmark.svg", 65),
+  s("C", "languages/c-original.svg"),
+  s("C#", "languages/csharp-original.svg"),
+  s("Embedded C", "languages/embeddedc-original-wordmark.svg"),
+  s("Next.js", "frontend-development/nextjs-original.svg"),
+  s("React", "frontend-development/react-original-wordmark.svg", 55),
+  s("React Native", "mobile-app-development/react-native.svg", 50),
+  s("Flutter", "mobile-app-development/flutter-original.svg", 40),
+  s("Node.js", "backend-development/nodejs-original-wordmark.svg", 75),
+  s("NestJS", "backend-development/nestjs-original.svg"),
+  s("Express", "backend-development/express-original-wordmark.svg", 70),
+  s("GraphQL", "backend-development/graphql.svg"),
+  s("Prisma", "backend-development/prisma.svg"),
+  s("FastAPI", "frameworks/fastapi-original-wordmark.svg", 80),
+  s("Flask", "frameworks/flask-original-wordmark.svg", 70),
+  s("Phoenix", "frameworks/phoenix-original-wordmark.svg", 55),
+  s("Spring", "backend-development/spring-original-wordmark.svg"),
+  s(".NET", "frameworks/dot-net-original-wordmark.svg", 55),
+  s("CodeIgniter", "frameworks/codeigniter-plain-wordmark.svg"),
+  s("Electron", "frameworks/electron-original.svg"),
+  s("Odoo", "other-tools/Odoo-Logo.wine.svg", 80),
+  s("HTML5", "frontend-development/html5-original-wordmark.svg"),
+  s("CSS3", "frontend-development/css3-original-wordmark.svg"),
+  s("Bootstrap", "frontend-development/bootstrap-plain-wordmark.svg", 50),
+  s("Docker", "devops/docker-original-wordmark.svg", 55),
+  s("Nginx", "backend-development/nginx-original.svg", 70),
+  s("Bash", "devops/bash-original.svg"),
+  s("SSH", "other-tools/ssh-original-wordmark.svg"),
+  s("Git", "versionning/git-original-wordmark.svg"),
 ];
 
-export const AiSkillData = [
-  {
-    skill_name: "anaconda",
-    Image: "/images/svgs/tech-stack/ai-ml/anaconda-original-wordmark.svg",
-    width: 70,
-    height: 70,
-  },
-  {
-    skill_name: "jupyter",
-    Image: "/images/svgs/tech-stack/ai-ml/jupyter-original-wordmark.svg",
-    width: 60,
-    height: 60,
-  },
-  {
-    skill_name: "kaggle",
-    Image: "/images/svgs/tech-stack/ai-ml/kaggle-original-wordmark.svg",
-    width: 60,
-    height: 60,
-  },
-  {
-    skill_name: "matlab",
-    Image: "/images/svgs/tech-stack/ai-ml/matlab-original.svg",
-    width: 70,
-    height: 70,
-  },
-  {
-    skill_name: "numpy",
-    Image: "/images/svgs/tech-stack/ai-ml/numpy-original-wordmark.svg",
-    width: 70,
-    height: 70,
-  },
-  {
-    skill_name: "pandas",
-    Image: "/images/svgs/tech-stack/ai-ml/pandas-original-wordmark.svg",
-    width: 55,
-    height: 55,
-  },
-  {
-    skill_name: "pytorch",
-    Image: "/images/svgs/tech-stack/ai-ml/pytorch-original-wordmark.svg",
-    width: 75,
-    height: 75,
-  },
-  {
-    skill_name: "scikit learn",
-    Image: "/images/svgs/tech-stack/ai-ml/scikit-learn-seeklogo.com.svg",
-    width: 70,
-    height: 70,
-  },
-  {
-    skill_name: "seaborn",
-    Image: "/images/svgs/tech-stack/ai-ml/seaborn-seeklogo.com.svg",
-    width: 55,
-    height: 55,
-  },
-  {
-    skill_name: "tensorflow",
-    Image: "/images/svgs/tech-stack/ai-ml/tensorflow-original-wordmark.svg",
-    width: 75,
-    height: 75,
-  },
+export const DbSkillData: ISkill[] = [
+  s("PostgreSQL", "db/postgresql-original-wordmark.svg", 55),
+  s("MySQL", "db/mysql-original-wordmark.svg", 70),
+  s("MariaDB", "db/mariadb-icon.svg", 55),
+  s("MongoDB", "db/mongodb-original-wordmark.svg"),
+  s("SQLite", "db/sqlite-original-wordmark.svg"),
+  s("Oracle", "db/oracle-original.svg", 70),
 ];
+
+export const AiSkillData: ISkill[] = [
+  s("Pandas", "ai-ml/pandas-original-wordmark.svg", 55),
+  s("NumPy", "ai-ml/numpy-original-wordmark.svg", 70),
+  s("scikit-learn", "ai-ml/scikit-learn-seeklogo.com.svg", 70),
+  s("TensorFlow", "ai-ml/tensorflow-original-wordmark.svg", 75),
+  s("PyTorch", "ai-ml/pytorch-original-wordmark.svg", 75),
+  s("Jupyter", "ai-ml/jupyter-original-wordmark.svg"),
+  s("Anaconda", "ai-ml/anaconda-original-wordmark.svg", 70),
+  s("Kaggle", "ai-ml/kaggle-original-wordmark.svg"),
+  s("Seaborn", "ai-ml/seaborn-seeklogo.com.svg", 55),
+  s("MATLAB", "ai-ml/matlab-original.svg", 70),
+];
+
+export const SKILL_GROUPS = {
+  auto: AutoSkillData,
+  dev: DevSkillData,
+  data: DbSkillData,
+  ml: AiSkillData,
+} as const;
+
+export type SkillGroup = keyof typeof SKILL_GROUPS;
+
+export const SKILL_COUNT =
+  AutoSkillData.length +
+  DevSkillData.length +
+  DbSkillData.length +
+  AiSkillData.length;

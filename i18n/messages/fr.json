@@ -1,112 +1,272 @@
 {
-  "General": {
-    "hireMe": "Embauchez-moi"
-  },
   "NavBar": {
     "home": "Accueil",
     "about": "À propos",
-    "intro": "Introduction",
+    "projects": "Projets",
+    "intro": "Intro",
     "skills": "Compétences",
-    "experience": "Expérience",
-    "education": "Éducation",
-    "projects": "Projets"
+    "experience": "Parcours",
+    "console": "Terminal"
   },
-  "HomePage": {
-    "title": "Hi ! Je suis",
-    "description": "En tant que développeur polyvalent, je m'engage à transformer les concepts en solutions de pointe. Jetez un coup d'œil à mes récentes réalisations qui mettent en évidence mes compétences en ingénierie logicielle.",
-    "resume": "CV",
-    "cmdSumUp": "Ecrivez le code ci-dessous pour résumer qui je suis :",
-    "technoUsed": "technologies utilisées",
-    "projectsCompleted": "projets achevés",
-    "yearsOfExperience": "années d' expérience"
+  "Hero": {
+    "trigger": "webhook reçu · nouveau visiteur",
+    "role": "Growth Engineer & Développeur <em>Full-Stack</em>",
+    "description": "Des produits web et mobiles construits de bout en bout, et les automatisations qui les font tourner. Growth Engineer chez Brevo, via Valano Tech.",
+    "run": "Lancer le scénario",
+    "downloadResume": "Télécharger le CV",
+    "now": "Actuellement",
+    "via": "Via",
+    "from": "Depuis",
+    "try": "essayez :",
+    "scroll": "défiler vers le routeur"
+  },
+  "Routes": {
+    "status": "3 routes",
+    "title": "Un routeur, <em>trois</em> routes.",
+    "subtitle": "Chaque demande qui m'arrive est filtrée vers l'une d'elles. Les problèmes les plus intéressants se trouvent aux jointures.",
+    "auto": {
+      "filter": "besoin d'automatiser",
+      "title": "Automatisation & IA ops",
+      "body": "Scénarios Make et n8n, APIs d'enrichissement en Python, miroirs de données Supabase et agents Dust — des flux qui tournent sans surveillance et préviennent quand ils échouent."
+    },
+    "product": {
+      "filter": "besoin d'un produit",
+      "title": "Produits web & mobiles",
+      "body": "Next.js, React Native, Flutter, Phoenix. Du schéma de base de données à l'écran, livré et maintenu en production pour des télécoms, de l'e-commerce et des équipes mobile."
+    },
+    "data": {
+      "filter": "besoin de données",
+      "title": "Data & machine learning",
+      "body": "Conception PostgreSQL, pipelines et l'outillage ML d'un master Big Data — utilisés aujourd'hui pour enrichir des fiches CRM et repérer ce qui mérite l'attention d'un humain."
+    }
+  },
+  "Terminal": {
+    "title": "Terminal interactif",
+    "subtitle": "Tapez help pour explorer — ou 1sa 1789 pour exécuter mon module npm.",
+    "hint": "Tapez une commande puis Entrée. Tab complète, ↑ ↓ parcourt l'historique. ⌘K l'ouvre partout.",
+    "welcome": "Tapez help pour lister les commandes. Essayez whois, run ou 1sa 1789.",
+    "unknown": "Commande introuvable : '{command}'. Tapez 'help' pour voir les commandes disponibles.",
+    "processing": "traitement..."
+  },
+  "Workflow": {
+    "status": "en direct",
+    "active": "actif",
+    "title": "Une semaine de mon travail, <em>en marche</em>.",
+    "subtitle": "Un scénario façon Make, en direct. Exécutez-le, déplacez les modules, survolez pour l'inspecteur, regardez les bundles circuler.",
+    "body": "C'est le type de flux que je construis chaque semaine : un événement CRM arrive, un routeur le répartit, chaque branche parle à un outil différent — documents, enrichissement, notifications, miroir de données — et une gestion d'erreur transforme un bundle en échec en message plutôt qu'en trou silencieux. Make et n8n pour l'orchestration, Python et Supabase quand un flux a besoin de vrai code ou d'une vraie base.",
+    "run": "Exécuter une fois",
+    "running": "En cours…",
+    "reset": "Réinitialiser",
+    "ops": "opérations",
+    "schedule": "Planification",
+    "hint": "Glissez un module · survolez pour le détail",
+    "errorHandler": "gestion d'erreur"
+  },
+  "Featured": {
+    "status": "{count} fenêtres",
+    "title": "Des projets avec lesquels on <em>joue</em>.",
+    "subtitle": "Pas de captures d'écran. Chaque projet est une fenêtre qui tourne — le vrai scénario Make, le vrai module npm, une version fonctionnelle du produit.",
+    "cta": "Ouvrir toutes les fenêtres"
+  },
+  "Connections": {
+    "status": "{count} connexions",
+    "title": "Chaque outil, <em>connecté</em>.",
+    "subtitle": "La stack, groupée par usage. Chaque outil a servi en production — pas seulement dans un tutoriel.",
+    "verified": "vérifiées"
+  },
+  "History": {
+    "status": "{count} exécutions",
+    "title": "Historique des <em>exécutions</em>.",
+    "subtitle": "Six ans d'exécutions, les plus récentes d'abord. Ouvrez une ligne pour lire ce qui a été livré et quels outils l'ont porté.",
+    "tabs": "Onglets de l'historique",
+    "ops": "ops",
+    "col": {
+      "when": "quand",
+      "what": "ce qui a tourné",
+      "where": "où",
+      "ops": "ops"
+    }
+  },
+  "Contact": {
+    "status": "1 emplacement libre",
+    "title": "Ajoutez-moi à <em>votre</em> scénario.",
+    "subtitle": "Freelance, conseil, automatisation ou poste à temps plein — le prochain module de ce flux est à vous de le connecter.",
+    "add": "Ajouter un module",
+    "addHint": "ouvre le formulaire de contact",
+    "details": "Détails de connexion",
+    "copy": "Copier l'email",
+    "write": "M'écrire"
   },
   "About": {
-    "Me": {
-      "header": "La passion alimente les objectifs",
-      "title": "Ingénieur Informatique | Développeur Polyvalent",
-      "quote": "En tant que passionné d'informatique, j'ai été témoin de la profonde métamorphose de notre monde à travers la technologie. Embrassant l'ère numérique, j'ai entamé un parcours transformateur à l'ITUniveristy Andoharanofotsy, un bastion d'excellence dans le paysage de l'enseignement technologique malgache. Là, au milieu d'une pléthore de langages de programmation et d'outils de pointe, j'ai cultivé mes compétences et perfectionné mon savoir-faire à travers des projets immersifs et des stages. Armé d'un Master en Informatique, ma passion pour la programmation brûle plus que jamais. Je m'épanouis face à chaque défi, animé par une soif insatiable de connaissances et d'innovation. Rejoignez-moi dans la navigation de ce domaine technologique en constante évolution, où chaque obstacle est une opportunité et l'apprentissage, une aventure perpétuelle."
-    },
+    "title": "À propos",
+    "titleRich": "L'ingénieur derrière les <em>modules</em>.",
+    "openConsole": "ouvrir dans le terminal",
+    "quote": "La passion nourrit le but. Chaque ligne de code est un pas vers la transformation des idées en solutions concrètes.",
+    "intro": "Je suis Sambatra Andriamihaja, Growth Engineer et développeur full-stack basé à Antananarivo. Titulaire d'un master en IA & Big Data de l'ESTIA, j'ai passé cinq ans à livrer des plateformes web et mobiles — pour un opérateur télécom, un groupe e-commerce et un produit mobile — avant de me tourner vers l'automatisation : scénarios Make, APIs d'enrichissement en Python, miroirs de données Supabase et agents IA qui font avancer les équipes métier plus vite. J'aime les jointures entre les systèmes. C'est là que la plupart des logiciels cassent, et là que le travail devient intéressant.",
     "Skills": {
-      "header": "Compétences",
+      "title": "Compétences & expertise",
+      "subtitle": "Les technologies que j'utilise au quotidien, groupées par usage",
+      "auto": {
+        "title": "Automatisation & IA Ops",
+        "description": "Workflows, APIs d'enrichissement, miroirs de données et agents"
+      },
       "dev": {
         "title": "Développement",
-        "description": "Expertise en développement mobile, web et logiciel à l'aide de technologies modernes."
+        "description": "Web, mobile et backend — langages, frameworks, outillage"
       },
-      "ai": {
-        "title": "Machine Learning",
-        "description": "Maîtrise de la création et du déploiement de modèles d'IA"
+      "data": {
+        "title": "Bases de données",
+        "description": "Conception de schémas, migrations et requêtes"
       },
-      "dba": {
-        "title": "Administration des bases de données",
-        "description": "Expérience dans la gestion et l'optimisation des bases de données"
+      "ml": {
+        "title": "Machine Learning / IA",
+        "description": "Entraînement, évaluation et outillage data"
       }
     },
+    "Timeline": {
+      "experience": "Expérience",
+      "education": "Formation"
+    },
     "Experiences": {
-      "header": "Expérience",
-      "SP": {
-        "experienceTitle": "Développeur Full Stack JS",
-        "date": "Sep. 2023 - Présent",
+      "present": "En cours",
+      "via": "via",
+      "BREVO": {
+        "experienceTitle": "Growth Engineer — RevOps / Tech",
+        "date": "Nov. 2024 — Aujourd'hui",
         "points": {
-          "0": "J'ai travaillé dans une équipe responsable de la maintenance et du développement de nouvelles fonctionnalités sur mobile pour le projet Orizon d'Orizon.",
-          "1": "J'ai implémenté de nouvelles fonctionnalités sur la plateforme web équivalente."
+          "0": "Enrichissement de données par IA — conception et développement d'APIs internes en Python pour l'enrichissement automatisé des données CRM (contacts, emails, téléphones en cascade, entreprises et stack technologique), avec l'équipe Data de Brevo.",
+          "1": "Automatisation des flux entre plateformes — scénarios Make synchronisant en temps réel le CRM Brevo avec PandaDoc, Planhat, Qobra, Gong, Chili Piper, des notifications Slack et d'autres intégrations métier.",
+          "2": "Base miroir sur Supabase — mise en place et maintenance d'un miroir du CRM Brevo pour pallier les filtres absents de l'API ; il alimente les plateformes internes et réduit la consommation de crédits Make.",
+          "3": "Plateformes internes — participation à la conception des plateformes hébergeant les APIs, centralisant l'enrichissement et l'automatisation tout en optimisant les coûts opérationnels.",
+          "4": "Agents IA métier sur Dust — conception et déploiement d'agents sur mesure permettant aux équipes Brevo d'interroger le CRM et les outils tiers en langage naturel."
+        }
+      },
+      "MOZAR": {
+        "experienceTitle": "Développeur JS",
+        "date": "Août 2024 — Nov. 2024",
+        "points": {
+          "0": "Mise à jour de la landing page de Mozar et livraison des nouvelles fonctionnalités et sections demandées par l'équipe — une mission de quatre mois via Valano Tech."
+        }
+      },
+      "SP": {
+        "experienceTitle": "Développeur Fullstack JS",
+        "date": "Sept. 2023 — Juil. 2024",
+        "points": {
+          "0": "Maintenance et évolution de l'application mobile Orizon avec une petite équipe produit.",
+          "1": "Livraison des fonctionnalités correspondantes sur la plateforme web, en gardant la couche GraphQL alignée entre les deux clients."
         }
       },
       "MGBI": {
-        "experienceTitle": "Développeur Logiciel",
-        "date": "Jan. 2023 - Jul. 2023",
+        "experienceTitle": "Développeur logiciel",
+        "date": "Janv. 2023 — Juil. 2023",
         "points": {
-          "0": "Développement d'applications web",
-          "1": "Conception et maintenance d'outils logiciels"
+          "0": "Développement d'applications web en Elixir et Phoenix, dont une plateforme e-commerce pour un client réunionnais.",
+          "1": "Refonte de l'outil interne de suivi de projets et écriture de modules Odoo pour les codes-barres et les modèles d'impression."
         }
       },
       "ODC": {
-        "experienceTitle": "Développeur Mobile",
-        "date": "Jul. 2022 - Sep. 2022",
+        "experienceTitle": "Développeur mobile",
+        "date": "Juil. 2022 — Sept. 2022",
         "points": {
-          "0": "J'ai effectué un stage de fin d'études dans le cadre de l'Orange Summer Challenge 2022 sur le thème 'tech4good' (c'est-à-dire la technologie pour le bien), organisé par l'Orange Digital Center dans le cadre de mon Master Sciences BIHAR, au cours duquel j'ai été chargé de construire une application mobile."
+          "0": "Stage de fin d'études pour l'Orange Summer Challenge 2022 (tech4good) : une application Flutter qui dialogue avec un kit de production de biogaz, lit ses capteurs et prévoit la date d'épuisement du stock."
         }
       },
       "TELMA": {
-        "experienceTitle": "Développeur d'applications Web",
-        "date": "Dec. 2020 - Mar. 2021",
+        "experienceTitle": "Développeur web",
+        "date": "Déc. 2020 — Mars 2021",
         "points": {
-          "0": "J'ai effectué un stage en vue d'obtenir une licence en informatique option Développement, au cours duquel j'ai redessiné l'application web de gestion des documents pour le département des systèmes d'information de Telma."
+          "0": "Stage de licence : refonte de l'application de gestion documentaire utilisée par la direction des systèmes d'information de Telma."
         }
       }
     },
     "Educations": {
-      "header": "Éducation",
-      "viewDiploma": "Voir le Diplôme",
+      "present": "En cours",
+      "via": "via",
+      "viewDiploma": "Voir le diplôme",
+      "closeDiploma": "Fermer",
       "ESTIA": {
-        "educationLevel": "Étudiant en Master",
-        "date": "Avr. 2021 - Déc. 2023",
-        "point": "Je me suis spécialisé en IA et Big Data en suivant le cursus BIHAR à l'école d'ingénieurs ESTIA en ligne en partenariat avec l'ITUniversity, où j'ai obtenu le diplôme de Master of Science Big data Intellignece for Human Augmented Reality."
+        "educationLevel": "Master — IA & Big Data",
+        "date": "Avr. 2021 — Déc. 2023",
+        "point": "Programme BIHAR dispensé en ligne par l'école d'ingénieurs ESTIA avec l'ITUniversity. Diplômé d'un MSc Big Data Intelligence for Human Augmented Reality."
       },
       "ITU": {
-        "educationLevel": "Étudiant en Licence",
-        "date": "Sep. 2017 - Mars 2021",
-        "point": "J'ai étudié l'informatique à l'IT University à Antananarivo, Madagascar, numéro 1 dans ce domaine à l'échelle nationale, où j'ai obtenu une licence en informatique, option Développement."
+        "educationLevel": "Licence — Informatique",
+        "date": "Sept. 2017 — Mars 2021",
+        "point": "Informatique à l'IT University d'Antananarivo. Diplômé d'une licence, parcours développement."
       },
       "STGAB": {
-        "educationLevel": "Lycéen",
-        "schoolName": "Lycée Saint Gabriel à Mahajanga, Madagascar",
-        "date": "Sep. 2014 - Juil. 2017",
-        "point": "J'ai étudié au Lycée Saint Gabriel à Mahajanga, Madagascar, l'un des plus prestigieux de la ville, où j'ai obtenu mon Baccalauréat Scientifique."
+        "educationLevel": "Baccalauréat scientifique",
+        "schoolName": "Lycée Saint Gabriel, Mahajanga",
+        "date": "Sept. 2014 — Juil. 2017",
+        "point": "Baccalauréat scientifique dans l'un des plus anciens établissements de Mahajanga."
       }
     }
   },
   "Projects": {
-    "header": "Plongez dans mes réalisations",
+    "status": "{count} fenêtres",
+    "metaTitle": "Projets — chaque projet, en marche",
+    "title": "Chaque projet, <em>en marche</em>.",
+    "subtitle": "Automatisations pour des clients, produits, et deux ou trois choses écrites parce qu'elles m'agaçaient. Chacun est une fenêtre vivante — cherchez la stack, filtrez la route, agrandissez pour lire le cas.",
+    "search": "Stack, client, mot-clé…",
+    "searchLabel": "Rechercher un projet",
+    "clear": "Effacer",
+    "count": "{count, plural, =0 {Aucun résultat} =1 {# fenêtre} other {# fenêtres}}",
+    "empty": {
+      "title": "Rien ne correspond.",
+      "body": "Essayez un autre mot-clé, ou réinitialisez les filtres pour tout voir."
+    },
+    "featured": "À la une",
+    "viewDetails": "Agrandir",
+    "viewCode": "Source",
+    "viewLive": "Voir en ligne",
+    "close": "Fermer",
+    "techStack": "Stack",
+    "capture": "capture archivée",
+    "ongoing": "En cours",
+    "via": "via",
     "category": {
-      "all": "Tout",
-      "professional": "Professionel",
-      "personal": "Personnel",
-      "studies": "Études"
+      "all": "tout",
+      "professional": "professionnel",
+      "personal": "personnel",
+      "studies": "études"
     }
   },
-  "NotFoundPage": {},
+  "HireMe": {
+    "button": "Me recruter",
+    "title": "Travaillons ensemble",
+    "description": "Je suis disponible pour des projets freelance, du conseil, de l'automatisation et des opportunités à temps plein.",
+    "nameLabel": "Nom",
+    "namePlaceholder": "Votre nom",
+    "emailLabel": "Email",
+    "emailPlaceholder": "vous@email.com",
+    "subjectLabel": "Sujet",
+    "subjectPlaceholder": "Choisissez un sujet",
+    "subjects": {
+      "freelance": "Projet freelance",
+      "consulting": "Conseil",
+      "automation": "Automatisation",
+      "fulltime": "Opportunité à temps plein",
+      "other": "Autre"
+    },
+    "messageLabel": "Message",
+    "messagePlaceholder": "Parlez-moi de votre projet...",
+    "send": "Envoyer",
+    "successTitle": "Presque terminé !",
+    "successMessage": "Votre messagerie devrait s'être ouverte avec le message prêt à envoyer. Sinon, utilisez l'adresse ci-dessous — je réponds sous 24 heures.",
+    "close": "Fermer",
+    "copied": "Copiée",
+    "mailNote": "Ouvre votre messagerie avec le message adressé à {email}."
+  },
   "Footer": {
-    "copyright": "Droit d'auteur © {year} Tous droits réservés",
-    "buildBy": "Construit par"
+    "tagline": "Growth Engineer et développeur full-stack à Antananarivo. Des produits, des automatisations, et les jointures entre les deux.",
+    "rights": "Tous droits réservés.",
+    "builtWith": "Next.js, Tailwind CSS, Framer Motion, Three.js."
+  },
+  "NotFound": {
+    "code": "404",
+    "title": "Cette page est introuvable.",
+    "body": "La route n'existe pas — ou elle a existé, puis a été refactorisée hors de l'histoire.",
+    "cta": "Retour à l'accueil",
+    "console": "Ouvrir le terminal"
   }
 }

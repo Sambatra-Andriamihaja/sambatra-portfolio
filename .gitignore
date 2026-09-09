@@ -4,7 +4,11 @@
 /node_modules
 /.pnp
 .pnp.js
-.yarn/install-state.gz
+
+# lockfiles from other package managers — this project is pnpm only
+package-lock.json
+yarn.lock
+bun.lockb
 
 # testing
 /coverage
@@ -24,6 +28,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
 
 # local env files
 .env*.local
@@ -34,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# AI agent tooling (installed per developer, not part of the site)
+.agents/
+.claude/
+skills-lock.json

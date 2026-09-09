@@ -1,13 +1,22 @@
 "use client";
 
-import * as React from "react";
-import { ThemeProvider as NextThemesProvider } from "next-themes";
-import { type ThemeProviderProps } from "next-themes/dist/types";
+import { ThemeProvider as NextThemes } from "next-themes";
+import type { ReactNode } from "react";
 
-export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
+/**
+ * `value` maps the "light" theme onto a `.light` class. Dark is the
+ * default state of the token layer, so it needs no class at all.
+ */
+export function ThemeProvider({ children }: { children: ReactNode }) {
   return (
-    <NextThemesProvider attribute="class" {...props}>
+    <NextThemes
+      attribute="class"
+      defaultTheme="dark"
+      enableSystem
+      disableTransitionOnChange
+      value={{ light: "light", dark: "dark" }}
+    >
       {children}
-    </NextThemesProvider>
+    </NextThemes>
   );
 }

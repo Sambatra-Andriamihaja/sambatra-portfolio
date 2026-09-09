@@ -1,39 +1,18 @@
 export interface IMenu {
+  /** i18n key under the NavBar namespace */
   title: string;
   url: string;
-  submenu?: IMenu[];
 }
 
-export const menuItemsData = (lang: string): IMenu[] => [
-  {
-    title: "home",
-    url: `/${lang}`,
-  },
-  {
-    title: "about",
-    url: `/${lang}/about`,
-  },
-  {
-    title: "projects",
-    url: `/${lang}/projects`,
-  },
+export const navItems = (lang: string): IMenu[] => [
+  { title: "home", url: `/${lang}` },
+  { title: "about", url: `/${lang}/about` },
+  { title: "projects", url: `/${lang}/projects` },
 ];
 
-export const aboutSubMenu: IMenu[] = [
-  {
-    title: "intro",
-    url: "#hello",
-  },
-  {
-    title: "skills",
-    url: "#skills",
-  },
-  {
-    title: "experience",
-    url: "#experience",
-  },
-  {
-    title: "education",
-    url: "#education",
-  },
+/** In-page anchors surfaced on the about route. */
+export const aboutSections: IMenu[] = [
+  { title: "intro", url: "#intro" },
+  { title: "skills", url: "#skills" },
+  { title: "experience", url: "#timeline" },
 ];

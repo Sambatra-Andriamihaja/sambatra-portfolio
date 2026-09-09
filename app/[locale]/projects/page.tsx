@@ -1,13 +1,36 @@
-import React from "react";
-import { Metadata } from "next";
+import type { Metadata } from "next";
+import { Suspense } from "react";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
-import ProjectsPage from "@/components/projects/ProjectsPage";
+import type { Locale } from "@/constants/lang";
+import { WorkIndex } from "@/components/work/work-index";
 
-export const metadata: Metadata = {
-  title: "Sambatra | Projects",
-  description: "Sambatra's projects",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: Locale };
+}): Promise<Metadata> {
+  const t = await getTranslations({
+    locale: params.locale,
+    namespace: "Projects",
+  });
+  return {
+    title: t("metaTitle"),
+    description: t("subtitle"),
+    alternates: { canonical: `/${params.locale}/projects` },
+  };
+}
 
-export default function Projects() {
-  return <ProjectsPage />;
+export default function ProjectsPage({
+  params: { locale },
+}: {
+  params: { locale: Locale };
+}) {
+  unstable_setRequestLocale(locale);
+
+  return (
+    <Suspense fallback={null}>
+      <WorkIndex locale={locale} />
+    </Suspense>
+  );
 }

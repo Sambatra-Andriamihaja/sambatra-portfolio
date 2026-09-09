@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Chili Piper">
+  <path fill="#F5533D" d="M44 14c6 8 4 22-6 32S18 60 12 56c-4-3-2-9 3-13 7-6 12-9 17-16 3-4 5-9 5-13h7z"/>
+  <path fill="#E23A2A" d="M40 20c2 9-2 18-9 25s-14 9-19 11c9 1 20-3 27-11s8-17 5-25h-4z" opacity=".9"/>
+  <path fill="#2EAD5B" d="M46 8c4 0 8 2 10 6-4 1-8 2-11 5-2-3-2-8 1-11z"/>
+</svg>

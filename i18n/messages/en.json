@@ -1,112 +1,272 @@
 {
-  "General": {
-    "hireMe": "Hire me"
-  },
   "NavBar": {
     "home": "Home",
     "about": "About",
-    "intro": "Introduction",
+    "projects": "Work",
+    "intro": "Intro",
     "skills": "Skills",
-    "experience": "Experience",
-    "education": "Education",
-    "projects": "Projects"
+    "experience": "Journey",
+    "console": "Terminal"
   },
-  "HomePage": {
-    "title": "Hi ! I'm",
-    "description": "As a versatile full-stack developer, I am committed to transforming concepts into cutting-edge solutions. Delve into my recent endeavors that highlight my proficiency in software engineering.",
-    "resume": "Resume",
-    "cmdSumUp": "Write the code below to sum up who am I :",
-    "technoUsed": "technologies used",
-    "projectsCompleted": "projects completed",
-    "yearsOfExperience": "years of experience"
+  "Hero": {
+    "trigger": "webhook received · new visitor",
+    "role": "Growth Engineer & <em>Full-Stack</em> Developer",
+    "description": "Web and mobile products built end to end, and the automations that keep them running. Growth Engineer at Brevo, via Valano Tech.",
+    "run": "Run the scenario",
+    "downloadResume": "Download CV",
+    "now": "Now at",
+    "via": "Via",
+    "from": "From",
+    "try": "try:",
+    "scroll": "scroll to route"
+  },
+  "Routes": {
+    "status": "3 routes",
+    "title": "One router, <em>three</em> routes.",
+    "subtitle": "Every request that reaches me is filtered into one of these. Most interesting problems sit on the seams between them.",
+    "auto": {
+      "filter": "needs automation",
+      "title": "Automation & AI ops",
+      "body": "Make and n8n scenarios, Python enrichment APIs, Supabase data mirrors and Dust agents — flows that run without anyone watching, and tell you when they fail."
+    },
+    "product": {
+      "filter": "needs a product",
+      "title": "Web & mobile products",
+      "body": "Next.js, React Native, Flutter, Phoenix. From the database schema to the screen, shipped and maintained in production for telecoms, e-commerce and mobile teams."
+    },
+    "data": {
+      "filter": "needs data",
+      "title": "Data & machine learning",
+      "body": "PostgreSQL design, pipelines, and the ML tooling from an MSc in Big Data — used today to enrich CRM records and score what deserves a human's attention."
+    }
+  },
+  "Terminal": {
+    "title": "Interactive Terminal",
+    "subtitle": "Try typing help to explore — or 1sa 1789 to run my npm module.",
+    "hint": "Type a command and press Enter. Tab completes, ↑ ↓ browse history. ⌘K opens it anywhere.",
+    "welcome": "Type help to list commands. Try whois, run, or 1sa 1789.",
+    "unknown": "Command not found: '{command}'. Type 'help' for available commands.",
+    "processing": "processing..."
+  },
+  "Workflow": {
+    "status": "live",
+    "active": "active",
+    "title": "A week of my work, <em>running</em>.",
+    "subtitle": "A live Make-style scenario. Run it once, drag the modules, hover for the inspector, watch the bundles travel.",
+    "body": "This is the kind of flow I build every week: a CRM event comes in, a router splits it, each branch talks to a different tool — documents, enrichment, notifications, a data mirror — and an error handler makes sure a failed bundle becomes a message instead of a silent gap. Make and n8n for the orchestration, Python and Supabase when a flow needs real code or a real database.",
+    "run": "Run once",
+    "running": "Running…",
+    "reset": "Reset layout",
+    "ops": "operations",
+    "schedule": "Scheduling",
+    "hint": "Drag a module · hover for details",
+    "errorHandler": "error handler"
+  },
+  "Featured": {
+    "status": "{count} windows",
+    "title": "Work you can <em>play</em> with.",
+    "subtitle": "No screenshots. Every project ships as a running window — the real Make scenario, the real npm module, a working version of the product.",
+    "cta": "Open all windows"
+  },
+  "Connections": {
+    "status": "{count} connections",
+    "title": "Every tool, <em>connected</em>.",
+    "subtitle": "The stack, grouped by what it is for. Each one has been used in production — not listed from a tutorial.",
+    "verified": "verified"
+  },
+  "History": {
+    "status": "{count} runs",
+    "title": "Execution <em>history</em>.",
+    "subtitle": "Six years of runs, newest first. Open a row to read what shipped and which tools carried it.",
+    "tabs": "History tabs",
+    "ops": "ops",
+    "col": {
+      "when": "when",
+      "what": "what ran",
+      "where": "where",
+      "ops": "ops"
+    }
+  },
+  "Contact": {
+    "status": "1 free slot",
+    "title": "Add me to <em>your</em> scenario.",
+    "subtitle": "Freelance, consulting, automation work or a full-time role — the next module in this flow is yours to connect.",
+    "add": "Add a module",
+    "addHint": "opens the contact sheet",
+    "details": "Connection details",
+    "copy": "Copy email",
+    "write": "Write to me"
   },
   "About": {
-    "Me": {
-      "header": "Passion fuels purpose",
-      "title": "IT Engineer | Versatile Developer",
-      "quote": "As an IT enthusiast, I've witnessed the profound metamorphosis of our world through technology. Embracing the digital age, I embarked on a transformative journey at ITUniveristy Andoharanofotsy, a bastion of excellence in Madagascar's technology education landscape. There, amidst a plethora of programming languages and cutting-edge tools, I cultivated my skills and honed my craft through immersive projects and internships. Armed with a Master's degree in Computer Science, my passion for programming burns brighter than ever. I thrive on every challenge, driven by an insatiable hunger for knowledge and innovation. Join me as I navigate the ever-evolving field of technology, where every obstacle is an opportunity and learning is a lifelong adventure."
-    },
+    "title": "About Me",
+    "titleRich": "The engineer behind the <em>modules</em>.",
+    "openConsole": "open in terminal",
+    "quote": "Passion fuels purpose. Every line of code is a step toward transforming ideas into impactful solutions.",
+    "intro": "I'm Sambatra Andriamihaja, a Growth Engineer and Full-Stack Developer based in Antananarivo. I hold a Master's in AI & Big Data from ESTIA and spent five years shipping web and mobile platforms — for a telecom, an e-commerce group and a mobile product — before turning to automation: Make scenarios, Python enrichment APIs, Supabase data mirrors and AI agents that let business teams move faster. I like the seams between systems. That is where most software breaks, and where the interesting work is.",
     "Skills": {
-      "header": "Skills",
+      "title": "Skills & Expertise",
+      "subtitle": "Technologies I work with daily, grouped by what they are for",
+      "auto": {
+        "title": "Automation & AI Ops",
+        "description": "Workflows, enrichment APIs, data mirrors and agents"
+      },
       "dev": {
         "title": "Development",
-        "description": "Expertise in mobile, web and software development using modern technologies"
+        "description": "Web, mobile and backend — languages, frameworks, tooling"
       },
-      "ai": {
-        "title": "Machine Learning",
-        "description": "Proficiency in creating and deploying machine learning models"
+      "data": {
+        "title": "Databases",
+        "description": "Schema design, migrations and query work"
       },
-      "dba": {
-        "title": "Database Administration",
-        "description": "Experience in managing and optimizing databases"
+      "ml": {
+        "title": "Machine Learning / AI",
+        "description": "Training, evaluation and data tooling"
       }
     },
+    "Timeline": {
+      "experience": "Experience",
+      "education": "Education"
+    },
     "Experiences": {
-      "header": "Experience",
+      "present": "Present",
+      "via": "via",
+      "BREVO": {
+        "experienceTitle": "Growth Engineer — RevOps / Tech",
+        "date": "Nov 2024 — Present",
+        "points": {
+          "0": "AI data enrichment — designed and built internal Python APIs that enrich CRM records automatically (contact, email, waterfall phone, company and tech-stack enrichment), with Brevo's Data team.",
+          "1": "Cross-platform automation — Make scenarios that synchronise the Brevo CRM in real time with PandaDoc, Planhat, Qobra, Gong, Chili Piper, Slack notifications and other business integrations.",
+          "2": "Mirror database on Supabase — set up and maintain a mirror of the Brevo CRM to work around missing native API filters; it feeds the internal platforms and reduces Make credit consumption.",
+          "3": "Internal platforms — took part in designing the platforms that host the APIs, centralising enrichment and automation tooling while keeping operating costs down.",
+          "4": "Business AI agents on Dust — designed and deployed custom agents so Brevo teams can query the CRM and third-party tools in natural language."
+        }
+      },
+      "MOZAR": {
+        "experienceTitle": "JS Developer",
+        "date": "Aug 2024 — Nov 2024",
+        "points": {
+          "0": "Updated Mozar's landing page and shipped the new features and sections the team needed — a four-month mission through Valano Tech."
+        }
+      },
       "SP": {
         "experienceTitle": "Fullstack Developer JS",
-        "date": "Sep. 2023 - Present",
+        "date": "Sep 2023 — Jul 2024",
         "points": {
-          "0": "Worked on a team responsible for maintaining and developing new features on mobile for Orizon's project called Orizon.",
-          "1": "Implemented new features in the equivalent web platform"
+          "0": "Maintained and extended the Orizon mobile application with a small product team.",
+          "1": "Shipped matching features on the web platform, keeping the GraphQL layer in step across both clients."
         }
       },
       "MGBI": {
         "experienceTitle": "Software Developer",
-        "date": "Jan. 2023 - Jul. 2023",
+        "date": "Jan 2023 — Jul 2023",
         "points": {
-          "0": "Developed web applications",
-          "1": "Designed and maintained software tools"
+          "0": "Built web applications in Elixir and Phoenix, including an e-commerce platform for a client on Réunion Island.",
+          "1": "Rebuilt the internal project-monitoring tool and wrote Odoo modules for barcodes and print templates."
         }
       },
       "ODC": {
         "experienceTitle": "Mobile Developer",
-        "date": "Jul. 2022 - Sep. 2022",
+        "date": "Jul 2022 — Sep 2022",
         "points": {
-          "0": "Did an end-of-studies internship as part of the Orange Summer Challenge 2022 on the theme of 'tech4good' (in other words, technology for good), organised by the Orange Digital Center as part of my BIHAR Master of Sciences degree, in which I was tasked with building a mobile application."
+          "0": "End-of-studies internship for the Orange Summer Challenge 2022 (tech4good): a Flutter app that talks to a biogas production kit, reads its sensors and predicts when the tank runs dry."
         }
       },
       "TELMA": {
         "experienceTitle": "Web App Developer",
-        "date": "Dec. 2020 - Mar. 2021",
+        "date": "Dec 2020 — Mar 2021",
         "points": {
-          "0": "Did an internship with a view to obtaining a Bachelor's degree in Computer Science with a Development option, during which I redesigned the document management web application for Telma's Information Systems Department."
+          "0": "Bachelor's internship rebuilding the document-management application used by Telma's Information Systems department."
         }
       }
     },
     "Educations": {
-      "header": "Education",
-      "viewDiploma": "View Diploma",
+      "present": "Present",
+      "via": "via",
+      "viewDiploma": "View diploma",
+      "closeDiploma": "Close",
       "ESTIA": {
-        "educationLevel": "Master Student",
-        "date": "Apr. 2021 - Dec. 2023",
-        "point": "I specialised in AI and Big Data by following the BIHAR course at the ESTIA engineering school online in partnership with ITUniversity, where I obtained the Master of Science Big data Intellignece for Human Augmented Reality diploma."
+        "educationLevel": "Master's — AI & Big Data",
+        "date": "Apr 2021 — Dec 2023",
+        "point": "BIHAR programme run online by the ESTIA engineering school with ITUniversity. Graduated with an MSc in Big Data Intelligence for Human Augmented Reality."
       },
       "ITU": {
-        "educationLevel": "Bachelor Student",
-        "date": "Sep. 2017 - Mar. 2021",
-        "point": "I studied Computer Science at the IT University in Antananarivo, Madagascar, top 1 in the field nationwide, where I graduated with a Bachelor's degree in Computer Science, Development option"
+        "educationLevel": "Bachelor's — Computer Science",
+        "date": "Sep 2017 — Mar 2021",
+        "point": "Computer science at IT University, Antananarivo. Graduated with a bachelor's degree, development track."
       },
       "STGAB": {
-        "educationLevel": "Collegial Student",
-        "schoolName": "Lycée Saint Gabriel in Mahajanga, Madagascar",
-        "date": "Sep. 2014 - Jul. 2017",
-        "point": "I studied at the Lycée Saint Gabriel in Mahajanga, Madagascar, one of the city's most prestigious, where I obtained my Scientific Baccalaureate"
+        "educationLevel": "Scientific Baccalaureate",
+        "schoolName": "Lycée Saint Gabriel, Mahajanga",
+        "date": "Sep 2014 — Jul 2017",
+        "point": "Scientific baccalaureate at one of Mahajanga's oldest schools."
       }
     }
   },
   "Projects": {
-    "header": "Dive into my journeys",
+    "status": "{count} windows",
+    "metaTitle": "Work — every project, running",
+    "title": "Every project, <em>running</em>.",
+    "subtitle": "Client automations, products, and a couple of things I wrote because they annoyed me. Each one is a live window — search the stack, filter the route, maximise to read the case.",
+    "search": "Search stack, client, keyword…",
+    "searchLabel": "Search projects",
+    "clear": "Clear",
+    "count": "{count, plural, =0 {No results} =1 {# window} other {# windows}}",
+    "empty": {
+      "title": "Nothing matches that.",
+      "body": "Try a different keyword, or reset the filters to see everything."
+    },
+    "featured": "Featured",
+    "viewDetails": "Maximise",
+    "viewCode": "Source",
+    "viewLive": "Open live",
+    "close": "Close",
+    "techStack": "Stack",
+    "capture": "archived capture",
+    "ongoing": "Present",
+    "via": "via",
     "category": {
-      "all": "All",
-      "professional": "Professional",
-      "personal": "Personal",
-      "studies": "Studies"
+      "all": "all",
+      "professional": "professional",
+      "personal": "personal",
+      "studies": "studies"
     }
   },
-  "NotFoundPage": {},
+  "HireMe": {
+    "button": "Hire me",
+    "title": "Let's Work Together",
+    "description": "I'm available for freelance projects, consulting, automation work and full-time opportunities.",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "your@email.com",
+    "subjectLabel": "Subject",
+    "subjectPlaceholder": "Select a subject",
+    "subjects": {
+      "freelance": "Freelance Project",
+      "consulting": "Consulting",
+      "automation": "Automation",
+      "fulltime": "Full-Time Opportunity",
+      "other": "Other"
+    },
+    "messageLabel": "Message",
+    "messagePlaceholder": "Tell me about your project...",
+    "send": "Send Message",
+    "successTitle": "Almost there!",
+    "successMessage": "Your mail app should have opened with the message ready to send. If it did not, use the address below — I reply within a day.",
+    "close": "Close",
+    "copied": "Copied",
+    "mailNote": "Opens your mail app with the message addressed to {email}."
+  },
   "Footer": {
-    "copyright": "Copyright © {year} All rights reserved",
-    "buildBy": "Build by"
+    "tagline": "Growth Engineer and Full-Stack Developer in Antananarivo. Products, automations, and the seams between them.",
+    "rights": "All rights reserved.",
+    "builtWith": "Next.js, Tailwind CSS, Framer Motion, Three.js."
+  },
+  "NotFound": {
+    "code": "404",
+    "title": "This page could not be found.",
+    "body": "The route does not exist — or it did once and has since been refactored out of history.",
+    "cta": "Back home",
+    "console": "Open the terminal"
   }
 }
