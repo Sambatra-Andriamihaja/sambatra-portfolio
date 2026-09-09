@@ -1,9 +1,11 @@
-# sambatra-portfolio
+# sambatra.os
 
 Personal site of **Sambatra Andriamihaja** — Growth Engineer & Full-Stack
-Developer, Antananarivo.
+Developer, Antananarivo. Version 3: the portfolio doesn't describe the work,
+it runs it.
 
-Next.js App Router · TypeScript · Tailwind · Framer Motion · next-intl (EN/FR).
+Next.js 14 App Router · TypeScript · Tailwind · Framer Motion · Three.js ·
+next-intl (EN/FR) · pnpm.
 
 ---
 
@@ -33,95 +35,193 @@ sitemap entries and OG image resolution. It defaults to `https://sambatra.dev`.
 
 ---
 
-## Identity
+## The idea
 
-The site keeps the structure and personality of the first version — a
-centered "Hi, I'm Sambatra" hero, stat cards, an interactive terminal, a
-floating **Hire me** button, and the cursor glow — on a new palette.
+The site is an operating system, and every page reads as a running **Make
+scenario**. Sections are modules — `trigger`, `router`, `scenario`, `work`,
+`connections`, `history`, `contact` — carried as `data-module` attributes and
+mirrored by a rail on the left (`components/flow/spine.tsx`) that lights the
+active one. A real terminal sits at the centre of the home page, and every
+project ships as a **playable window** rather than a screenshot.
 
-**Palette** — midnight canvas `#0B0B0F`, indigo `#3F51B5` as the primary
-(buttons, active states, glow), gold `#D6A84F` as the accent. Tokens live in
-`app/globals.css` as `R G B` triplets so Tailwind can apply alpha via
-`rgb(var(--token) / <alpha>)`. Dark is the native state; `.light` overrides
-with a warm paper canvas. Indigo is never small text — `signal` is the
-text-safe tint.
-
-**Type** — Space Grotesk for everything, JetBrains Mono inside the terminal.
-
-**Signature elements**
-
-- `components/ui/cursor-glow.tsx` — a soft dot with five satellites in slow
-  orbit. Over any link or button the satellites settle on the control's
-  outline, which lights up as a dotted, sparkling circuit. Canvas, one rAF
-  loop, off on touch and under `prefers-reduced-motion`.
-- `components/ui/particle-field.tsx` — the hero's drifting constellation,
-  leaning gently toward the pointer.
-- `components/layout/hire-me.tsx` — the floating paper-plane button. Pressing
-  it launches the plane and opens a contact sheet; submitting composes a
-  ready-to-send email in the visitor's mail app (no backend needed).
-- The terminal wears an Ubuntu skin in dark mode and Windows PowerShell in
-  light mode.
-
-**Motion** — spring-based hover/tap on controls, `layoutId` pills for the
-active nav link, filters and tabs, staggered entrances, count-up stats, a
-quiet route transition. Only `transform` and `opacity` animate.
+Dark mode boots into **Ubuntu**. Light mode boots into **Windows 11**. Neither
+is a colour scheme; each is a full skin — chrome, wallpaper, fonts, terminal
+emulator, hero object.
 
 ---
 
-## Pages
+## Two operating systems, one DOM
 
-- **Home** — hero · stats · interactive terminal · workflow automation
-  (live Make-style scenario) · featured projects
-- **About** — a line I work by, an intro, every tool in one cloud · skills by
-  family · Experience / Education tabs on an alternating, brand-coloured
-  timeline (real logos: Brevo, Valano Tech, Mozar, Smart Predict, MGBI,
-  Orange, Telma)
-- **Projects** — filters, search, cards with Featured badges, View Code /
-  Live Demo, and an expanding detail dialog
+Switching is pure CSS. Both skins live in the markup at once and two Tailwind
+variants pick one, so the first paint is always right and there is no flash:
+
+```
+os-ubuntu:   →  html:not(.light) &
+os-win:      →  html.light &
+```
+
+`next-themes` toggles the `.light` class (`attribute="class"`, dark by
+default). Every token is an `R G B` triplet in `app/globals.css` so Tailwind
+can apply alpha with `rgb(var(--token) / <alpha>)`:
+
+|               | Ubuntu (`:root`)                                                           | Windows 11 (`.light`)                                            |
+| ------------- | -------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| Canvas        | `33 20 30` — Jammy aubergine                                               | `198 211 228` — the Bloom's grey-blue ground                     |
+| Accent        | `233 84 32` — Ubuntu orange                                                | `0 95 184` — Windows accent blue                                 |
+| Window chrome | Yaru headerbar, `44 44 44` surface, 12px radius                            | Mica title bar, 8px radius, 46px caption buttons                 |
+| UI font       | Ubuntu 400 / 500 / 700                                                     | Segoe UI Variable → Open Sans fallback                           |
+| Code font     | Ubuntu Mono                                                                | Cascadia Mono / Consolas → JetBrains Mono fallback               |
+| Terminal      | GNOME Terminal, `#300a24`, Tango palette                                   | Windows Terminal running PowerShell, `#012456`, Campbell palette |
+| Terminal bar  | Aubergine headerbar, bold centred title, `~` subtitle, Yaru round controls | Dark tab row — one tab, `+`, `⌄`, white caption buttons          |
+| Wallpaper     | Aubergine → orange gradients (`--wallpaper`)                               | Soft grey-blue gradient, lighter top-left                        |
+| Hero object   | Three.js point wave (`components/os/hero-field.tsx`)                       | Three.js **Bloom** (`components/os/bloom.tsx`) — grab it         |
+
+Fonts are loaded per OS in `lib/fonts.ts`; the Windows faces are system fonts
+with Google fallbacks, so nothing is downloaded for them.
+
+### The Bloom
+
+A hand-built recreation of the Windows 11 wallpaper: nine wraps of one wide
+satin-cobalt ribbon around a leaning axis, each a parametric sheet whose
+cross-section flares at the base, leans in, then rolls over at the rim.
+Vertex colours bake occlusion (navy in the creases, brighter on the folds),
+a `MeshPhysicalMaterial` with sheen and a soft clearcoat sits under a
+`RoomEnvironment`, and the key light casts real shadows into the folds.
+
+It can be **grabbed**: pointer events are read on the window (the hero text
+sits above the canvas), a raycast against a hidden proxy decides whether the
+pointer is on the ribbon, interactive elements are never hijacked. Drag spins
+it with inertia and a small tilt that springs back; released, it resumes its
+slow turn. It pauses off-screen and when the tab is hidden.
+
+Both hero objects load after the page is idle, on desktop fine pointers only,
+never under `prefers-reduced-motion`.
 
 ---
 
 ## The terminal
 
 Open it with `⌘K` / `Ctrl+K`, from the nav icon, or use the inline copy on
-the home page.
+the home page. The prompt is `sambatra@ubuntu:~$` on one OS and
+`PS C:\Users\sambatra>` on the other; each prints its own MOTD first.
 
-| Command                            | Effect                                             |
-| ---------------------------------- | -------------------------------------------------- |
-| `help`                             | List commands                                      |
-| `whois`                            | Identity record                                    |
-| `skills [auto\|dev\|data\|ml]`     | Technical skills, all or by group                  |
-| `projects [--all]`                 | Featured (or all) projects                         |
-| `experience` · `education`         | Career / academic timeline                         |
-| `timeline`                         | Everything, newest first                           |
-| `automation`                       | Automation & workflow expertise                    |
-| `run` · `scenario`                 | Execute the workflow scenario on the home page     |
-| `1sa <number>` · `isa`             | Spell a number in Malagasy — runs the real module  |
-| `quote`                            | A line I work by                                   |
-| `contact` · `hire`                 | Channels, and opens the contact sheet              |
-| `resume` · `cv`                    | CV download                                        |
-| `goto <home\|about\|projects>`     | Navigate                                           |
-| `theme [dark\|light]` · `lang`     | Theme and locale                                   |
-| `clear`                            | Clear the buffer                                   |
+| Command                        | Effect                                                 |
+| ------------------------------ | ------------------------------------------------------ |
+| `help` · `?`                   | List commands                                          |
+| `whois`                        | Identity record                                        |
+| `skills [auto\|dev\|data\|ml]` | Technical skills, all or by group (alias `stack`)      |
+| `projects [--all]`             | Featured (or all) projects (alias `work`)              |
+| `experience` · `education`     | Career / academic timeline                             |
+| `timeline`                     | Everything, newest first                               |
+| `automation`                   | Automation & workflow expertise                        |
+| `run` · `scenario`             | Scroll to and execute the scenario on the home page    |
+| `1sa <number>` · `isa`         | Spell a number in Malagasy — runs the published module |
+| `quote`                        | A line I work by                                       |
+| `contact` · `hire`             | Channels, and opens the contact sheet                  |
+| `resume` · `cv`                | CV download                                            |
+| `goto <home\|about\|projects>` | Navigate                                               |
+| `theme [dark\|light]`          | Switch OS                                              |
+| `lang [en\|fr]`                | Switch locale                                          |
+| `clear`                        | Clear the buffer (`Ctrl+L` too)                        |
 
-Tab or `→` accepts the inline completion; `↑`/`↓` walk the history.
-Commands are declared in `components/console/registry.ts`.
+Tab or `→` accepts the ghost completion; `↑`/`↓` walk the history. Two
+commands are hidden from `help` — try `sudo` and `exit`. Commands are declared
+in `components/console/registry.ts`; the overlay lives in
+`console-provider.tsx`.
 
 `1sa` is a real dependency (`pnpm add 1sa`). `lib/isa.ts` validates input
 (0 – 999 999 999 999) and patches the module's `undefined tapitrisa` bug on
-exact multiples of 10⁶ / 10⁹. The **1sa** project detail embeds a live input.
+exact multiples of 10⁶ / 10⁹.
+
+---
+
+## Playable project windows
+
+Every project declares a `demo` — an interactive component that renders inside
+its window (`components/demos/`). Each one is skinned to the **real product**
+it was built in or for, with that product's own colours, not the site's tokens:
+
+| `demo`     | What it is                                                                 | Looks like                    |
+| ---------- | -------------------------------------------------------------------------- | ----------------------------- |
+| `scenario` | Live Make canvas drawn from a declared scenario — run it, drag modules     | Make                          |
+| `enrich`   | Waterfall enrichment — type an email, watch providers answer in turn       | Brevo                         |
+| `agent`    | Agent chat with visible tool calls into the CRM and the data mirror        | Slack thread / Dust           |
+| `graphql`  | One query feeding a web calendar and a phone at the same time              | GraphiQL + Orizon             |
+| `docs`     | Versioned document search — index, open, browse versions                   | WikIT (Bootstrap 4) for Telma |
+| `barcode`  | Odoo reference + Code 128 barcode, derived live from category & attributes | Odoo 16                       |
+| `print`    | Odoo report preview — variant `sheet` (product sheet) or `bill` (drafts)   | Odoo 16, real report replicas |
+| `shop`     | Packaging catalogue search + quote builder                                 | FOCICOM                       |
+| `board`    | Project monitoring board with blockers                                     | Phidia                        |
+| `color`    | A working colour picker — drag the swatch, copy hex / RGB / HSL            | The Electron app              |
+| `biogas`   | Sensor dashboard, burner control, depletion forecast                       | The Flutter "Kit App"         |
+| `landing`  | Section builder — toggle and reorder, the page rebuilds without a reload   | mozar.io                      |
+| `isa`      | The npm page, with a live input into the published module                  | npm                           |
+
+The contract is `components/demos/types.ts` — `DemoProps { locale; variant?;
+compact? }` — and `registry.tsx` maps `TDemo → component` with `next/dynamic`.
+`ProjectWindow` mounts a demo only when it is about to scroll into view
+(`IntersectionObserver`, `rootMargin: 320px`), so the work index stays light.
+Each window's status bar carries a one-line "what to try" hint (`tryEn` /
+`tryFr`).
 
 ---
 
 ## The scenario canvas
 
 `components/scenario/` renders Make-style automation flows declared in
-`scenarios.ts`: draggable modules, bezier routes with filter pills, an
-error-handler route, gold bundles travelling the edges, a **Run once** control
-that walks the graph tier by tier and increments per-module operation badges,
-hover cards, and an idle mode that sends a faint packet down a random route.
-Automation projects declare `frame: "scenario"` and a `scenario` id to get a
-living preview on their card.
+`scenarios.ts` (`hero`, `sync`, `enrich`, `mirror`, `agents`, `platform`).
+It uses Make's own palette — `#F4F4F7` canvas, `#6D00CC` active route — with
+solid brand-coloured modules and white glyphs (`apps.tsx`). Modules drag,
+routes are beziers with filter pills, an error-handler route hangs off the
+side, a **Run once** control walks the graph tier by tier while bundles travel
+the edges and per-module operation badges tick up, and hovering opens an
+inspector. The `requestAnimationFrame` loop runs only while bundles exist.
+
+Projects that declare a `scenario` id get this canvas as their window and in
+their detail view.
+
+---
+
+## The mark
+
+Two braces written by hand — `{` above, `}` below — the closing of one meeting
+the opening of the other so that, leaned 24°, they read as an **S**. The
+opening and closing of a function.
+
+The paths live once, in `components/os/logo.tsx` (`LOGO_OPEN`, `LOGO_CLOSE`,
+`LOGO_LEAN`), and feed everything: the nav and footer, the boot screen, the
+OpenGraph card (`app/opengraph-image.tsx`) and the favicons, which are
+**generated at build time** from the same constants (`app/icon.tsx` → 32 and
+192 px, `app/apple-icon.tsx` → 180 px). The logo cannot drift.
+
+---
+
+## Signature details
+
+- **Live wire** — `components/os/pointer-fx.tsx`. A node (ring + dot) trails
+  the pointer. Over anything interactive it docks 10px outside the nearest
+  edge and a wire is drawn from pointer to node — dashed bezier with a comet
+  tail on Ubuntu, a solid elbow with a dotted frame on Windows. Clicking sends
+  a bundle down the wire. Off on touch and under `prefers-reduced-motion`.
+- **Boot** — `components/os/boot.tsx`. An 800ms plymouth-style boot on the
+  first visit of a session (`sessionStorage`), then never again.
+- **Window** — `components/os/window.tsx`. One component, both chromes.
+  `chrome="terminal"` swaps in the two terminal emulators' own bars.
+- **Hire me** — `components/layout/hire-me.tsx`. A contact sheet that composes
+  a ready-to-send email in the visitor's mail app; no backend.
+- **Route change** — `app/[locale]/template.tsx`, a 320ms fade-up. No
+  `loading.tsx`, no frozen router: nothing between click and page.
+
+### Design rules
+
+The v2 site was too loud; v3 is quiet on purpose. No eyebrows or kickers, no
+pulsing "live" dots, no status pills, no numbered headers, no clock, no serif
+italics — emphasis is a single `text-accent` span via `t.rich(..., { em })`.
+Routes are a `divide-y` list, not three equal cards. UI transitions are
+150–300ms ease-out (`[0.23, 1, 0.32, 1]` / `[0.16, 1, 0.3, 1]`). Nothing
+animates forever except the terminal caret and the bundles of a running
+scenario. Demos use their product's brand colours, never the site's tokens,
+and never `dark:` prefixes.
 
 ---
 
@@ -130,25 +230,31 @@ living preview on their card.
 ```
 app/
   layout.tsx              pass-through root (metadataBase only)
-  globals.css             token layer + component classes
+  globals.css             token layer — :root Ubuntu, .light Windows — + component classes
+  icon.tsx apple-icon.tsx generated favicons, from the logo paths
+  opengraph-image.tsx     1200×630 social card (GNOME Terminal on aubergine)
   robots.ts sitemap.ts    generated
-  opengraph-image.tsx     1200×630 social card
   [locale]/
-    layout.tsx            document shell, providers, JSON-LD
-    page.tsx              home
+    layout.tsx            document shell: Backdrop · PointerFx · Spine · Nav · main · Footer · HireMe · Boot
+    template.tsx          route fade
+    page.tsx              home — Hero · Routes · Scenario · Featured · Connections · History · Contact
     about/ projects/      routes
-    loading.tsx error.tsx not-found.tsx
+    error.tsx not-found.tsx
 
 components/
-  console/                the terminal — commands, renderer, provider
-  scenario/               Make-style canvas
+  os/                     the operating system — window chrome, backdrop, boot, logo,
+                          live-wire pointer, hero point field, the Bloom
+  console/                the terminal — commands, line renderer, ⌘K provider
+  demos/                  the twelve playable windows + registry + contract
+  scenario/               Make canvas — engine, app glyphs, declared scenarios
+  flow/                   section rail (spine) and quiet section headers
   home/ about/ work/      page sections
-  layout/                 nav, footer, hire-me, transition, theme, locale
-  ui/                     cursor glow, particle field, section header, actions, icons
-constants/                all content: profile, projects, skills, timeline
+  layout/                 nav, footer, hire-me, theme toggle, locale switch
+  ui/                     actions, icons, section wrapper
+constants/                all content: profile, site, projects, skills, timeline, menu, lang
 i18n/messages/            en.json · fr.json — every string on the site
-lib/                      fonts, motion tokens, cn(), the 1sa wrapper
-public/images/experiences real company logos (SVG/PNG)
+lib/                      fonts (per OS), motion tokens, cn(), the 1sa wrapper
+public/images/            project shots, company logos, tech-stack SVGs
 ```
 
 Content never lives in JSX. Structure lives in `constants/`, copy lives in
@@ -162,30 +268,51 @@ Append to the array in `constants/projects.ts`:
 
 ```ts
 {
-  id: 16,
+  id: 17,
   slug: "thing",
-  category: PROFESSIONAL,     // PROFESSIONAL | PERSONAL | STUDIES
-  frame: "desktop",           // desktop | mobile | duo | terminal | artifact | scenario
+  category: PROFESSIONAL,       // PROFESSIONAL | PERSONAL | STUDIES
+  demo: "scenario",             // one of TDemo — what plays inside the window
+  demoVariant: "sheet",         // optional sub-mode (print: sheet | bill)
+  scenario: "sync",             // optional — a scenario id, for `scenario`/`enrich`/`agent`
+  tryEn: "Run it, then drag a module",
+  tryFr: "Exécutez-le, puis déplacez un module",
   year: "2025",
-  ongoing: true,              // shows "Present" instead of the year
+  ongoing: true,                // shows "Present" instead of the year
   client: "Someone",
-  via: "Valano Tech",         // optional umbrella employer
+  via: "Valano Tech",           // optional umbrella employer
   titleEn: "...", titleFr: "...",
   descEn: "...",  descFr: "...",
-  shot: "/images/projects/thing.png",
+  shot: "/images/projects/thing.png",   // optional — used by the detail view
   live: "https://...",
   source: "https://github.com/...",
+  npm: "thing",                 // optional — when published
   tags: [T.react, T.postgres],
 }
 ```
 
-Add its slug to `FEATURED_SLUGS` to give it the badge; the first three
-featured slugs are the ones shown on the home page.
+A new kind of demo is a component in `components/demos/` that takes
+`DemoProps`, a new member of the `TDemo` union, and one line in
+`registry.tsx`.
+
+`FEATURED_SLUGS` gives a project the badge and the `projects` command;
+`HOME_SLUGS` in `components/home/featured.tsx` chooses the four shown on the
+home page.
 
 ---
 
 ## Internationalisation
 
-`next-intl` with the locale as the first path segment. `middleware.ts`
-negotiates, `i18n/i18n.ts` loads the bundle, and `constants/lang.ts` is the
-single place the locale list is declared.
+`next-intl` with the locale as the first path segment (`localePrefix:
+"always"`, EN default). `middleware.ts` negotiates, `i18n/i18n.ts` loads the
+bundle, and `constants/lang.ts` is the single place the locale list is
+declared. Project titles and descriptions are bilingual in `constants/`; every
+other string is in `i18n/messages/`.
+
+---
+
+## Verification
+
+`pnpm typecheck && pnpm lint && pnpm build` must be clean. Visual QA is done
+headlessly against `next start` in both OS modes, on desktop (1600×1000) and
+a 390px handset — grids use explicit `grid-cols-1` and `minmax(0, 1fr)` tracks
+so nothing ever pushes the viewport wider than the phone.
